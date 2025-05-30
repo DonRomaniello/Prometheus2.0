@@ -32,12 +32,12 @@ const ContentRenderer = ({ contentFile }) => {
   }, [contentFile]);
 
   if (loading) {
-    return <div>Loading content...</div>;
+    return <div className="content-loading">Loading content...</div>;
   }
 
   if (error) {
     return (
-      <div>
+      <div className="content-error">
         <h2>Content Not Found</h2>
         <p>{error}</p>
         <p>Please check that the markdown file exists in the content directory.</p>
@@ -46,8 +46,10 @@ const ContentRenderer = ({ contentFile }) => {
   }
 
   return (
-    <div>
-      <ReactMarkdown>{content}</ReactMarkdown>
+    <div className="content-renderer">
+      <div className="container">
+        <ReactMarkdown>{content}</ReactMarkdown>
+      </div>
     </div>
   );
 };
