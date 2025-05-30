@@ -41,29 +41,78 @@ All colors, spacing, and typography can be customized by editing the CSS variabl
 
 ## Grid System
 
-The grid system uses CSS Grid for flexible layouts:
+Our grid system uses semantic `grid-template-areas` for cleaner, more readable layouts.
 
-### Basic Grid
+### Basic Layout Example
 ```jsx
-<div className="grid grid-3">
+<div className="layout-two-column">
+  <main className="area-main">
+    <ContentRenderer contentFile="services" />
+  </main>
+  <aside className="area-sidebar">
+    <h3>Quick Links</h3>
+  </aside>
+</div>
+```
+
+### Available Layout Templates
+
+#### Two Column Layout
+```jsx
+<div className="layout-two-column">
+  <div className="area-main">Main content</div>
+  <div className="area-sidebar">Sidebar</div>
+</div>
+```
+
+#### Three Equal Columns
+```jsx
+<div className="layout-three-equal">
+  <div className="area-left">Left</div>
+  <div className="area-center">Center</div>
+  <div className="area-right">Right</div>
+</div>
+```
+
+#### Full Page Layout
+```jsx
+<div className="layout-full-page">
+  <header className="area-header">Header</header>
+  <main className="area-main">Main</main>
+  <aside className="area-sidebar">Sidebar</aside>
+  <footer className="area-footer">Footer</footer>
+</div>
+```
+
+#### Auto-Responsive Grids
+```jsx
+<!-- Auto-fit: columns shrink to fit content -->
+<div className="grid-auto-fit">
+  <div>Card 1</div>
+  <div>Card 2</div>
+  <div>Card 3</div>
+</div>
+
+<!-- Auto-fill: maintains minimum column width -->
+<div className="grid-auto-fill">
   <div>Item 1</div>
   <div>Item 2</div>
-  <div>Item 3</div>
 </div>
 ```
 
-### Grid with Column Spans
-```jsx
-<div className="grid grid-4">
-  <div className="col-1">1 column</div>
-  <div className="col-2">2 columns</div>
-  <div className="col-1">1 column</div>
-</div>
-```
+### Layout Classes
+- `.layout-two-column` - Main content + sidebar (2:1 ratio)
+- `.layout-three-equal` - Three equal columns
+- `.layout-content-sidebar` - Content + sidebar (3:1 ratio)
+- `.layout-full-page` - Header, main, sidebar, footer
+- `.layout-article` - Article with title, meta, content, sidebar
+- `.layout-dashboard` - Nav, sidebar, main, widget areas
 
-### Available Grid Classes
-- `.grid-1` through `.grid-12` - Number of columns
-- `.col-1` through `.col-12` - Column span
+### Grid Area Classes
+- `.area-header`, `.area-main`, `.area-content`
+- `.area-sidebar`, `.area-footer`, `.area-nav`
+- `.area-left`, `.area-center`, `.area-right`
+- `.area-title`, `.area-meta`, `.area-tags`, `.area-widget`
 
 ### Container Classes
 - `.container` - Max-width with centered content
