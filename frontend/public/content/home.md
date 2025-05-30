@@ -22,13 +22,19 @@ Edit the variables at the top of `src/styles/global.css` to customize:
 - Font sizes: `--font-size-xs` through `--font-size-xxxl`
 
 ### Grid System
-Use classes like `grid-3` for 3-column layouts:
+Use semantic layout classes for clean, readable layouts:
 ```html
-<div className="grid grid-3">
-  <div className="col-1">Column 1</div>
-  <div className="col-2">Column spans 2</div>
+<div className="layout-two-column">
+  <main className="area-main">Main content</main>
+  <aside className="area-sidebar">Sidebar</aside>
 </div>
 ```
+
+Available layouts:
+- `layout-two-column` - Main content + sidebar
+- `layout-three-equal` - Three equal columns  
+- `grid-auto-fit` - Auto-responsive card layouts
+- Visit `/grid-demo` to see examples!
 
 ### Utility Classes
 - Spacing: `m-md`, `p-lg`, `mt-xl`, etc.
