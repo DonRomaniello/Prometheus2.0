@@ -277,8 +277,8 @@ body {
 }
 
 .nav-hidden {
-  transform: translateY(-100%);
-  opacity: 0;
+  transform: translateY(-85%);
+  opacity: 0.3;
 }
 
 .navigation ul {

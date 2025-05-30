@@ -1,57 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
+import { useScrollVisibility } from '../hooks/useScrollVisibility';
 
 const Navigation = () => {
-  const [isVisible, setIsVisible] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
-  const [isHovered, setIsHovered] = useState(false);
-
-  useEffect(() => {
-    let scrollTimeout;
-    
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-      const scrollDifference = currentScrollY - lastScrollY;
-      const scrollSpeed = Math.abs(scrollDifference);
-      
-      // Hide navbar when scrolling down past 100px
-      if (currentScrollY > 100 && scrollDifference > 0 && !isHovered) {
-        setIsVisible(false);
-      }
-      // Show navbar when scrolling up quickly or at top
-      else if (scrollDifference < 0 && (scrollSpeed > 10 || currentScrollY < 100)) {
-        setIsVisible(true);
-      }
-      
-      setLastScrollY(currentScrollY);
-      
-      // Clear any existing timeout
-      clearTimeout(scrollTimeout);
-      
-      // Set a timeout to show navbar after scrolling stops
-      scrollTimeout = setTimeout(() => {
-        if (currentScrollY < 100) {
-          setIsVisible(true);
-        }
-      }, 150);
-    };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-      clearTimeout(scrollTimeout);
-    };
-  }, [lastScrollY, isHovered]);
-
-  const handleMouseEnter = () => {
-    setIsHovered(true);
-    setIsVisible(true);
-  };
-
-  const handleMouseLeave = () => {
-    setIsHovered(false);
-  };
+  const { isVisible, handleMouseEnter, handleMouseLeave } = useScrollVisibility({
+    hideThreshold: 100,
+    showSpeedThreshold: 10,
+    scrollStopDelay: 150
+  });
 
   return (
     <nav 
