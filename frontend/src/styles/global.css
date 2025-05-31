@@ -1,3 +1,6 @@
+/* Import font */
+@import url("https://use.typekit.net/rtr3rae.css");
+
 /* CSS Variables - Edit these to change the entire app's appearance */
 :root {
   /* Colors */
@@ -43,7 +46,7 @@
   /* Font Weights */
   --font-weight-light: 300;
   --font-weight-normal: 400;
-  --font-weight-medium: 500;
+  --font-weight-medium: 600;
   --font-weight-semibold: 600;
   --font-weight-bold: 700;
 
@@ -76,7 +79,7 @@
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: "josefin-sans", -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -90,6 +93,11 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+/* Add Josefin Sans font base classes */
+.font-josefin {
+  font-family: "josefin-sans", sans-serif;
 }
 
 /* Container System */
@@ -472,7 +480,7 @@ main {
 .content-renderer code {
   background-color: var(--bg-secondary);
   padding: var(--spacing-xs) var(--spacing-sm);
-  font-family: 'Monaco', 'Consolas', 'Courier New', monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
   font-size: var(--font-size-sm);
 }
 
