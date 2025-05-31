@@ -11,7 +11,7 @@
   --color-warning: #ffc107;
   --color-info: #17a2b8;
   --color-light: #f8f9fa;
-  --color-dark: #343a40;
+  --color-dark: #0A0A0A;
   --color-white: #ffffff;
   --color-black: #000000;
 
@@ -43,12 +43,13 @@
   --font-size-xxl: 1.5rem;
   --font-size-xxxl: 2rem;
 
-  /* Font Weights */
+  /* Font Weights - Proxima Nova supports 300-800 in 100 unit increments */
   --font-weight-light: 300;
   --font-weight-normal: 400;
-  --font-weight-medium: 600;
+  --font-weight-medium: 500;
   --font-weight-semibold: 600;
   --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
 
   /* Line Heights */
   --line-height-tight: 1.2;
@@ -79,7 +80,7 @@
 
 body {
   margin: 0;
-  font-family: "josefin-sans", -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: "proxima-nova", -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -95,10 +96,24 @@ code {
     monospace;
 }
 
-/* Add Josefin Sans font base classes */
-.font-josefin {
-  font-family: "josefin-sans", sans-serif;
+/* Add Proxima Nova font base classes */
+.font-proxima {
+  font-family: "proxima-nova", sans-serif;
 }
+
+/* Proxima Nova Font Weight Classes - Normal & Italic */
+.font-300 { font-weight: 300; font-style: normal; }
+.font-300-italic { font-weight: 300; font-style: italic; }
+.font-400 { font-weight: 400; font-style: normal; }
+.font-400-italic { font-weight: 400; font-style: italic; }
+.font-500 { font-weight: 500; font-style: normal; }
+.font-500-italic { font-weight: 500; font-style: italic; }
+.font-600 { font-weight: 600; font-style: normal; }
+.font-600-italic { font-weight: 600; font-style: italic; }
+.font-700 { font-weight: 700; font-style: normal; }
+.font-700-italic { font-weight: 700; font-style: italic; }
+.font-800 { font-weight: 800; font-style: normal; }
+.font-800-italic { font-weight: 800; font-style: italic; }
 
 /* Container System */
 .container {
@@ -328,6 +343,7 @@ code {
 .font-medium { font-weight: var(--font-weight-medium); }
 .font-semibold { font-weight: var(--font-weight-semibold); }
 .font-bold { font-weight: var(--font-weight-bold); }
+.font-extrabold { font-weight: var(--font-weight-extrabold); }
 
 .text-left { text-align: left; }
 .text-center { text-align: center; }
