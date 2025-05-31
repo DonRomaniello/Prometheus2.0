@@ -3,6 +3,8 @@ import ReactMarkdown from 'react-markdown';
 
 const ContentRenderer = ({ contentFile }) => {
   const [content, setContent] = useState('');
+  const [firstHeader, setFirstHeader] = useState('');
+  const [remainingContent, setRemainingContent] = useState('');
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -18,6 +20,19 @@ const ContentRenderer = ({ contentFile }) => {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
         const markdownContent = await response.text();
+        
+        // Extract first header (h1, h2, h3, adjust second number as needed)
+        const headerMatch = markdownContent.match(/^(#{1,3})\s+(.+)$/m);
+        
+        if (headerMatch) {
+          const [fullMatch, hashes, headerText] = headerMatch;
+          setFirstHeader(`${hashes} ${headerText}`);
+          // Remove the first header from content
+          setRemainingContent(markdownContent.replace(fullMatch, '').trim());
+        } else {
+          setFirstHeader('');
+          setRemainingContent(markdownContent);
+        }
         
         setContent(markdownContent);
       } catch (err) {
@@ -46,9 +61,14 @@ const ContentRenderer = ({ contentFile }) => {
   }
 
   return (
-    <div className="content-renderer">
-      <div className="container">
-        <ReactMarkdown>{content}</ReactMarkdown>
+    <div className="container content-renderer">
+      {firstHeader && (
+        <div className="content-header">
+          <ReactMarkdown>{firstHeader}</ReactMarkdown>
+        </div>
+      )}
+      <div className="content-body">
+        <ReactMarkdown>{remainingContent}</ReactMarkdown>
       </div>
     </div>
   );
