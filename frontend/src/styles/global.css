@@ -68,7 +68,7 @@
   /* Grid System */
   --grid-columns: 12;
   --grid-gap: var(--spacing-md);
-  --container-max-width: 1200px;
+  --container-max-width: 100vh;
 }
 
 /* Reset and Base Styles */
@@ -200,6 +200,10 @@ code {
     "sidebar main main widget";
   grid-template-columns: 200px 2fr 1fr 200px;
   gap: var(--grid-gap);
+}
+
+.content-container {
+  border-left: #0A0A0A solid 1px;
 }
 
 /* Simple Grid Utilities */

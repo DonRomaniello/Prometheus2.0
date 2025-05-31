@@ -47,7 +47,7 @@ const ContentRenderer = ({ contentFile }) => {
 
   return (
     <div className="content-renderer">
-      <div className="container">
+      <div className="container content-container">
         <ReactMarkdown>{content}</ReactMarkdown>
       </div>
     </div>
