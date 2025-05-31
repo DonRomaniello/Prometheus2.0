@@ -202,8 +202,9 @@ code {
   gap: var(--grid-gap);
 }
 
-.content-container {
+.content-body {
   border-left: #0A0A0A solid 1px;
+  padding: 0 var(--spacing-md);
 }
 
 /* Simple Grid Utilities */
