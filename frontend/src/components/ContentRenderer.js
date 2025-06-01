@@ -28,7 +28,7 @@ const ContentRenderer = ({ contentFile }) => {
         if (jsonBlockMatch) {
           try {
             // jsonBlockMatch[1] contains only the JSON inside the code block
-            setLayout(JSON.parse(jsonBlockMatch[1]).join(' '))
+            setLayout(JSON.parse(jsonBlockMatch[1]).layout.join(' '))
           } catch (e) {
             console.error('Invalid JSON in code block:', e);
           }

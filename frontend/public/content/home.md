@@ -30,15 +30,6 @@ Edit the variables at the top of `src/styles/global.css` to customize:
 - Spacing: `--spacing-xs` through `--spacing-xxl`
 - Font sizes: `--font-size-xs` through `--font-size-xxxl`
 
-### Grid System
-Use semantic layout classes for clean, readable layouts:
-```html
-<div className="layout-two-column">
-  <main className="area-main">Main content</main>
-  <aside className="area-sidebar">Sidebar</aside>
-</div>
-```
-
 Available layouts:
 - `layout-two-column` - Main content + sidebar
 - `layout-three-equal` - Three equal columns  
