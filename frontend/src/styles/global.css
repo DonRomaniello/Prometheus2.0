@@ -215,15 +215,17 @@ code {
 }
 
 .grid-auto-fit {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
   gap: var(--grid-gap);
+  justify-content: flex-start;
 }
 
 .grid-auto-fill {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
   gap: var(--grid-gap);
+  justify-content: flex-start;
 }
 
 /* Named Grid Areas */
