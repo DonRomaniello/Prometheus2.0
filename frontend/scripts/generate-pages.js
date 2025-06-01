@@ -9,10 +9,13 @@ const PAGES_DIR = path.join(__dirname, '../src/pages');
 const APP_JS_PATH = path.join(__dirname, '../src/App.js');
 const NAVIGATION_JS_PATH = path.join(__dirname, '../src/components/Navigation.js');
 
-// Helper function to convert filename to component name
+// Helper function to convert filename to component name (in PascalCase)
 function toComponentName(filename) {
   const baseName = path.basename(filename, '.md');
-  return baseName.charAt(0).toUpperCase() + baseName.slice(1);
+  // Convert to PascalCase: Split by underscores or hyphens, capitalize each part, and join
+  return baseName.split(/[-_]/)
+    .map(part => part.charAt(0).toUpperCase() + part.slice(1))
+    .join('');
 }
 
 // Helper function to convert filename to route path
@@ -48,8 +51,7 @@ function createPageComponent(contentFile) {
     return false;
   }
   
-  const componentContent = `import React from 'react';
-import ContentRenderer from '../components/ContentRenderer';
+  const componentContent = `import ContentRenderer from '../components/ContentRenderer';
 
 const ${componentName} = () => {
   return <ContentRenderer contentFile="${contentFile}" />;
@@ -128,7 +130,9 @@ function updateNavigation(contentFiles) {
   // Generate navigation items
   const navItems = contentFiles.map(file => {
     const routePath = toRoutePath(file);
-    const label = file === 'home' ? 'Home' : capitalize(file);
+    const label = file === 'home'
+      ? 'Home'
+      : file.replace(/[-_]/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
     return `        <li><Link to="${routePath}">${label}</Link></li>`;
   }).join('\n');
   
