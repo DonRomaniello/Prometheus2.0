@@ -1,3 +1,12 @@
+```json
+{
+  "layout" : [
+    "content-renderer"
+  ]
+}
+```
+
+
 # Welcome to Prometheus 2.0
 
 This is the home page content. You can edit this markdown file to change what appears on the home page.

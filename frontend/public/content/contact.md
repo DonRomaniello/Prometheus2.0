@@ -1,3 +1,10 @@
+```json
+{
+  "layout" : [
+    "content-renderer"
+  ]
+}
+```
 # Contact Us
 
 Get in touch with the Prometheus 2.0 team.
