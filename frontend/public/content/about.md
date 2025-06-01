@@ -1,3 +1,10 @@
+```json
+{
+  "layout" : [
+    "content-renderer"
+  ]
+}
+```
 # About Prometheus 2.0
 
 Prometheus 2.0 is a modern React application that allows you to manage content through markdown files while providing seamless navigation and consistent styling.
