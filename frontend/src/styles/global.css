@@ -5,12 +5,12 @@
 /* CSS Variables - Edit these to change the entire app's appearance */
 :root {
   /* Colors */
-  --color-primary: #007bff;
-  --color-secondary: #6c757d;
+  --color-primary: #0A0A0A;
+  --color-secondary: #4F5165;
   --color-success: #28a745;
   --color-danger: #dc3545;
   --color-warning: #ffc107;
-  --color-info: #17a2b8;
+  --color-info: #547AA5;
   --color-light: #f8f9fa;
   --color-dark: #0A0A0A;
   --color-white: #ffffff;
