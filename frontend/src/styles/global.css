@@ -1,5 +1,6 @@
 /* Import font */
 @import url("https://use.typekit.net/rtr3rae.css");
+@import './people.css';
 
 /* CSS Variables - Edit these to change the entire app's appearance */
 :root {

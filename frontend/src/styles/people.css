@@ -1,0 +1,49 @@
+/* People grid layout variables */
+:root {
+  --people-image-size: 28vh;
+}
+
+/* People grid layout: responsive, max 3 columns, always square */
+.people-grid .content-body {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(var(--people-image-size), var(--people-image-size)));
+  max-width: 100%;
+  gap: 2rem;
+  justify-items: center;
+  align-items: start;
+  margin: 2rem 0;
+}
+
+.people-grid .content-body p {
+  margin: 0;
+  display: contents;
+}
+
+.people-grid img {
+  width: var(--people-image-size);
+  height: var(--people-image-size);
+  max-width: 100%;
+  object-fit: cover;
+  background: #e0e0e0;
+  display: block;
+}
+
+.person-square {
+  width: var(--people-image-size);
+  aspect-ratio: 1 / 1;
+  background: #f0f0f0;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.person-name {
+  margin-top: 0.5rem;
+  font-weight: 600;
+  font-size: 1rem;
+  text-align: center;
+}
