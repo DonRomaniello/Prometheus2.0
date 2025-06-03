@@ -70,4 +70,15 @@
 
   /* People grid layout variables */
   --people-image-size: 28vh;
+
+  /* Mobile Navigation Variables */
+  --mobile-breakpoint: 768px;
+  --hamburger-size: 40px;
+  --hamburger-line-height: 4px;
+  --hamburger-line-radius: 0;
+  --mobile-nav-z-index: 1001;
+  --mobile-nav-backdrop-z-index: 1000;
+  --mobile-nav-width: 85vw;
+  --mobile-nav-animation-duration: 0.3s;
+  --brand-font-size: 2rem;
 }
