@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useScrollVisibility } from '../hooks/useScrollVisibility';
 import { useMobileNavigation } from '../hooks/useMobileNavigation';
+import '../styles/components/navigation.css';
 
 const Navigation = () => {
   const { isVisible, handleMouseEnter, handleMouseLeave } = useScrollVisibility({
