@@ -1,7 +1,5 @@
-/* People grid layout variables */
-:root {
-  --people-image-size: 28vh;
-}
+/* Import variables */
+@import './variables.css';
 
 /* People grid layout: responsive, max 3 columns, always square */
 .people-grid .content-body {
@@ -31,7 +29,6 @@
   width: var(--people-image-size);
   aspect-ratio: 1 / 1;
   background: #f0f0f0;
-  border-radius: 12px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -51,15 +48,27 @@
 .filler-content {
   width: var(--people-image-size);
   height: var(--people-image-size);
-  background: #f8f8f8;
-  border: 2px dashed #d0d0d0;
-  border-radius: 12px;
+  background: var(--color-light);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 1rem;
   box-sizing: border-box;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeInUp 0.3s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.filler-content:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .filler-quote {

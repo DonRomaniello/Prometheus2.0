@@ -11,15 +11,6 @@ const ContentRenderer = ({ contentFile }) => {
     fillerContent: Array.isArray(fillerContent) ? fillerContent : [],
   });
 
-  // Log values for debugging
-  console.log('ContentRenderer Debug:', {
-    contentFile,
-    isPeopleGrid,
-    fillerContent,
-    fillerNeeded,
-    layout
-  });
-
   if (loading) {
     return <div className="content-loading">Loading content...</div>;
   }
@@ -48,7 +39,11 @@ const ContentRenderer = ({ contentFile }) => {
         <ReactMarkdown>{remainingContent}</ReactMarkdown>
         {isPeopleGrid && Array.isArray(fillerContent) && fillerContent.length > 0 && fillerNeeded > 0 && 
           fillerContent.slice(0, fillerNeeded).map((filler, idx) => (
-            <div key={`filler-${idx}`} className="person-square filler-content">
+            <div 
+              key={`filler-${idx}`} 
+              className="person-square filler-content"
+              style={{ animationDelay: `${idx * 0.1}s` }}
+            >
               {filler.quote && filler.attribution ? (
                 <div className="filler-quote">
                   <blockquote>"{filler.quote}"</blockquote>

@@ -12,22 +12,10 @@ export function useFillPeopleGrid({ fillerContent = [] }) {
     const analyzeGrid = () => {
       const grid = gridRef.current;
       
-      if (!grid) {
-        console.log('Grid ref is null');
-        return;
-      }
-      
-      // Count all direct children
-      const childrenCount = grid.children.length;
-      console.log('Grid children count:', childrenCount);
-      
-      // Let's see what the actual structure is
-      console.log('Grid element:', grid);
-      console.log('Grid children:', Array.from(grid.children));
+      if (!grid) return;
       
       // Look for paragraph elements with images (which are the people squares)
       const paragraphsWithImages = grid.querySelectorAll('p img');
-      console.log('Paragraphs with images count:', paragraphsWithImages.length);
       
       // Get the number of columns from the flexbox layout
       const computedStyles = window.getComputedStyle(grid);
@@ -40,16 +28,11 @@ export function useFillPeopleGrid({ fillerContent = [] }) {
       
       if (firstImage) {
         const itemWidth = firstImage.offsetWidth;
-        console.log('Container width:', containerWidth);
-        console.log('Item width:', itemWidth);
-        console.log('Gap:', gap);
         
         if (itemWidth > 0) {
           columnsPerRow = Math.floor((containerWidth + gap) / (itemWidth + gap));
         }
       }
-      
-      console.log('Calculated columns per row:', columnsPerRow);
       
       // Calculate filler needed: F = N - (X % N)
       const X = paragraphsWithImages.length; // number of people images
@@ -57,31 +40,45 @@ export function useFillPeopleGrid({ fillerContent = [] }) {
       const remainder = X % N;
       const F = remainder === 0 ? 0 : N - remainder; // filler needed
       
-      console.log('Filler calculation:');
-      console.log(`X (images): ${X}`);
-      console.log(`N (columns): ${N}`);
-      console.log(`X % N (remainder): ${remainder}`);
-      console.log(`F (filler needed): ${F}`);
-      
-      // Update the state
-      setFillInfo({
-        needsFilling: F > 0,
-        fillerNeeded: F,
-        columnsPerRow: N
+      // Only update state if values actually changed to prevent unnecessary re-renders
+      setFillInfo(prev => {
+        if (prev.fillerNeeded !== F || prev.columnsPerRow !== N) {
+          return {
+            needsFilling: F > 0,
+            fillerNeeded: F,
+            columnsPerRow: N
+          };
+        }
+        return prev;
       });
     };
 
-    // Add a small delay to ensure DOM is ready
-    const timeoutId = setTimeout(() => {
-      analyzeGrid();
-    }, 100);
+    // Initial analysis
+    analyzeGrid();
+
+    // Re-analyze on resize with reduced debounce for faster response
+    const handleResize = debounce(analyzeGrid, 100);
+    window.addEventListener('resize', handleResize);
+    
+    // Re-analyze when images might have loaded
+    window.addEventListener('load', analyzeGrid);
     
     return () => {
-      clearTimeout(timeoutId);
+      window.removeEventListener('resize', handleResize);
+      window.removeEventListener('load', analyzeGrid);
     };
-  }, []);
+  }, [fillerContent]);
   
   return { gridRef, ...fillInfo };
+}
+
+// Debounce helper function
+function debounce(func, wait) {
+  let timeout;
+  return function(...args) {
+    clearTimeout(timeout);
+    timeout = setTimeout(() => func.apply(this, args), wait);
+  };
 }
 
 export default useFillPeopleGrid;
