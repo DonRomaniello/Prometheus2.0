@@ -42,10 +42,9 @@ const Navigation = () => {
             </div>
             {isOpen && <div className="mobile-nav-backdrop" onClick={closeNav}></div>}
             <div className={`mobile-nav${isOpen ? ' open' : ''}`}>
-              <div className="mobile-nav-header-menu">
-                <span className="brand-logo-menu">Prometheus2.0</span>
-                <button className="close-button" onClick={closeNav} aria-label="Close navigation menu">×</button>
-              </div>
+              {/* <div className="mobile-nav-header-menu">
+                <button className="close-button" onClick={closeNav} aria-label="Close navigation menu">(close)</button>
+              </div> */}
               <ul className="mobile-nav-links">
                 <li><Link to="/" onClick={handleLinkClick}>Home</Link></li>
                 <li><Link to="/about" onClick={handleLinkClick}>About</Link></li>
