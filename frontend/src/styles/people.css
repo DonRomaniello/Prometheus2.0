@@ -46,3 +46,49 @@
   font-size: 1rem;
   text-align: center;
 }
+
+/* Filler content styling */
+.filler-content {
+  width: var(--people-image-size);
+  height: var(--people-image-size);
+  background: #f8f8f8;
+  border: 2px dashed #d0d0d0;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.filler-quote {
+  text-align: center;
+  font-style: italic;
+  color: #666;
+}
+
+.filler-quote blockquote {
+  margin: 0 0 0.5rem 0;
+  font-size: 0.9rem;
+  line-height: 1.3;
+}
+
+.filler-quote cite {
+  font-size: 0.8rem;
+  color: #888;
+  font-style: normal;
+}
+
+.filler-text {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.4;
+}
+
+.filler-empty {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+}
