@@ -1,5 +1,10 @@
 /* CSS Variables - Edit these to change the entire app's appearance */
 :root {
+  /* Divisors */
+  --magic-number: 15;
+  --magic-85: calc(13/21);
+  --golden-ratio: 1.618; /* Golden ratio for design consistency */
+
   /* Colors */
   --color-primary: #0A0A0A;
   --color-primary-rgb: 10, 10, 10;
@@ -29,8 +34,11 @@
 
   /* Background Colors */
   --bg-primary: var(--color-white);
+  --bg-primary-rgb: var(--color-white-rgb);
   --bg-secondary: var(--color-light);
+  --bg-secondary-rgb: var(--color-light-rgb);
   --bg-dark: var(--color-dark);
+  --bg-dark-rgb: var(--color-dark-rgb);
 
   /* Spacing */
   --spacing-xs: 0.25rem;
@@ -81,12 +89,13 @@
 
   /* Mobile Navigation Variables */
   --mobile-breakpoint: 768px;
-  --hamburger-size: calc(2 * var(--spacing-md));
-  --hamburger-line-height: 4px;
-  --hamburger-line-radius: 0;
+  --mobile-nav-height: calc(100vh / var(--magic-number));
   --mobile-nav-z-index: 1001;
   --mobile-nav-backdrop-z-index: 1000;
-  --mobile-nav-width: 85vw;
+  --mobile-nav-width: calc(100vw * var(--magic-85));
   --mobile-nav-animation-duration: 0.3s;
+  --hamburger-container-width: var(--mobile-nav-height);
+  --hamburger-size: calc(var(--hamburger-container-width) * var(--magic-85));
+  --hamburger-line-height: calc(var(--hamburger-size) / var(--magic-number));
   --brand-font-size: 2rem;
 }

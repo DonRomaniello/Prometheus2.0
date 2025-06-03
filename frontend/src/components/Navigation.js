@@ -21,13 +21,14 @@ const Navigation = () => {
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      <div className="container">
+      <div>
         {isMobile ? (
           <>
             <div className="mobile-nav-header">
               <Link to="/" className="brand-logo" onClick={handleLinkClick}>
-                Prometheus2.0
+                Prometheus Studios
               </Link>
+              <div className="hamburger-container">
               <button
                 className={`hamburger-button${isOpen ? ' open' : ''}`}
                 onClick={toggleNav}
@@ -37,6 +38,7 @@ const Navigation = () => {
                 <span className="hamburger-line"></span>
                 <span className="hamburger-line"></span>
               </button>
+              </div>
             </div>
             {isOpen && <div className="mobile-nav-backdrop" onClick={closeNav}></div>}
             <div className={`mobile-nav${isOpen ? ' open' : ''}`}>
