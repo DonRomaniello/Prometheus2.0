@@ -1,76 +1,8 @@
 /* Import font */
 @import url("https://use.typekit.net/rtr3rae.css");
-@import './people.css';
 
-/* CSS Variables - Edit these to change the entire app's appearance */
-:root {
-  /* Colors */
-  --color-primary: #007bff;
-  --color-secondary: #6c757d;
-  --color-success: #28a745;
-  --color-danger: #dc3545;
-  --color-warning: #ffc107;
-  --color-info: #17a2b8;
-  --color-light: #f8f9fa;
-  --color-dark: #0A0A0A;
-  --color-white: #ffffff;
-  --color-black: #000000;
-
-  /* Text Colors */
-  --text-primary: var(--color-dark);
-  --text-secondary: var(--color-secondary);
-  --text-muted: #6c757d;
-  --text-light: var(--color-light);
-
-  /* Background Colors */
-  --bg-primary: var(--color-white);
-  --bg-secondary: var(--color-light);
-  --bg-dark: var(--color-dark);
-
-  /* Spacing */
-  --spacing-xs: 0.25rem;
-  --spacing-sm: 0.5rem;
-  --spacing-md: 1rem;
-  --spacing-lg: 1.5rem;
-  --spacing-xl: 2rem;
-  --spacing-xxl: 3rem;
-
-  /* Font Sizes */
-  --font-size-xs: 0.75rem;
-  --font-size-sm: 0.875rem;
-  --font-size-base: 1rem;
-  --font-size-lg: 1.125rem;
-  --font-size-xl: 1.25rem;
-  --font-size-xxl: 1.5rem;
-  --font-size-xxxl: 2rem;
-
-  /* Font Weights - Proxima Nova supports 300-800 in 100 unit increments */
-  --font-weight-light: 300;
-  --font-weight-normal: 400;
-  --font-weight-medium: 500;
-  --font-weight-semibold: 600;
-  --font-weight-bold: 700;
-  --font-weight-extrabold: 800;
-
-  /* Line Heights */
-  --line-height-tight: 1.2;
-  --line-height-normal: 1.5;
-  --line-height-relaxed: 1.75;
-
-  /* Borders */
-  --border-width: 1px;
-  --border-color: #e5e7eb;
-
-  /* Shadows */
-  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-
-  /* Grid System */
-  --grid-columns: 12;
-  --grid-gap: var(--spacing-md);
-  --container-max-width: 100vh;
-}
+/* Import variables */
+@import './variables.css';
 
 /* Reset and Base Styles */
 * {
@@ -215,15 +147,17 @@ code {
 }
 
 .grid-auto-fit {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
   gap: var(--grid-gap);
+  justify-content: flex-start;
 }
 
 .grid-auto-fill {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
   gap: var(--grid-gap);
+  justify-content: flex-start;
 }
 
 /* Named Grid Areas */

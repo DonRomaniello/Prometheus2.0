@@ -1,8 +1,15 @@
+import React, { useRef } from 'react';
 import ReactMarkdown from 'react-markdown';
 import { useMarkdownContent } from '../hooks/useMarkdownContent';
+import { useFillPeopleGrid } from '../hooks/useFillPeopleGrid';
 
 const ContentRenderer = ({ contentFile }) => {
-  const { layout, firstHeader, remainingContent, loading, error } = useMarkdownContent(contentFile);
+  const { layout, firstHeader, remainingContent, loading, error, fillerContent } = useMarkdownContent(contentFile);
+  const contentBodyRef = useRef(null);
+  const isPeopleGrid = layout.includes('people-grid');
+  const { gridRef, fillerNeeded } = useFillPeopleGrid({
+    fillerContent: Array.isArray(fillerContent) ? fillerContent : [],
+  });
 
   if (loading) {
     return <div className="content-loading">Loading content...</div>;
@@ -25,8 +32,31 @@ const ContentRenderer = ({ contentFile }) => {
           <ReactMarkdown>{firstHeader}</ReactMarkdown>
         </div>
       )}
-      <div className="content-body">
+      <div
+        className="content-body"
+        ref={isPeopleGrid ? gridRef : contentBodyRef}
+      >
         <ReactMarkdown>{remainingContent}</ReactMarkdown>
+        {isPeopleGrid && Array.isArray(fillerContent) && fillerContent.length > 0 && fillerNeeded > 0 && 
+          fillerContent.slice(0, fillerNeeded).map((filler, idx) => (
+            <div 
+              key={`filler-${idx}`} 
+              className="person-square filler-content"
+              style={{ animationDelay: `${idx * 0.1}s` }}
+            >
+              {filler.quote && filler.attribution ? (
+                <div className="filler-quote">
+                  <blockquote>"{filler.quote}"</blockquote>
+                  <cite>&mdash; {filler.attribution}</cite>
+                </div>
+              ) : filler.text ? (
+                <div className="filler-text">{filler.text}</div>
+              ) : (
+                <div className="filler-empty"></div>
+              )}
+            </div>
+          ))
+        }
       </div>
     </div>
   );

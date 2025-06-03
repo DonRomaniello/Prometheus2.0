@@ -1,6 +1,16 @@
 ```json
 {
-  "layout": ["content-renderer", "people-grid"]
+  "layout": ["content-renderer", "people-grid"],
+  "filler" : [
+    {
+      "quote" : "Accurate first.",
+      "attribution" : "Kevin Mullaney"
+    },
+    {
+      "quote" : "Character is king.",
+      "attribution" : "Joe Bill"
+    }
+  ]
 }
 ```
 # The Studio
@@ -12,6 +22,3 @@
 ![Person 5](/headshot.png)
 ![Person 6](/headshot.png)
 ![Person 7](/headshot.png)
-![Person 8](/headshot.png)
-
-
