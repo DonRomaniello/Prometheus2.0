@@ -2,16 +2,24 @@
 :root {
   /* Colors */
   --color-primary: #0A0A0A;
+  --color-primary-rgb: 10, 10, 10;
   --color-secondary: #4F5165;
+  --color-secondary-rgb: 79, 81, 101;
   --color-success: #28a745;
   --color-danger: #dc3545;
   --color-warning: #ffc107;
   --color-info: #547AA5;
+  --color-info-rgb: 84, 122, 165;
   --color-light: #f8f9fa;
+  --color-light-rgb: 248, 249, 250;
   --color-medium: #6c757d;
+  --color-medium-rgb: 108, 117, 125;
   --color-dark: #0A0A0A;
+  --color-dark-rgb: 10, 10, 10;
   --color-white: #ffffff;
+  --color-white-rgb: 255, 255, 255;
   --color-black: #000000;
+  --color-black-rgb: 0, 0, 0;
 
   /* Text Colors */
   --text-primary: var(--color-dark);
@@ -73,7 +81,7 @@
 
   /* Mobile Navigation Variables */
   --mobile-breakpoint: 768px;
-  --hamburger-size: 40px;
+  --hamburger-size: calc(2 * var(--spacing-md));
   --hamburger-line-height: 4px;
   --hamburger-line-radius: 0;
   --mobile-nav-z-index: 1001;
