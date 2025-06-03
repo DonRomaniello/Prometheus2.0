@@ -8,7 +8,7 @@ import TheStudio from './pages/TheStudio';
 import Navigation from './components/Navigation';
 import './styles/variables.css';
 import './styles/global.css';
-import './styles/people.css';
+import './styles/layouts/people.css';
 
 function App() {
   return (

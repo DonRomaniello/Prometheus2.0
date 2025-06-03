@@ -2,6 +2,11 @@ import React, { useRef } from 'react';
 import ReactMarkdown from 'react-markdown';
 import { useMarkdownContent } from '../hooks/useMarkdownContent';
 import { useFillPeopleGrid } from '../hooks/useFillPeopleGrid';
+import '../styles/layouts/content-renderer.css';
+import '../styles/layouts/people.css';
+import '../styles/layouts/layout-two-column.css';
+import '../styles/layouts/layout-three-equal.css';
+import '../styles/layouts/grid-auto-fit.css';
 
 const ContentRenderer = ({ contentFile }) => {
   const { layout, firstHeader, remainingContent, loading, error, fillerContent } = useMarkdownContent(contentFile);
