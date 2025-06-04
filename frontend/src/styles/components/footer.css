@@ -113,40 +113,33 @@
   left: 100%;
 }
 
-/* Responsive design */
-@media (max-width: 768px) {
-  .footer {
-    position: static !important;
-    transform: none !important;
-    opacity: 1 !important;
-    transition: none !important;
-    height: auto !important;
-    box-shadow: none !important;
-  }
-  .footer-scroll-spacer {
-    display: none !important;
-  }
-  
-  .footer-links {
-    gap: 0; /* Keep links clustered on mobile too */
-    flex-direction: column;
-  }
-  
-  .footer-link {
-    padding: var(--spacing-xs) var(--spacing-sm);
-    font-size: var(--font-size-sm);
-  }
+/* Mobile styles */
+.footer.mobile {
+  position: static !important;
+  transform: none !important;
+  opacity: 1 !important;
+  transition: none !important;
+  height: auto !important;
+  box-shadow: none !important;
 }
 
-@media (max-width: 480px) {
-  .footer-links {
-    gap: 0; /* Keep links clustered on smallest screens */
-  }
-  
-  .footer-link {
-    padding: var(--spacing-xs);
-    font-size: var(--font-size-xs);
-  }
+.footer-scroll-spacer.mobile {
+  display: none !important;
+}
+
+.footer-links.mobile {
+  gap: 0;
+  flex-direction: column;
+}
+
+.footer-link.mobile {
+  padding: var(--spacing-xs) var(--spacing-sm);
+  font-size: var(--font-size-sm);
+}
+
+.footer-link.small-mobile {
+  padding: var(--spacing-xs);
+  font-size: var(--font-size-xs);
 }
 
 /* Animation keyframes for subtle entrance effect */

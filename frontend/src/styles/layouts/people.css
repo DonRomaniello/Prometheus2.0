@@ -105,71 +105,63 @@
 }
 
 /* Mobile optimizations for people grid */
-@media (max-width: 768px) {
-  .people-grid .content-body {
-    gap: 14.3vw; /* Space between photos on mobile */
-    margin: 1rem 0;
-    justify-content: center; /* Center the single column */
-    padding: 0 10%; /* Add padding to prevent cutoff */
-  }
-
-  .people-grid img,
-  .person-square,
-  .filler-content {
-    width: 85.7vw; /* 80% of viewport width */
-    height: 85.7vw; /* Keep it square */
-    max-width: 400px; /* Prevent it from getting too large on tablets */
-    max-height: 400px;
-  }
-
-  .people-grid img {
-    object-fit: cover; /* Ensure images scale properly */
-  }
-
-  .filler-content {
-    padding: 0.75rem;
-  }
-
-  .filler-quote blockquote {
-    font-size: 0.8rem;
-    line-height: 1.2;
-  }
-
-  .filler-quote cite {
-    font-size: 0.7rem;
-  }
-
-  .filler-text {
-    font-size: 0.8rem;
-    line-height: 1.3;
-  }
+.people-grid .content-body.mobile {
+  gap: 14.3vw;
+  margin: 1rem 0;
+  justify-content: center;
+  padding: 0 10%;
 }
 
-@media (max-width: 480px) {
-  .people-grid .content-body {
-    gap: 14.3vw; /* Same spacing on smaller screens */
-    padding: 0 10%; /* Add padding to prevent cutoff */
-  }
+.people-grid .content-body.mobile img,
+.people-grid .content-body.mobile .person-square,
+.people-grid .content-body.mobile .filler-content {
+  width: 85.7vw;
+  height: 85.7vw;
+  max-width: 400px;
+  max-height: 400px;
+}
 
-  .people-grid img,
-  .person-square,
-  .filler-content {
-    width: 85.7vw; /* 80% width on smaller screens */
-    height: 85.7vw; /* Keep it square */
-    max-width: 300px; /* Smaller max size for phones */
-    max-height: 300px;
-  }
+.people-grid .content-body.mobile .filler-content {
+  padding: 0.75rem;
+}
 
-  .filler-content {
-    padding: 0.5rem;
-  }
+.people-grid .content-body.mobile .filler-quote blockquote {
+  font-size: 0.8rem;
+  line-height: 1.2;
+}
 
-  .filler-quote blockquote {
-    font-size: 0.75rem;
-    margin: 0 0 0.25rem 0;
-  }
+.people-grid .content-body.mobile .filler-quote cite {
+  font-size: 0.7rem;
+}
 
-  .filler-quote cite {
-    font-size: 0.65rem;
-  }
+.people-grid .content-body.mobile .filler-text {
+  font-size: 0.8rem;
+  line-height: 1.3;
+}
+
+.people-grid .content-body.small-mobile {
+  gap: 14.3vw;
+  padding: 0 10%;
+}
+
+.people-grid .content-body.small-mobile img,
+.people-grid .content-body.small-mobile .person-square,
+.people-grid .content-body.small-mobile .filler-content {
+  width: 85.7vw;
+  height: 85.7vw;
+  max-width: 300px;
+  max-height: 300px;
+}
+
+.people-grid .content-body.small-mobile .filler-content {
+  padding: 0.5rem;
+}
+
+.people-grid .content-body.small-mobile .filler-quote blockquote {
+  font-size: 0.75rem;
+  margin: 0 0 0.25rem 0;
+}
+
+.people-grid .content-body.small-mobile .filler-quote cite {
+  font-size: 0.65rem;
 }

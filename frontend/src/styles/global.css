@@ -418,70 +418,56 @@ code {
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
-  /* Responsive Grid Layouts - Stack vertically on mobile */
-  .layout-full-page {
-    grid-template-areas: 
-      "header"
-      "main"
-      "sidebar"
-      "footer";
-    grid-template-columns: 1fr;
-  }
-  
-  .layout-two-column,
-  .layout-content-sidebar {
-    grid-template-areas: 
-      "main"
-      "sidebar";
-    grid-template-columns: 1fr;
-  }
-  
-  .layout-three-equal {
-    grid-template-areas: 
-      "left"
-      "center"
-      "right";
-    grid-template-columns: 1fr;
-  }
-  
-  .layout-article {
-    grid-template-areas: 
-      "title"
-      "meta"
-      "content"
-      "sidebar"
-      "tags";
-    grid-template-columns: 1fr;
-  }
-  
-  .layout-dashboard {
-    grid-template-areas: 
-      "nav"
-      "main"
-      "sidebar"
-      "widget";
-    grid-template-columns: 1fr;
-  }
-  
-  /* Auto-fit grids become smaller on mobile */
-  .grid-auto-fit {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  }
-  
-  .grid-auto-fill {
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  }
-  
-  .container {
-    padding: 0 var(--spacing-sm);
-  }
+.layout-full-page.mobile {
+  grid-template-areas: 
+    "header"
+    "main"
+    "sidebar"
+    "footer";
+  grid-template-columns: 1fr;
 }
-
-@media (max-width: 480px) {
-  :root {
-    --spacing-md: 0.75rem;
-    --spacing-lg: 1rem;
-    --spacing-xl: 1.25rem;
-  }
+.layout-two-column.mobile,
+.layout-content-sidebar.mobile {
+  grid-template-areas: 
+    "main"
+    "sidebar";
+  grid-template-columns: 1fr;
+}
+.layout-three-equal.mobile {
+  grid-template-areas: 
+    "left"
+    "center"
+    "right";
+  grid-template-columns: 1fr;
+}
+.layout-article.mobile {
+  grid-template-areas: 
+    "title"
+    "meta"
+    "content"
+    "sidebar"
+    "tags";
+  grid-template-columns: 1fr;
+}
+.layout-dashboard.mobile {
+  grid-template-areas: 
+    "nav"
+    "main"
+    "sidebar"
+    "widget";
+  grid-template-columns: 1fr;
+}
+.grid-auto-fit.mobile {
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+.grid-auto-fill.mobile {
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+}
+.container.mobile {
+  padding: 0 var(--spacing-sm);
+}
+:root.small-mobile {
+  --spacing-md: 0.75rem;
+  --spacing-lg: 1rem;
+  --spacing-xl: 1.25rem;
 }

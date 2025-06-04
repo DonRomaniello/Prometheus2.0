@@ -102,55 +102,43 @@
   background: transparent;
 }
 
-/* Mobile optimizations for people grid */
-@media (max-width: 768px) {
-  .people-grid .content-body {
-    gap: 1rem;
-    margin: 1rem 0;
-  }
-
-  :root {
-    --people-image-size: 20vh;
-  }
-
-  .filler-content {
-    padding: 0.75rem;
-  }
-
-  .filler-quote blockquote {
-    font-size: 0.8rem;
-    line-height: 1.2;
-  }
-
-  .filler-quote cite {
-    font-size: 0.7rem;
-  }
-
-  .filler-text {
-    font-size: 0.8rem;
-    line-height: 1.3;
-  }
+/* Mobile styles for people grid */
+.people-grid .content-body.mobile {
+  gap: 1rem;
+  margin: 1rem 0;
 }
 
-@media (max-width: 480px) {
-  :root {
-    --people-image-size: 18vh;
-  }
+.people-grid .content-body.mobile .filler-content {
+  padding: 0.75rem;
+}
 
-  .people-grid .content-body {
-    gap: 0.75rem;
-  }
+.people-grid .content-body.mobile .filler-quote blockquote {
+  font-size: 0.8rem;
+  line-height: 1.2;
+}
 
-  .filler-content {
-    padding: 0.5rem;
-  }
+.people-grid .content-body.mobile .filler-quote cite {
+  font-size: 0.7rem;
+}
 
-  .filler-quote blockquote {
-    font-size: 0.75rem;
-    margin: 0 0 0.25rem 0;
-  }
+.people-grid .content-body.mobile .filler-text {
+  font-size: 0.8rem;
+  line-height: 1.3;
+}
 
-  .filler-quote cite {
-    font-size: 0.65rem;
-  }
+.people-grid .content-body.small-mobile {
+  gap: 0.75rem;
+}
+
+.people-grid .content-body.small-mobile .filler-content {
+  padding: 0.5rem;
+}
+
+.people-grid .content-body.small-mobile .filler-quote blockquote {
+  font-size: 0.75rem;
+  margin: 0 0 0.25rem 0;
+}
+
+.people-grid .content-body.small-mobile .filler-quote cite {
+  font-size: 0.65rem;
 }

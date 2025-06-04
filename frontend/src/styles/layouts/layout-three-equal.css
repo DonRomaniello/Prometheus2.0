@@ -6,9 +6,7 @@
   gap: var(--grid-gap);
 }
 
-@media (max-width: 768px) {
-  .layout-three-equal {
-    grid-template-areas: "left" "center" "right";
-    grid-template-columns: 1fr;
-  }
+.layout-three-equal.mobile {
+  grid-template-areas: "left" "center" "right";
+  grid-template-columns: 1fr;
 }

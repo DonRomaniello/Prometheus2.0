@@ -6,8 +6,6 @@
   justify-content: flex-start;
 }
 
-@media (max-width: 768px) {
-  .grid-auto-fit {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  }
+.grid-auto-fit.mobile {
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }

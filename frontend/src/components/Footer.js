@@ -5,7 +5,7 @@ import useIsMobile from '../hooks/useIsMobile';
 import '../styles/components/footer.css';
 
 const Footer = () => {
-  const { isMobile } = useIsMobile(768);
+  const { isMobile, isSmallMobile } = useIsMobile(768);
   const { isVisible } = useScrollFooter({
     showDelay: 100,
     hideDelay: 200,
@@ -67,25 +67,25 @@ const Footer = () => {
   // Only animate on desktop, inline on mobile
   if (isMobile) {
     return (
-      <footer className="footer" style={{ position: 'static', transform: 'none', opacity: 1 }}>
+      <footer className={`footer mobile${isSmallMobile ? ' small-mobile' : ''}`} style={{ position: 'static', transform: 'none', opacity: 1 }}>
         <div className="footer-content">
           <div className="footer-top-row">
             <nav className="footer-nav">
-              <ul className="footer-links">
+              <ul className={`footer-links mobile${isSmallMobile ? ' small-mobile' : ''}`}>
                 <li>
-                  <Link to="/contact" className="footer-link">Contact</Link>
+                  <Link to="/contact" className={`footer-link mobile${isSmallMobile ? ' small-mobile' : ''}`}>Contact</Link>
                 </li>
                 <li>
-                  <Link to="/privacy" className="footer-link">Privacy</Link>
+                  <Link to="/privacy" className={`footer-link mobile${isSmallMobile ? ' small-mobile' : ''}`}>Privacy</Link>
                 </li>
                 <li>
-                  <Link to="/terms" className="footer-link">Terms of Service</Link>
+                  <Link to="/terms" className={`footer-link mobile${isSmallMobile ? ' small-mobile' : ''}`}>Terms of Service</Link>
                 </li>
                 <li>
-                  <Link to="/faq" className="footer-link">FAQ</Link>
+                  <Link to="/faq" className={`footer-link mobile${isSmallMobile ? ' small-mobile' : ''}`}>FAQ</Link>
                 </li>
                 <li>
-                  <Link to="/testimonials" className="footer-link">Testimonials</Link>
+                  <Link to="/testimonials" className={`footer-link mobile${isSmallMobile ? ' small-mobile' : ''}`}>Testimonials</Link>
                 </li>
               </ul>
             </nav>

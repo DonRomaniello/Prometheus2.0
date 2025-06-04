@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import ReactMarkdown from 'react-markdown';
 import { useMarkdownContent } from '../hooks/useMarkdownContent';
 import { useFillPeopleGrid } from '../hooks/useFillPeopleGrid';
+import useIsMobile from '../hooks/useIsMobile';
 import '../styles/layouts/content-renderer.css';
 import '../styles/layouts/people.css';
 import '../styles/layouts/layout-two-column.css';
@@ -15,6 +16,7 @@ const ContentRenderer = ({ contentFile, content }) => {
   const { gridRef, fillerNeeded } = useFillPeopleGrid({
     fillerContent: Array.isArray(fillerContent) ? fillerContent : [],
   });
+  const { isMobile, isSmallMobile } = useIsMobile(768);
 
   // If content is provided directly, use it instead of loading from file
   if (content) {
@@ -41,6 +43,16 @@ const ContentRenderer = ({ contentFile, content }) => {
     );
   }
 
+  // Compose className for content-body
+  let contentBodyClass = 'content-body';
+  if (isPeopleGrid) {
+    if (isSmallMobile) {
+      contentBodyClass += ' small-mobile';
+    } else if (isMobile) {
+      contentBodyClass += ' mobile';
+    }
+  }
+
   return (
     <div className={`container ${layout}`}>
       {firstHeader && (
@@ -49,7 +61,7 @@ const ContentRenderer = ({ contentFile, content }) => {
         </div>
       )}
       <div
-        className="content-body"
+        className={contentBodyClass}
         ref={isPeopleGrid ? gridRef : contentBodyRef}
       >
         <ReactMarkdown>{remainingContent}</ReactMarkdown>
