@@ -72,35 +72,43 @@ const Footer = () => {
       
       <footer className={`footer ${isVisible ? 'footer-visible' : 'footer-hidden'}`}>
         <div className="footer-content">
-          <nav className="footer-nav">
-            <ul className="footer-links">
-              <li>
-                <Link to="/contact" className="footer-link">
-                  Contact
-                </Link>
-              </li>
-              <li>
-                <Link to="/privacy" className="footer-link">
-                  Privacy
-                </Link>
-              </li>
-              <li>
-                <Link to="/terms" className="footer-link">
-                  Terms of Service
-                </Link>
-              </li>
-              <li>
-                <Link to="/faq" className="footer-link">
-                  FAQ
-                </Link>
-              </li>
-              <li>
-                <Link to="/testimonials" className="footer-link">
-                  Testimonials
-                </Link>
-              </li>
-            </ul>
-          </nav>
+          {/* Top row with navigation links */}
+          <div className="footer-top-row">
+            <nav className="footer-nav">
+              <ul className="footer-links">
+                <li>
+                  <Link to="/contact" className="footer-link">
+                    Contact
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/privacy" className="footer-link">
+                    Privacy
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/terms" className="footer-link">
+                    Terms of Service
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/faq" className="footer-link">
+                    FAQ
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/testimonials" className="footer-link">
+                    Testimonials
+                  </Link>
+                </li>
+              </ul>
+            </nav>
+          </div>
+          
+          {/* Bottom row - can be used for additional content */}
+          <div className="footer-bottom-row">
+            {/* This row is available for future content */}
+          </div>
         </div>
       </footer>
     </>

@@ -49,7 +49,6 @@ const Navigation = () => {
                 <li><Link to="/" onClick={handleLinkClick}>Home</Link></li>
                 <li><Link to="/about" onClick={handleLinkClick}>About</Link></li>
                 <li><Link to="/classes" onClick={handleLinkClick}>Classes</Link></li>
-                <li><Link to="/contact" onClick={handleLinkClick}>Contact</Link></li>
                 <li><Link to="/the_studio" onClick={handleLinkClick}>The Studio</Link></li>
               </ul>
             </div>
@@ -59,7 +58,6 @@ const Navigation = () => {
             <li><Link to="/">Home</Link></li>
             <li><Link to="/about">About</Link></li>
             <li><Link to="/classes">Classes</Link></li>
-            <li><Link to="/contact">Contact</Link></li>
             <li><Link to="/the_studio">The Studio</Link></li>
           </ul>
         )}
