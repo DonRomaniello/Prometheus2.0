@@ -1,3 +1,6 @@
+import './styles/user_agent_zero.css';
+import './styles/variables.css';
+import './styles/global.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import About from './pages/About';
 import Classes from './pages/Classes';
@@ -5,8 +8,6 @@ import Contact from './pages/Contact';
 import Home from './pages/Home';
 import TheStudio from './pages/TheStudio';
 import Navigation from './components/Navigation';
-import './styles/variables.css';
-import './styles/global.css';
 
 function App() {
   return (
@@ -20,10 +21,6 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/" element={<Home />} />
             <Route path="/the_studio" element={<TheStudio />} />
-
-
-
-
           </Routes>
         </main>
       </div>

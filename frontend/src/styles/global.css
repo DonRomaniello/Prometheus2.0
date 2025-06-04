@@ -1,7 +1,5 @@
 /* Import font */
 @import url("https://use.typekit.net/rtr3rae.css");
-/* Import variables */
-@import '../../node_modules/modern-normalize/modern-normalize.css';
 @import './variables.css';
 
 /* Reset and Base Styles */
