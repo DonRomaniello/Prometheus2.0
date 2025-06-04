@@ -116,7 +116,15 @@
 /* Responsive design */
 @media (max-width: 768px) {
   .footer {
-    height: calc(2 * var(--mobile-nav-height)); /* Maintain double height on mobile */
+    position: static !important;
+    transform: none !important;
+    opacity: 1 !important;
+    transition: none !important;
+    height: auto !important;
+    box-shadow: none !important;
+  }
+  .footer-scroll-spacer {
+    display: none !important;
   }
   
   .footer-links {
