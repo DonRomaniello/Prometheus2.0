@@ -5,7 +5,7 @@
   ]
 }
 ```
-# Welcome to Prometheus 2.0
+# Welcome to Prometheus Studios
 
 This is the home page content. You can edit this markdown file to change what appears on the home page.
 

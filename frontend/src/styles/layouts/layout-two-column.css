@@ -1,0 +1,14 @@
+/* Two Column Layout */
+.layout-two-column {
+  display: grid;
+  grid-template-areas: "main sidebar";
+  grid-template-columns: 2fr 1fr;
+  gap: var(--grid-gap);
+}
+
+@media (max-width: 768px) {
+  .layout-two-column {
+    grid-template-areas: "main" "sidebar";
+    grid-template-columns: 1fr;
+  }
+}

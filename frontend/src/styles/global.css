@@ -1,7 +1,5 @@
 /* Import font */
 @import url("https://use.typekit.net/rtr3rae.css");
-
-/* Import variables */
 @import './variables.css';
 
 /* Reset and Base Styles */
@@ -304,66 +302,6 @@ code {
 
 /* Component-Specific Styles */
 
-/* Navigation */
-.navigation {
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  padding: var(--spacing-md) 0;
-}
-
-.floating-nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000;
-  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
-}
-
-.nav-visible {
-  transform: translateY(0);
-  opacity: 1;
-}
-
-.nav-hidden {
-  transform: translateY(calc(-1 * (100% - (.618 * var(--spacing-md)))));
-}
-
-.navigation ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  gap: var(--spacing-lg);
-  justify-content: center;
-}
-
-.navigation li {
-  margin: 0;
-}
-
-.navigation a {
-  text-decoration: none;
-  color: var(--text-primary);
-  font-weight: var(--font-weight-medium);
-  padding: var(--spacing-sm) var(--spacing-md);
-  transition: all 0.3s ease;
-  display: block;
-}
-
-.navigation a:hover {
-  background-color: var(--color-primary);
-  color: var(--color-white);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3);
-}
-
-/* Ensure main content starts below the fixed nav */
-main {
-  padding-top: 80px;
-}
-
 .content-renderer {
   padding: var(--spacing-lg);
 }
@@ -533,11 +471,6 @@ main {
   
   .grid-auto-fill {
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  }
-  
-  .navigation ul {
-    flex-direction: column;
-    gap: var(--spacing-sm);
   }
   
   .container {

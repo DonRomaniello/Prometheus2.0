@@ -1,7 +1,8 @@
-/* Import variables */
-@import './variables.css';
-
 /* People grid layout: responsive, max 3 columns, always square */
+.people-header {
+  text-align: center;
+}
+
 .people-grid .content-body {
   display: flex;
   flex-wrap: wrap;
@@ -9,6 +10,7 @@
   justify-content: flex-start; /* Changed from center to match the undoing of autofit centering */
   align-items: start;
   margin: 2rem 0;
+  border-left: none;
 }
 
 .people-grid .content-body p {
@@ -105,12 +107,23 @@
 /* Mobile optimizations for people grid */
 @media (max-width: 768px) {
   .people-grid .content-body {
-    gap: 1rem;
+    gap: 14.3vw; /* Space between photos on mobile */
     margin: 1rem 0;
+    justify-content: center; /* Center the single column */
+    padding: 0 10%; /* Add padding to prevent cutoff */
   }
 
-  :root {
-    --people-image-size: 20vh;
+  .people-grid img,
+  .person-square,
+  .filler-content {
+    width: 85.7vw; /* 80% of viewport width */
+    height: 85.7vw; /* Keep it square */
+    max-width: 400px; /* Prevent it from getting too large on tablets */
+    max-height: 400px;
+  }
+
+  .people-grid img {
+    object-fit: cover; /* Ensure images scale properly */
   }
 
   .filler-content {
@@ -133,12 +146,18 @@
 }
 
 @media (max-width: 480px) {
-  :root {
-    --people-image-size: 18vh;
+  .people-grid .content-body {
+    gap: 14.3vw; /* Same spacing on smaller screens */
+    padding: 0 10%; /* Add padding to prevent cutoff */
   }
 
-  .people-grid .content-body {
-    gap: 0.75rem;
+  .people-grid img,
+  .person-square,
+  .filler-content {
+    width: 85.7vw; /* 80% width on smaller screens */
+    height: 85.7vw; /* Keep it square */
+    max-width: 300px; /* Smaller max size for phones */
+    max-height: 300px;
   }
 
   .filler-content {

@@ -1,17 +1,30 @@
 /* CSS Variables - Edit these to change the entire app's appearance */
 :root {
+  /* Divisors */
+  --magic-number: 11;
+  --magic-62: calc(13/21);
+  --golden-ratio: 1.618; /* Golden ratio for design consistency */
+
   /* Colors */
   --color-primary: #0A0A0A;
-  --color-secondary: #4F5165;
+  --color-primary-rgb: 10, 10, 10;
+  --color-secondary: #4F5165;   
+  --color-secondary-rgb: 79, 81, 101;
   --color-success: #28a745;
   --color-danger: #dc3545;
   --color-warning: #ffc107;
   --color-info: #547AA5;
+  --color-info-rgb: 84, 122, 165;
   --color-light: #f8f9fa;
+  --color-light-rgb: 248, 249, 250;
   --color-medium: #6c757d;
+  --color-medium-rgb: 108, 117, 125;
   --color-dark: #0A0A0A;
+  --color-dark-rgb: 10, 10, 10;
   --color-white: #ffffff;
+  --color-white-rgb: 255, 255, 255;
   --color-black: #000000;
+  --color-black-rgb: 0, 0, 0;
 
   /* Text Colors */
   --text-primary: var(--color-dark);
@@ -21,8 +34,11 @@
 
   /* Background Colors */
   --bg-primary: var(--color-white);
+  --bg-primary-rgb: var(--color-white-rgb);
   --bg-secondary: var(--color-light);
+  --bg-secondary-rgb: var(--color-light-rgb);
   --bg-dark: var(--color-dark);
+  --bg-dark-rgb: var(--color-dark-rgb);
 
   /* Spacing */
   --spacing-xs: 0.25rem;
@@ -70,4 +86,16 @@
 
   /* People grid layout variables */
   --people-image-size: 28vh;
+
+  /* Mobile Navigation Variables */
+  --mobile-breakpoint: 768px;
+  --mobile-nav-height: calc(100vh / var(--magic-number));
+  --mobile-nav-z-index: 1001;
+  --mobile-nav-backdrop-z-index: 1000;
+  --mobile-nav-width: calc(100vw * var(--magic-62));
+  --mobile-nav-animation-duration: 0.3s;
+  --hamburger-container-width: var(--mobile-nav-height);
+  --hamburger-size: calc(var(--hamburger-container-width) * var(--magic-62));
+  --hamburger-line-height: calc(var(--hamburger-size) / var(--magic-number));
+  --brand-font-size: 2rem;
 }
