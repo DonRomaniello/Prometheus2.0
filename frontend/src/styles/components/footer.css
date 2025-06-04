@@ -1,15 +1,11 @@
 /* Footer Component Styles */
 
-/* Invisible trigger zone for bottom 10% of viewport */
-.footer-trigger-zone {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 10vh; /* 10% of viewport height */
-  z-index: 500; /* Below navigation but above most content */
-  pointer-events: auto;
+/* Scroll spacer to ensure there's always enough content to scroll */
+.footer-scroll-spacer {
+  width: 100%;
   background: transparent;
+  pointer-events: none;
+  /* Height is set dynamically via inline style */
 }
 
 /* Footer container */
@@ -24,17 +20,20 @@
   z-index: 999; /* High z-index but below navigation */
   transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
   padding: var(--spacing-md) 0;
+  pointer-events: auto;
 }
 
 /* Footer visibility states */
 .footer-visible {
   transform: translateY(0);
   opacity: 1;
+  pointer-events: auto;
 }
 
 .footer-hidden {
   transform: translateY(100%);
   opacity: 0;
+  pointer-events: none; /* Ensure no interaction when hidden */
 }
 
 /* Footer content container */
@@ -123,11 +122,6 @@
     padding: var(--spacing-xs) var(--spacing-sm);
     font-size: var(--font-size-sm);
   }
-  
-  /* Adjust trigger zone for mobile */
-  .footer-trigger-zone {
-    height: 15vh; /* Slightly larger trigger area on mobile */
-  }
 }
 
 @media (max-width: 480px) {
@@ -139,11 +133,6 @@
     padding: var(--spacing-xs);
     font-size: var(--font-size-xs);
   }
-}
-
-/* Ensure footer doesn't interfere with scrolling */
-.footer-trigger-zone:hover ~ * {
-  pointer-events: auto;
 }
 
 /* Animation keyframes for subtle entrance effect */

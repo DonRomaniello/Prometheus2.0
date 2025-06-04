@@ -1,24 +1,75 @@
 import { Link } from 'react-router-dom';
-import { useViewportHover } from '../hooks/useViewportHover';
+import { useScrollFooter } from '../hooks/useViewportHover';
+import { useState, useEffect } from 'react';
 import '../styles/components/footer.css';
 
 const Footer = () => {
-  const { isVisible, handleMouseEnter, handleMouseLeave } = useViewportHover({
-    bottomPercentage: 10, // Trigger when hovering over bottom 10% of viewport
+  const { isVisible } = useScrollFooter({
     showDelay: 100,
-    hideDelay: 300
+    hideDelay: 200,
+    overscrollThreshold: 50
   });
+
+  const [spacerHeight, setSpacerHeight] = useState(0);
+
+  // Calculate required spacer height to ensure scrollability
+  useEffect(() => {
+    const calculateSpacerHeight = () => {
+      const viewportHeight = window.innerHeight;
+      const documentHeight = document.documentElement.scrollHeight;
+      const bodyHeight = document.body.scrollHeight;
+      
+      // Use the larger of the two height measurements
+      const totalContentHeight = Math.max(documentHeight, bodyHeight);
+      
+      // If content is shorter than viewport, add enough height to make it scrollable
+      // Plus additional buffer for overscroll detection
+      const minimumScrollableHeight = viewportHeight + 100; // 100px buffer for overscroll
+      
+      if (totalContentHeight < minimumScrollableHeight) {
+        const needed = minimumScrollableHeight - totalContentHeight;
+        setSpacerHeight(needed);
+      } else {
+        // Content is already tall enough, just add small buffer
+        setSpacerHeight(100);
+      }
+    };
+
+    // Calculate on mount
+    calculateSpacerHeight();
+
+    // Recalculate when window resizes or content changes
+    const handleResize = () => {
+      setTimeout(calculateSpacerHeight, 100); // Small delay to ensure DOM updates
+    };
+
+    window.addEventListener('resize', handleResize);
+    
+    // Use MutationObserver to detect content changes
+    const observer = new MutationObserver(() => {
+      setTimeout(calculateSpacerHeight, 100);
+    });
+    
+    observer.observe(document.body, {
+      childList: true,
+      subtree: true,
+      attributes: true
+    });
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+      observer.disconnect();
+    };
+  }, []);
 
   return (
     <>
-      {/* Invisible trigger zone for bottom 10% of viewport */}
+      {/* Dynamic spacer to ensure there's always enough content to scroll */}
       <div 
-        className="footer-trigger-zone"
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
+        className="footer-scroll-spacer" 
+        style={{ height: `${spacerHeight}px` }}
       />
       
-      {/* Footer component */}
       <footer className={`footer ${isVisible ? 'footer-visible' : 'footer-hidden'}`}>
         <div className="footer-content">
           <nav className="footer-nav">

@@ -1,82 +1,120 @@
 import { useState, useEffect, useCallback } from 'react';
 
 /**
- * Custom hook for detecting mouse hover over bottom percentage of viewport
+ * Custom hook for detecting scroll-to-bottom behavior for footer visibility
  * @param {Object} options - Configuration options
- * @param {number} options.bottomPercentage - Percentage of viewport height from bottom to trigger (default: 10)
  * @param {number} options.showDelay - Delay before showing footer (default: 100ms)
- * @param {number} options.hideDelay - Delay before hiding footer (default: 300ms)
- * @returns {Object} - { isVisible, handleMouseEnter, handleMouseLeave }
+ * @param {number} options.hideDelay - Delay before hiding footer (default: 200ms)
+ * @param {number} options.overscrollThreshold - How much overscroll needed to trigger (default: 50px)
+ * @returns {Object} - { isVisible }
  */
-export const useViewportHover = (options = {}) => {
+export const useScrollFooter = (options = {}) => {
   const {
-    bottomPercentage = 10,
     showDelay = 100,
-    hideDelay = 300
+    hideDelay = 200,
+    overscrollThreshold = 50
   } = options;
 
   const [isVisible, setIsVisible] = useState(false);
-  const [isHovering, setIsHovering] = useState(false);
+  const [isAtBottom, setIsAtBottom] = useState(false);
+  const [lastScrollY, setLastScrollY] = useState(0);
+  const [overscrollAmount, setOverscrollAmount] = useState(0);
 
-  // Calculate the trigger threshold based on viewport height
-  const getTriggerThreshold = useCallback(() => {
-    return window.innerHeight * (bottomPercentage / 100);
-  }, [bottomPercentage]);
+  const checkIfAtBottom = useCallback(() => {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    const windowHeight = window.innerHeight;
+    const docHeight = document.documentElement.scrollHeight;
+    
+    // Check if we're at the bottom (with small tolerance for floating point precision)
+    const atBottom = scrollTop + windowHeight >= docHeight - 10;
+    setIsAtBottom(atBottom);
+    
+    return atBottom;
+  }, []);
 
-  // Handle mouse movement to detect if cursor is in bottom area
-  const handleMouseMove = useCallback((e) => {
-    const viewportHeight = window.innerHeight;
-    const mouseY = e.clientY;
-    const triggerThreshold = getTriggerThreshold();
+  const handleScroll = useCallback(() => {
+    const currentScrollY = window.pageYOffset || document.documentElement.scrollTop;
+    const scrollDifference = currentScrollY - lastScrollY;
+    const atBottom = checkIfAtBottom();
     
-    const isInBottomArea = mouseY >= (viewportHeight - triggerThreshold);
-    
-    if (isInBottomArea && !isHovering) {
-      setIsHovering(true);
-    } else if (!isInBottomArea && isHovering) {
-      setIsHovering(false);
+    if (atBottom) {
+      // User is at bottom and trying to scroll down further
+      if (scrollDifference > 0) {
+        setOverscrollAmount(prev => Math.min(prev + scrollDifference, overscrollThreshold));
+      }
+      // User scrolled up from bottom
+      else if (scrollDifference < 0) {
+        setOverscrollAmount(0);
+        setIsVisible(false);
+      }
+    } else {
+      // Not at bottom, reset everything
+      setOverscrollAmount(0);
+      if (isVisible) {
+        setIsVisible(false);
+      }
     }
-  }, [isHovering, getTriggerThreshold]);
+    
+    setLastScrollY(currentScrollY);
+  }, [lastScrollY, overscrollThreshold, isVisible, checkIfAtBottom]);
 
-  // Handle visibility with delays
+  // Handle wheel events for better overscroll detection
+  const handleWheel = useCallback((e) => {
+    if (isAtBottom && e.deltaY > 0) {
+      // User is trying to scroll down while at bottom
+      setOverscrollAmount(prev => {
+        const newAmount = Math.min(prev + Math.abs(e.deltaY), overscrollThreshold);
+        return newAmount;
+      });
+    }
+  }, [isAtBottom, overscrollThreshold]);
+
+  // Show footer when overscroll threshold is reached
   useEffect(() => {
     let timeoutId;
-
-    if (isHovering) {
+    
+    if (overscrollAmount >= overscrollThreshold && isAtBottom) {
       timeoutId = setTimeout(() => {
         setIsVisible(true);
       }, showDelay);
-    } else {
+    }
+    
+    return () => clearTimeout(timeoutId);
+  }, [overscrollAmount, overscrollThreshold, isAtBottom, showDelay]);
+
+  // Hide footer with delay when not at bottom
+  useEffect(() => {
+    let timeoutId;
+    
+    if (!isAtBottom && isVisible) {
       timeoutId = setTimeout(() => {
         setIsVisible(false);
       }, hideDelay);
     }
-
+    
     return () => clearTimeout(timeoutId);
-  }, [isHovering, showDelay, hideDelay]);
+  }, [isAtBottom, isVisible, hideDelay]);
 
-  // Add/remove mouse move listener
+  // Add scroll and wheel listeners
   useEffect(() => {
-    document.addEventListener('mousemove', handleMouseMove, { passive: true });
+    // Initial check
+    checkIfAtBottom();
+    setLastScrollY(window.pageYOffset || document.documentElement.scrollTop);
+    
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('wheel', handleWheel, { passive: true });
+    window.addEventListener('resize', checkIfAtBottom);
     
     return () => {
-      document.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('wheel', handleWheel);
+      window.removeEventListener('resize', checkIfAtBottom);
     };
-  }, [handleMouseMove]);
-
-  // Manual handlers for the trigger zone
-  const handleMouseEnter = useCallback(() => {
-    setIsHovering(true);
-  }, []);
-
-  const handleMouseLeave = useCallback(() => {
-    setIsHovering(false);
-  }, []);
+  }, [handleScroll, handleWheel, checkIfAtBottom]);
 
   return {
     isVisible,
-    isHovering,
-    handleMouseEnter,
-    handleMouseLeave
+    isAtBottom,
+    overscrollAmount
   };
 };
