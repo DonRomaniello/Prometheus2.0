@@ -8,13 +8,24 @@ import '../styles/layouts/layout-two-column.css';
 import '../styles/layouts/layout-three-equal.css';
 import '../styles/layouts/grid-auto-fit.css';
 
-const ContentRenderer = ({ contentFile }) => {
+const ContentRenderer = ({ contentFile, content }) => {
   const { layout, firstHeader, remainingContent, loading, error, fillerContent } = useMarkdownContent(contentFile);
   const contentBodyRef = useRef(null);
   const isPeopleGrid = layout.includes('people-grid');
   const { gridRef, fillerNeeded } = useFillPeopleGrid({
     fillerContent: Array.isArray(fillerContent) ? fillerContent : [],
   });
+
+  // If content is provided directly, use it instead of loading from file
+  if (content) {
+    return (
+      <div className="container content-renderer">
+        <div className="content-body">
+          <ReactMarkdown>{content}</ReactMarkdown>
+        </div>
+      </div>
+    );
+  }
 
   if (loading) {
     return <div className="content-loading">Loading content...</div>;
