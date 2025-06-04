@@ -1,14 +1,14 @@
 /* CSS Variables - Edit these to change the entire app's appearance */
 :root {
   /* Divisors */
-  --magic-number: 15;
+  --magic-number: 11;
   --magic-85: calc(13/21);
   --golden-ratio: 1.618; /* Golden ratio for design consistency */
 
   /* Colors */
   --color-primary: #0A0A0A;
   --color-primary-rgb: 10, 10, 10;
-  --color-secondary: #4F5165;
+  --color-secondary: #4F5165;   
   --color-secondary-rgb: 79, 81, 101;
   --color-success: #28a745;
   --color-danger: #dc3545;
