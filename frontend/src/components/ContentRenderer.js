@@ -33,7 +33,7 @@ const ContentRenderer = ({ contentFile }) => {
   return (
     <div className={`container ${layout}`}>
       {firstHeader && (
-        <div className="content-header">
+        <div className={`content-header ${isPeopleGrid ? 'people-header' : ''}`}>
           <ReactMarkdown>{firstHeader}</ReactMarkdown>
         </div>
       )}

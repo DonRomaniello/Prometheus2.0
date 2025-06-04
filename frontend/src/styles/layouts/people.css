@@ -1,4 +1,8 @@
 /* People grid layout: responsive, max 3 columns, always square */
+.people-header {
+  text-align: center;
+}
+
 .people-grid .content-body {
   display: flex;
   flex-wrap: wrap;
@@ -6,6 +10,7 @@
   justify-content: flex-start; /* Changed from center to match the undoing of autofit centering */
   align-items: start;
   margin: 2rem 0;
+  border-left: none;
 }
 
 .people-grid .content-body p {
