@@ -6,7 +6,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
-  justify-content: flex-start; /* Changed from center to match the undoing of autofit centering */
+  justify-content: center; /* Center the grid content */
   align-items: start;
   margin: 2rem 0;
 }
