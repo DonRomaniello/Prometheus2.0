@@ -23,7 +23,7 @@ Production is limited to class shows and collaborations across media.
 
 ## Development
 
-Prometheus Studios has been both the birthplace and incubator of new formats and show.
+Prometheus Studios has been both the birthplace and incubator of new formats and shows.
 
 
 

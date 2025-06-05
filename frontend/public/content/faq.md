@@ -25,8 +25,10 @@ Students will be improvising the vast majority of the time. Any time not spent i
 
 ## I have improv experience, why do I have to take Solid Foundations?
 
-If you have completed the iO training program or the Magnet training program, you are welcome to bypass Solid Foundations.
+If you have completed the iO or Magnet Theater training programs, you may bypass Solid Foundations.
 
-If you've studied anywhere else, you will need to take The Reset. Please drop us a line to find out when the next yearly session of The Reset will take place.
+If you've studied anywhere else, you will need to take The Reset. 
 
-If you still feel like taking a four week course would be a waste of your time, then you are free to study elsewhere.
+Please drop us a line to find out when the next session of The Reset will take place.
+
+If you still feel like a four week course would be a waste of your time, then you are encouraged to play elsewhere.
