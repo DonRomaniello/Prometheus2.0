@@ -5,27 +5,32 @@
   ]
 }
 ```
-# About Prometheus 2.0
+# About Prometheus Studios
 
-Prometheus 2.0 is a modern React application that allows you to manage content through markdown files while providing seamless navigation and consistent styling.
+## The Impetus
 
-## How It Works
+Prometheus Studios was founded to provide opportunities for the study and practice of long form improvisation in the city of Beacon.
 
-1. **Content Management**: Write your content in markdown files stored in `src/content/`
-2. **Automatic Routing**: Each markdown file automatically becomes a navigable page
-3. **Consistent Rendering**: All content is rendered through a standardized component for uniform appearance
+As the performing arts flourish in the Hudson Valley, we aim to contribute world-class improv instruction to underpin this growth.
 
-## Technology Stack
+## The Difference
 
-- **React 19**: Latest version for modern component development
-- **React Router**: Client-side routing for seamless navigation
-- **React Markdown**: Reliable markdown parsing and rendering
-- **CSS Modules**: Scoped styling for maintainable CSS
+We're small. Just one instructor and a handful of classes. We like it this way, because it means every student is special.
 
-## Editing Content
+We aren't attempting to be a one-stop shop for all things comedy. We're just focusing on being the best at teaching long form improv classes.
 
-To edit any page content:
-1. Navigate to the corresponding `.md` file in `src/content/`
-2. Edit the markdown content
-3. Save the file
-4. The changes will appear immediately in the app
+By keeping our efforts devoted to education, we are able to provide a high quality experience for as many students as possible.
+
+## Our Philosophy
+
+Improv in the United States grew out of a WPA project that used improv to teach acting to those that wouldn't otherwise have access to the stage.
+
+This informs every level of organization and interaction at Prometheus Studios.
+
+Our classes are accessible to as many people as possible. Tuition is offered on a sliding scale. The range starts at just above the cost of renting the space. No redistribution or subisidization is involved, making each student an equal participant.
+
+## The Student
+
+We welcome all students, regardless of experience or background. We offer introductory courses as well as bleeding-edge classes where students have participated in the world premiere of new forms.
+
+Students explore not just the art of improvisation, but the practical side of the craft as well. Students are involved in the production of their class shows and share in the proceeds from ticket sales.

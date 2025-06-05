@@ -5,42 +5,26 @@
   ]
 }
 ```
-# Welcome to Prometheus Studios
+# Prometheus Studios
 
-This is the home page content. You can edit this markdown file to change what appears on the home page.
+Prometheus Studios is a long form improv studio.
 
-## Features
+We provide opportunities to study improvised scenework and long form improvisation.
 
-- **Markdown-powered content**: Edit content as simple markdown files
-- **React Router navigation**: Navigate between pages with clean URLs
-- **Consistent styling**: All content rendered through a standardized component
-- **Unified CSS System**: All styles in one file with CSS variables
-- **Grid System**: Easy-to-use grid layout classes
-- **Utility Classes**: Spacing, typography, and layout utilities
+## Classes
 
-## CSS System
+We offer concise, focused courses in grounded improvisation.
 
-The new CSS system includes:
+A carefully scaffolded curriculum rapidly introduces students to the cutting edge of long form improvisation.
 
-### CSS Variables
-Edit the variables at the top of `src/styles/global.css` to customize:
-- Colors: `--color-primary`, `--color-secondary`, etc.
-- Spacing: `--spacing-xs` through `--spacing-xxl`
-- Font sizes: `--font-size-xs` through `--font-size-xxxl`
+## Productions
 
-Available layouts:
-- `layout-two-column` - Main content + sidebar
-- `layout-three-equal` - Three equal columns  
-- `grid-auto-fit` - Auto-responsive card layouts
-- Visit `/grid-demo` to see examples!
+Production is limited to class shows and collaborations across media.
 
-### Utility Classes
-- Spacing: `m-md`, `p-lg`, `mt-xl`, etc.
-- Text: `text-lg`, `font-bold`, `text-center`
-- Layout: `flex`, `justify-center`, `items-center`
+## Development
 
-Navigate to different pages using the menu above, or visit URLs directly:
-- `/about` - Learn more about this project
-- `/contact` - Get in touch
+Prometheus Studios has been both the birthplace and incubator of new formats and shows.
 
-All content is stored as markdown files in the `src/content` directory and can be easily edited.
+
+
+Prometheus Studios is based out of the City of Beacon in the beautiful Hudson Valley region of New York.
