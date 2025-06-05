@@ -7,50 +7,26 @@
 ```
 # Frequently Asked Questions
 
-## General Questions
+## Do you have shows?
+Prometheus Studios is a studio whose purpose is to educate and help individuals develop as improvisors.
 
-### What is Prometheus Studios?
-Prometheus Studios is a creative space dedicated to fostering artistic expression and learning through various classes and workshops.
+The shows we produce are class shows that are meant to exhibit the skills and forms that the students have been working on, while also solidifying the work in the classroom.
 
-### Where are you located?
-Please visit our Contact page for current location and address information.
+Our students can be found in a variety of productions in the Hudson Valley.
 
-### What types of classes do you offer?
-We offer a variety of creative classes including art, design, photography, and more. Check our Classes page for current offerings.
+## What is the teaching philosophy at Prometheus Studios?
+Prometheus Studios draws on over a century of intuitive exercises and scaffolding of skills to help students develop as improvisors. 
 
-## Registration & Classes
+The best way to learn is to do.
 
-### How do I register for classes?
-Class registration information can be found on individual class pages. Contact us directly for assistance with registration.
+The best way to do in order to learn is in the proximal zone of success, with the help of supportive instructor.
 
-### What is your cancellation policy?
-Please refer to our Terms of Service for detailed cancellation and refund policies.
+Students will be improvising the vast majority of the time. Any time not spent improvising will be devoted to fostering student discussion supplemented with intructor wisdom.
 
-### Do you offer private lessons?
-Contact us to discuss private lesson options and availability.
+## I have improv experience, why do I have to take Solid Foundations?
 
-## Facilities & Equipment
+If you have completed the iO training program or the Magnet training program, you are welcome to bypass Solid Foundations.
 
-### What equipment is provided?
-Equipment availability varies by class. Specific requirements and provided materials are listed in each class description.
+If you've studied anywhere else, you will need to take The Reset. Please drop us a line to find out when the next yearly session of The Reset will take place.
 
-### Can I use the studio space for personal projects?
-Studio rental options may be available. Please contact us for more information.
-
-## Getting Started
-
-### I'm a beginner. Which classes are right for me?
-We welcome students of all skill levels. Look for classes marked as "beginner-friendly" or contact us for recommendations.
-
-### What should I bring to my first class?
-Class-specific requirements are listed in the course descriptions. Generally, just bring enthusiasm and creativity!
-
-## Contact & Support
-
-### How can I get in touch?
-Visit our Contact page for phone, email, and location information.
-
-### Do you have social media?
-Follow us on our social media channels for updates, student work showcases, and studio news.
-
-*This is a placeholder page. Additional FAQ content will be added based on common inquiries.*
+If you still feel like taking a four week course would be a waste of your time, then you are free to study elsewhere.

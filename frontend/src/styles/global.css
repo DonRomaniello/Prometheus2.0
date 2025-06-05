@@ -51,6 +51,7 @@ code {
   max-width: var(--container-max-width);
   margin: 0 auto;
   padding: 0 var(--spacing-md);
+  min-height: 100vh;
 }
 
 .container-fluid {
@@ -136,6 +137,7 @@ code {
 .content-body {
   border-left: #0A0A0A solid 1px;
   padding: 0 var(--spacing-md);
+  min-height: 61.8vh;
 }
 
 /* Simple Grid Utilities */
