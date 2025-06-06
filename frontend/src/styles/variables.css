@@ -40,6 +40,19 @@
   --bg-dark: var(--color-dark);
   --bg-dark-rgb: var(--color-dark-rgb);
 
+  /* Pythagorean Scale */
+  --unison: calc(1 / 1);
+  --second: calc(9 / 8);
+  --minor-third: calc(6 / 5);
+  --major-third: calc(5 / 4);
+  --major-fourth: calc(4 / 3);
+  --major-fifth: calc(3 / 2);
+  --minor-sixth: calc(8 / 5);
+  --major-sixth: calc(5 / 3);
+  --minor-seventh: calc(7 / 4);
+  --major-seventh: calc(15 / 8);
+  --octave: calc(2 / 1);
+
   /* Spacing */
   --spacing-xs: 0.25rem;
   --spacing-sm: 0.5rem;
@@ -49,13 +62,13 @@
   --spacing-xxl: 3rem;
 
   /* Font Sizes */
-  --font-size-xs: 0.75rem;
-  --font-size-sm: 0.875rem;
-  --font-size-base: 1.125rem;
-  --font-size-lg: 1.125rem;
-  --font-size-xl: 1.25rem;
-  --font-size-xxl: 2.25rem;
-  --font-size-xxxl: 3rem;
+  --font-size-xs: calc(1rem / var(--major-fifth));
+  --font-size-sm: calc(1rem / var(--major-third));
+  --font-size-base: calc(1rem * var(--unison));
+  --font-size-lg: calc(1rem * var(--major-third));
+  --font-size-xl: calc(1rem * var(--major-fifth));
+  --font-size-xxl: calc(1rem * var(--minor-seventh));
+  --font-size-xxxl: calc(1rem * var(--octave));
 
   /* Font Weights - Proxima Nova supports 300-800 in 100 unit increments */
   --font-weight-light: 300;
