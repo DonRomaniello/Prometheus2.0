@@ -3,7 +3,7 @@ import './styles/variables.css';
 import './styles/global.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import About from './pages/About';
-import Classes from './pages/Classes';
+import Courses from './pages/Courses';
 import Contact from './pages/Contact';
 import Home from './pages/Home';
 import TheStudio from './pages/TheStudio';
@@ -23,7 +23,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
-            <Route path="/classes" element={<Classes />} />
+            <Route path="/courses" element={<Courses />} />
             <Route path="/the_studio" element={<TheStudio />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/privacy" element={<Privacy />} />
