@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { parseMarkdownPeople, shuffleArray } from '../utils';
 
 /**
  * Custom hook to fetch and parse markdown content with optional JSON layout block and header extraction.
@@ -10,6 +11,7 @@ export function useMarkdownContent(contentFile) {
   const [firstHeader, setFirstHeader] = useState('');
   const [remainingContent, setRemainingContent] = useState('');
   const [fillerContent, setFillerContent] = useState([]); // Add this state
+  const [people, setPeople] = useState([]); // Add people state
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -27,6 +29,7 @@ export function useMarkdownContent(contentFile) {
         // Extract first JSON code block
         const jsonBlockMatch = markdownContent.match(/```json\s*([\s\S]*?)```/);
         let contentWithoutJsonBlock = markdownContent;
+        let isPeopleGrid = false;
         
         if (jsonBlockMatch) {
           try {
@@ -35,6 +38,7 @@ export function useMarkdownContent(contentFile) {
             // Set layout
             if (parsed.layout && Array.isArray(parsed.layout)) {
               setLayout(parsed.layout.join(' '));
+              isPeopleGrid = parsed.layout.includes('people-grid');
             } else {
               setLayout('content-renderer');
             }
@@ -67,6 +71,13 @@ export function useMarkdownContent(contentFile) {
           setFirstHeader('');
           setRemainingContent(contentWithoutJsonBlock);
         }
+        
+        if (isPeopleGrid) {
+          const parsedPeople = parseMarkdownPeople(contentWithoutJsonBlock);
+          setPeople(shuffleArray(parsedPeople));
+        } else {
+          setPeople([]);
+        }
       } catch (err) {
         console.error(`Error loading content file: ${contentFile}.md`, err);
         setError(`Could not load content for ${contentFile}`);
@@ -77,5 +88,5 @@ export function useMarkdownContent(contentFile) {
     loadContent();
   }, [contentFile]);
 
-  return { layout, firstHeader, remainingContent, fillerContent, loading, error };
+  return { layout, firstHeader, remainingContent, fillerContent, loading, error, people };
 }

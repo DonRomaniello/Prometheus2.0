@@ -1,23 +1,29 @@
-import React, { useRef } from 'react';
+import { useRef } from 'react';
 import ReactMarkdown from 'react-markdown';
-import { useMarkdownContent } from '../hooks/useMarkdownContent';
-import { useFillPeopleGrid } from '../hooks/useFillPeopleGrid';
-import useIsMobile from '../hooks/useIsMobile';
+import {
+  useMarkdownContent,
+  useFillPeopleGrid,
+  useExpandableGrid,
+  useContentBodyClass,
+  useIsMobile
+} from '../hooks';
 import '../styles/layouts/content-renderer.css';
 import '../styles/layouts/people.css';
 import '../styles/layouts/layout-two-column.css';
 import '../styles/layouts/layout-three-equal.css';
 import '../styles/layouts/grid-auto-fit.css';
-import FillerContent from './FillerContent';
+import { FillerContent } from './';
 
 const ContentRenderer = ({ contentFile, content }) => {
-  const { layout, firstHeader, remainingContent, loading, error, fillerContent } = useMarkdownContent(contentFile);
+  const { layout, firstHeader, remainingContent, loading, error, fillerContent, people } = useMarkdownContent(contentFile);
   const contentBodyRef = useRef(null);
   const isPeopleGrid = layout.includes('people-grid');
   const { gridRef, fillerNeeded } = useFillPeopleGrid({
     fillerContent: Array.isArray(fillerContent) ? fillerContent : [],
   });
   const { isMobile, isSmallMobile } = useIsMobile(768);
+  const { toggleExpanded, isExpanded, orderedItems } = useExpandableGrid(people, gridRef);
+  const contentBodyClass = useContentBodyClass(layout, isMobile, isSmallMobile);
 
   // If content is provided directly, use it instead of loading from file
   if (content) {
@@ -44,16 +50,6 @@ const ContentRenderer = ({ contentFile, content }) => {
     );
   }
 
-  // Compose className for content-body
-  let contentBodyClass = 'content-body';
-  if (isPeopleGrid) {
-    if (isSmallMobile) {
-      contentBodyClass += ' small-mobile';
-    } else if (isMobile) {
-      contentBodyClass += ' mobile';
-    }
-  }
-
   return (
     <div className={`container ${layout}`}>
       {firstHeader && (
@@ -65,12 +61,31 @@ const ContentRenderer = ({ contentFile, content }) => {
         className={contentBodyClass}
         ref={isPeopleGrid ? gridRef : contentBodyRef}
       >
-        <ReactMarkdown>{remainingContent}</ReactMarkdown>
-        {isPeopleGrid && Array.isArray(fillerContent) && fillerContent.length > 0 && fillerNeeded > 0 && 
-          fillerContent.slice(0, fillerNeeded).map((filler, idx) => (
-            <FillerContent key={`filler-${idx}`} filler={filler} idx={idx} />
-          ))
-        }
+        {isPeopleGrid ? (
+          <>
+            {Array.isArray(orderedItems) && orderedItems.map((person, idx) => (
+              <div
+                className={`person-card${isExpanded(idx) ? ' expanded' : ''}`}
+                key={person.name + idx}
+                onClick={() => toggleExpanded(idx)}
+                style={{ cursor: 'pointer' }}
+              >
+                <img
+                  src={person.image}
+                  alt={person.name}
+                  className={`person-image${isExpanded(idx) ? ' expanded' : ''}`}
+                />
+              </div>
+            ))}
+            {Array.isArray(fillerContent) && fillerContent.length > 0 && fillerNeeded > 0 &&
+              fillerContent.slice(0, fillerNeeded).map((filler, idx) => (
+                <FillerContent key={`filler-${idx}`} filler={filler} idx={idx} />
+              ))
+            }
+          </>
+        ) : (
+          <ReactMarkdown>{remainingContent}</ReactMarkdown>
+        )}
       </div>
     </div>
   );
