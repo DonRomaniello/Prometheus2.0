@@ -4,6 +4,10 @@ import { useState, useEffect } from 'react';
 import useIsMobile from '../hooks/useIsMobile';
 import '../styles/components/footer.css';
 
+/**
+ * Footer component with responsive and scroll-aware behavior.
+ * Navigation links are variable-driven and mobile/desktop layouts are handled via CSS classes.
+ */
 const Footer = () => {
   const { isMobile, isSmallMobile } = useIsMobile(768);
   const { isVisible } = useScrollFooter({
@@ -67,7 +71,7 @@ const Footer = () => {
   // Only animate on desktop, inline on mobile
   if (isMobile) {
     return (
-      <footer className={`footer mobile${isSmallMobile ? ' small-mobile' : ''}`} style={{ position: 'static', transform: 'none', opacity: 1 }}>
+      <footer className={`footer mobile${isSmallMobile ? ' small-mobile' : ''}`}>
         <div className="footer-content">
           <div className="footer-top-row">
             <nav className="footer-nav">

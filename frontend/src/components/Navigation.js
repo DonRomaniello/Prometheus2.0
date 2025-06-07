@@ -4,6 +4,10 @@ import useIsMobile from '../hooks/useIsMobile';
 import { useState, useEffect } from 'react';
 import '../styles/components/navigation.css';
 
+/**
+ * Navigation component with responsive and scroll-aware behavior.
+ * Handles mobile/desktop layouts and accessibility for navigation menu.
+ */
 const Navigation = () => {
   const { isVisible, handleMouseEnter, handleMouseLeave } = useScrollVisibility({
     hideThreshold: 100,

@@ -1,9 +1,7 @@
 /* People grid layout: responsive, max 3 columns, always square */.filler-quote blockquote {
-  margin: 0 0 var(--spacing-sm) 0;
+  margin: 0 0 var(--spacing-xs) 0;
   font-size: var(--font-size-sm);
-  line-height: calc(var(--line-height-tight) + 0.1);
-}ple-header {
-  text-align: center;
+  line-height: var(--line-height-tight);
 }
 
 .people-grid .content-body {
@@ -70,7 +68,7 @@
 .filler-quote blockquote {
   margin: 0 0 var(--spacing-xs) 0;
   font-size: var(--font-size-sm);
-  line-height: 1.3;
+  line-height: var(--line-height-tight);
 }
 
 .filler-quote cite {
@@ -83,7 +81,7 @@
   text-align: center;
   font-size: var(--font-size-sm);
   color: var(--color-gray-600);
-  line-height: calc(var(--line-height-normal) - 0.1);
+  line-height: var(--line-height-normal);
 }
 
 .filler-empty {
@@ -113,3 +111,15 @@
 .people-grid .content-header h3 {
   text-align: center;
 }
+
+.filler-content[data-idx="0"] { animation-delay: 0s; }
+.filler-content[data-idx="1"] { animation-delay: 0.1s; }
+.filler-content[data-idx="2"] { animation-delay: 0.2s; }
+.filler-content[data-idx="3"] { animation-delay: 0.3s; }
+.filler-content[data-idx="4"] { animation-delay: 0.4s; }
+.filler-content[data-idx="5"] { animation-delay: 0.5s; }
+.filler-content[data-idx="6"] { animation-delay: 0.6s; }
+.filler-content[data-idx="7"] { animation-delay: 0.7s; }
+.filler-content[data-idx="8"] { animation-delay: 0.8s; }
+.filler-content[data-idx="9"] { animation-delay: 0.9s; }
+/* Add more if needed for larger grids */
