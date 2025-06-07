@@ -22,7 +22,7 @@ const ContentRenderer = ({ contentFile, content }) => {
     fillerContent: Array.isArray(fillerContent) ? fillerContent : [],
   });
   const { isMobile, isSmallMobile } = useIsMobile(768);
-  const { expandedIdx, toggleExpanded, isExpanded } = useExpandableGrid(people?.length);
+  const { toggleExpanded, isExpanded, orderedItems } = useExpandableGrid(people, gridRef);
   const contentBodyClass = useContentBodyClass(layout, isMobile, isSmallMobile);
 
   // If content is provided directly, use it instead of loading from file
@@ -63,7 +63,7 @@ const ContentRenderer = ({ contentFile, content }) => {
       >
         {isPeopleGrid ? (
           <>
-            {Array.isArray(people) && people.map((person, idx) => (
+            {Array.isArray(orderedItems) && orderedItems.map((person, idx) => (
               <div
                 className={`person-card${isExpanded(idx) ? ' expanded' : ''}`}
                 key={person.name + idx}

@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { parseMarkdownPeople } from '../utils';
+import { parseMarkdownPeople, shuffleArray } from '../utils';
 
 /**
  * Custom hook to fetch and parse markdown content with optional JSON layout block and header extraction.
@@ -73,7 +73,8 @@ export function useMarkdownContent(contentFile) {
         }
         
         if (isPeopleGrid) {
-          setPeople(parseMarkdownPeople(contentWithoutJsonBlock));
+          const parsedPeople = parseMarkdownPeople(contentWithoutJsonBlock);
+          setPeople(shuffleArray(parsedPeople));
         } else {
           setPeople([]);
         }

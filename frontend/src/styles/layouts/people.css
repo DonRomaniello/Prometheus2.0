@@ -133,7 +133,6 @@
 
 .person-expanded .person-square {
   z-index: 1;
-  transition: all var(--transition-normal) var(--animation-easing);
   filter: blur(2px) grayscale(0.5) brightness(0.8);
   opacity: 0.5;
   pointer-events: none;
@@ -154,7 +153,6 @@
   align-items: center;
   justify-content: center;
   position: relative;
-  transition: all var(--transition-normal) var(--animation-easing);
 }
 .person-expanded .person-square.expanded {
   filter: none;
@@ -172,32 +170,30 @@
   color: var(--color-gray-700);
 }
 
-.person-square.expanded {
-  grid-column: 1 / -1;
-  z-index: 2;
-  background: var(--color-light);
-  box-shadow: var(--shadow-lg);
-  transition: box-shadow var(--transition-normal), background var(--transition-normal);
-}
-
 /* Person card styling */
 .person-card {
   width: var(--people-image-size);
   height: var(--people-image-size);
   position: relative;
-  transition: all 0.3s ease;
   z-index: 1;
+  cursor: pointer;
 }
 
 .person-card.expanded {
-  grid-column: 1 / -1;
-  width: 100%;
-  height: auto;
+  /* Take up 3x3 grid cells with smooth scaling */
+  grid-column: span 3;
+  grid-row: span 3;
+  width: calc(var(--people-image-size) * 3 + var(--people-grid-gap) * 2);
+  height: calc(var(--people-image-size) * 3 + var(--people-grid-gap) * 2);
   z-index: 10;
   background: var(--color-light);
   box-shadow: var(--shadow-lg);
   padding: var(--spacing-md);
   border-radius: var(--border-radius);
+  /* Add flexbox to center the image */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .person-image {
@@ -206,17 +202,18 @@
   object-fit: cover;
   background: var(--color-gray-300);
   display: block;
-  transition: all 0.3s ease;
 }
 
 .person-image.expanded {
-  width: 100%;
-  height: 300px;
-  max-height: 50vh;
+  /* Make image fill most of the expanded card, centered */
+  width: calc(100% - var(--spacing-md) * 2);
+  height: calc(100% - var(--spacing-md) * 2);
+  max-width: calc(var(--people-image-size) * 2.5);
+  max-height: calc(var(--people-image-size) * 2.5);
+  object-fit: cover;
 }
 
-/* Hide other cards when one is expanded */
+/* Remove fade effect for other cards */
 .people-grid .content-body:has(.person-card.expanded) .person-card:not(.expanded) {
   opacity: 0.3;
-  filter: blur(2px);
 }
