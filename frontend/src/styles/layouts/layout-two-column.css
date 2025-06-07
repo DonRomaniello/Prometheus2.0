@@ -2,7 +2,7 @@
 .layout-two-column {
   display: grid;
   grid-template-areas: "main sidebar";
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: var(--ratio-2-1);
   gap: var(--grid-gap);
 }
 

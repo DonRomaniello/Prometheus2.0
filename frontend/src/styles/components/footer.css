@@ -15,11 +15,11 @@
   left: 0;
   right: 0;
   background: var(--bg-primary);
-  border-top: 1px solid rgba(var(--bg-dark-rgb), 0.1);
+  border-top: var(--border-width) solid rgba(var(--bg-dark-rgb), 0.1);
   /* box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.1); */
-  z-index: 999; /* High z-index but below navigation */
-  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
-  height: calc(((var(--font-size-base) + (var(--spacing-sm) * 2))) * 3); /* Double height for footer */
+  z-index: calc(var(--z-index-fixed) - 1); /* High z-index but below navigation */
+  transition: transform var(--transition-normal) var(--animation-easing), opacity var(--transition-normal) var(--animation-easing);
+  height: calc(((var(--font-size-base) + (var(--spacing-sm) * 2))) * 3); /* Triple height for footer */
   pointer-events: auto;
   display: flex;
   flex-direction: column;
@@ -94,7 +94,7 @@
   font-weight: var(--font-weight-medium);
   padding: var(--spacing-sm) var(--spacing-md);
   border-radius: var(--border-radius);
-  transition: all 0.3s ease;
+  transition: all var(--transition-normal) var(--animation-easing);
   display: inline-block;
   position: relative;
   overflow: hidden;
@@ -103,8 +103,8 @@
 .footer-link:hover {
   background-color: var(--color-primary);
   color: var(--color-white);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(var(--color-secondary-rgb), 0.3);
+  transform: var(--hover-transform-small);
+  box-shadow: var(--hover-shadow);
 }
 
 

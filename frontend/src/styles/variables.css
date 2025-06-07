@@ -29,7 +29,7 @@
   /* Text Colors */
   --text-primary: var(--color-dark);
   --text-secondary: var(--color-secondary);
-  --text-muted: #6c757d;
+  --text-muted: var(--color-medium);
   --text-light: var(--color-light);
 
   /* Background Colors */
@@ -85,12 +85,13 @@
 
   /* Borders */
   --border-width: 1px;
-  --border-color: #e5e7eb;
+  --border-color: var(--color-gray-300);
+  --border-radius: calc(var(--spacing-xs) / 2);
 
   /* Shadows */
-  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  --shadow-sm: 0 var(--border-width) calc(var(--border-width) * 2) 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 calc(var(--border-width) * 4) calc(var(--border-width) * 6) calc(var(--border-width) * -1) rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 calc(var(--border-width) * 10) calc(var(--border-width) * 15) calc(var(--border-width) * -3) rgba(0, 0, 0, 0.1);
 
   /* Grid System */
   --grid-columns: 12;
@@ -100,15 +101,79 @@
   /* People grid layout variables */
   --people-image-size: 28vh;
 
-  /* Mobile Navigation Variables */
-  --mobile-breakpoint: 768px;
+  /* Mobile Navigatio5 n Variables */
+  --mobile-breakpoint: calc(var(--spacing-xxl) * 25.6); /* 768px equivalent */
+  --mobile-breakpoint-large: calc(var(--mobile-breakpoint) + var(--border-width)); /* 769px */
   --mobile-nav-height: calc(100vh / var(--magic-number));
   --mobile-nav-z-index: 1001;
   --mobile-nav-backdrop-z-index: 1000;
   --mobile-nav-width: calc(100vw * var(--magic-62));
-  --mobile-nav-animation-duration: 0.3s;
+  --mobile-nav-max-width: calc(var(--spacing-xxl) * 13.33); /* 400px equivalent */
+  --mobile-nav-animation-duration: var(--transition-normal);
   --hamburger-container-width: var(--mobile-nav-height);
   --hamburger-size: calc(var(--hamburger-container-width) * var(--magic-62));
   --hamburger-line-height: calc(var(--hamburger-size) / var(--magic-number));
-  --brand-font-size: 2rem;
+  --brand-font-size: calc(1rem * var(--octave));
+
+  /* Animation & Transition Variables */
+  --transition-fast: calc(var(--major-third) / 10 * 1s);
+  --transition-normal: calc(var(--major-fifth) / 5 * 1s);
+  --transition-slow: calc(var(--major-fifth) / 3 * 1s);
+  --animation-easing: ease;
+  --animation-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+  /* Z-Index Scale */
+  --z-index-base: 1;
+  --z-index-dropdown: 100;
+  --z-index-sticky: 500;
+  --z-index-fixed: 600;
+  --z-index-modal-backdrop: var(--mobile-nav-backdrop-z-index);
+  --z-index-modal: var(--mobile-nav-z-index);
+  --z-index-popover: 1100;
+  --z-index-tooltip: 1200;
+
+  /* Layout Ratios */
+  --ratio-2-1: 2fr 1fr;
+  --ratio-3-1: 3fr 1fr;
+  --ratio-1-1-1: 1fr 1fr 1fr;
+  --ratio-golden: var(--golden-ratio)fr 1fr;
+  --dashboard-columns: calc(var(--spacing-xxl) * 6.67) 2fr 1fr calc(var(--spacing-xxl) * 6.67); /* 200px 2fr 1fr 200px equivalent */
+
+  /* Color Palette Extensions */
+  --color-gray-100: #f8f9fa;
+  --color-gray-200: #e9ecef;
+  --color-gray-300: #dee2e6;
+  --color-gray-400: #ced4da;
+  --color-gray-500: #adb5bd;
+  --color-gray-600: #6c757d;
+  --color-gray-700: #495057;
+  --color-gray-800: #343a40;
+  --color-gray-900: #212529;
+
+  /* People Grid Variables */
+  --people-grid-gap: var(--spacing-xl);
+  --people-image-hover-transform: translateY(calc(var(--border-width) * -2));
+  --people-image-hover-shadow: 0 calc(var(--border-width) * 4) calc(var(--border-width) * 12) rgba(0, 0, 0, 0.1);
+
+  /* Content Body Variables */
+  --content-body-min-height: calc(61.8vh); /* Golden ratio based */
+  --content-body-border-width: var(--border-width);
+
+  /* Hover Effects */
+  --hover-transform-up: translateY(calc(var(--border-width) * -2.5));
+  --hover-transform-small: translateY(calc(var(--border-width) * -2));
+  --hover-height-compensation: calc(100% + calc(var(--border-width) * 2.5));
+  --hover-shadow: 0 calc(var(--border-width) * 4) calc(var(--border-width) * 8) rgba(var(--color-secondary-rgb), 0.3);
+
+  /* Backdrop Effects */
+  --backdrop-opacity: 0.45;
+  --main-content-padding-top: calc(var(--mobile-nav-height) * var(--golden-ratio));
+
+  /* Mobile Text Sizes */
+  --font-size-mobile-sm: calc(var(--font-size-xs) * 1.1);
+  --font-size-mobile-xs: calc(var(--font-size-xs) * 0.9);
+
+  /* Grid Breakpoints */
+  --grid-mobile-min-size: calc(var(--spacing-xxl) * 5); /* 150px equivalent */
+  --grid-mobile-large-min-size: calc(var(--spacing-xxl) * 6.67); /* 200px equivalent */
 }

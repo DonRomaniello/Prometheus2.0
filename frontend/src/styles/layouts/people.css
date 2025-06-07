@@ -1,16 +1,20 @@
-/* People grid layout: responsive, max 3 columns, always square */
-.people-header {
+/* People grid layout: responsive, max 3 columns, always square */.filler-quote blockquote {
+  margin: 0 0 var(--spacing-sm) 0;
+  font-size: var(--font-size-sm);
+  line-height: calc(var(--line-height-tight) + 0.1);
+}ple-header {
   text-align: center;
 }
 
 .people-grid .content-body {
   display: flex;
   flex-wrap: wrap;
-  gap: 2rem;
-  justify-content: center; /* Center the grid content */
+  gap: var(--people-grid-gap);
+  justify-content: center;
   align-items: start;
-  margin: 2rem 0;
+  margin: var(--spacing-lg) 0;
   border-left: none;
+  position: relative;
 }
 
 .people-grid .content-body p {
@@ -18,32 +22,16 @@
   display: contents;
 }
 
-.people-grid img {
-  width: var(--people-image-size);
-  height: var(--people-image-size);
-  max-width: 100%;
-  object-fit: cover;
-  background: #e0e0e0;
-  display: block;
-}
-
+.people-grid img,
 .person-square {
   width: var(--people-image-size);
-  aspect-ratio: 1 / 1;
-  background: #f0f0f0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-}
-
-.person-name {
-  margin-top: 0.5rem;
-  font-weight: 600;
-  font-size: 1rem;
-  text-align: center;
+  height: var(--people-image-size);
+  max-width: 100vw;
+  max-height: 100vw;
+  object-fit: cover;
+  background: var(--color-gray-300);
+  display: block;
+  transition: all var(--transition-normal) var(--animation-easing);
 }
 
 /* Filler content styling */
@@ -55,11 +43,11 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 1rem;
+  padding: var(--spacing-md);
   box-sizing: border-box;
   opacity: 0;
-  transform: translateY(10px);
-  animation: fadeInUp 0.3s ease-out forwards;
+  transform: translateY(calc(var(--border-width) * 10));
+  animation: fadeInUp var(--transition-normal) ease-out forwards;
 }
 
 @keyframes fadeInUp {
@@ -70,32 +58,32 @@
 }
 
 .filler-content:hover {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--people-image-hover-shadow);
 }
 
 .filler-quote {
   text-align: center;
   font-style: italic;
-  color: #666;
+  color: var(--color-gray-600);
 }
 
 .filler-quote blockquote {
-  margin: 0 0 0.5rem 0;
-  font-size: 0.9rem;
+  margin: 0 0 var(--spacing-xs) 0;
+  font-size: var(--font-size-sm);
   line-height: 1.3;
 }
 
 .filler-quote cite {
-  font-size: 0.8rem;
-  color: #888;
+  font-size: var(--font-size-xs);
+  color: var(--color-gray-500);
   font-style: normal;
 }
 
 .filler-text {
   text-align: center;
-  font-size: 0.9rem;
-  color: #666;
-  line-height: 1.4;
+  font-size: var(--font-size-sm);
+  color: var(--color-gray-600);
+  line-height: calc(var(--line-height-normal) - 0.1);
 }
 
 .filler-empty {
@@ -105,63 +93,23 @@
 }
 
 /* Mobile optimizations for people grid */
-.people-grid .content-body.mobile {
-  gap: 14.3vw;
-  margin: 1rem 0;
-  justify-content: center;
-  padding: 0 10%;
-}
-
 .people-grid .content-body.mobile img,
 .people-grid .content-body.mobile .person-square,
-.people-grid .content-body.mobile .filler-content {
-  width: 85.7vw;
-  height: 85.7vw;
-  max-width: 400px;
-  max-height: 400px;
-}
-
-.people-grid .content-body.mobile .filler-content {
-  padding: 0.75rem;
-}
-
-.people-grid .content-body.mobile .filler-quote blockquote {
-  font-size: 0.8rem;
-  line-height: 1.2;
-}
-
-.people-grid .content-body.mobile .filler-quote cite {
-  font-size: 0.7rem;
-}
-
-.people-grid .content-body.mobile .filler-text {
-  font-size: 0.8rem;
-  line-height: 1.3;
-}
-
-.people-grid .content-body.small-mobile {
-  gap: 14.3vw;
-  padding: 0 10%;
-}
-
 .people-grid .content-body.small-mobile img,
-.people-grid .content-body.small-mobile .person-square,
-.people-grid .content-body.small-mobile .filler-content {
-  width: 85.7vw;
-  height: 85.7vw;
-  max-width: 300px;
-  max-height: 300px;
+.people-grid .content-body.small-mobile .person-square {
+  width: var(--people-image-size);
+  height: var(--people-image-size);
+  max-width: 100vw;
+  max-height: 100vw;
 }
 
-.people-grid .content-body.small-mobile .filler-content {
-  padding: 0.5rem;
+.people-grid .content-header {
+  text-align: center;
+  margin-bottom: var(--spacing-lg);
 }
 
-.people-grid .content-body.small-mobile .filler-quote blockquote {
-  font-size: 0.75rem;
-  margin: 0 0 0.25rem 0;
-}
-
-.people-grid .content-body.small-mobile .filler-quote cite {
-  font-size: 0.65rem;
+.people-grid .content-header h1,
+.people-grid .content-header h2,
+.people-grid .content-header h3 {
+  text-align: center;
 }
