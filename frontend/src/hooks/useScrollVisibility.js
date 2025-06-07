@@ -6,13 +6,15 @@ import { useState, useEffect, useCallback } from 'react';
  * @param {number} options.hideThreshold - Scroll position to start hiding (default: 100)
  * @param {number} options.showSpeedThreshold - Minimum scroll speed to show on upward scroll (default: 10)
  * @param {number} options.scrollStopDelay - Delay to show after scrolling stops (default: 150)
+ * @param {boolean} options.forceHide - Force hide regardless of scroll position (default: false)
  * @returns {Object} - { isVisible, isHovered, handleMouseEnter, handleMouseLeave }
  */
 export const useScrollVisibility = (options = {}) => {
   const {
     hideThreshold = 100,
     showSpeedThreshold = 10,
-    scrollStopDelay = 150
+    scrollStopDelay = 150,
+    forceHide = false
   } = options;
 
   const [isVisible, setIsVisible] = useState(true);
@@ -22,6 +24,12 @@ export const useScrollVisibility = (options = {}) => {
   const handleScroll = useCallback(() => {
     // Skip nav bar changes if scrolling is programmatic
     if (window.__programmaticScroll) return;
+    
+    // Force hide if forceHide option is enabled (e.g., when person is expanded)
+    if (forceHide && !isHovered) {
+      setIsVisible(false);
+      return;
+    }
     
     const currentScrollY = window.scrollY;
     const scrollDifference = currentScrollY - lastScrollY;
@@ -40,7 +48,7 @@ export const useScrollVisibility = (options = {}) => {
     }
     
     setLastScrollY(currentScrollY);
-  }, [lastScrollY, isHovered, hideThreshold, showSpeedThreshold]);
+  }, [lastScrollY, isHovered, hideThreshold, showSpeedThreshold, forceHide]);
 
   useEffect(() => {
     let scrollTimeout;
@@ -66,6 +74,13 @@ export const useScrollVisibility = (options = {}) => {
       clearTimeout(scrollTimeout);
     };
   }, [handleScroll, hideThreshold, scrollStopDelay]);
+
+  // Handle forceHide state changes
+  useEffect(() => {
+    if (forceHide && !isHovered) {
+      setIsVisible(false);
+    }
+  }, [forceHide, isHovered]);
 
   const handleMouseEnter = () => {
     setIsHovered(true);
