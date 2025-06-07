@@ -3,6 +3,7 @@ export { useMarkdownContent } from './useMarkdownContent';
 export { useFillPeopleGrid } from './useFillPeopleGrid';
 export { useExpandableGrid } from './useExpandableGrid';
 export { useContentBodyClass } from './useContentBodyClass';
+export { useDynamicTitle } from './useDynamicTitle';
 export { default as useIsMobile } from './useIsMobile';
 export { useMobileNavigation } from './useMobileNavigation';
 export { useScrollSpacer } from './useScrollSpacer';

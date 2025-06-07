@@ -5,6 +5,7 @@ import {
   useFillPeopleGrid,
   useExpandableGrid,
   useContentBodyClass,
+  useDynamicTitle,
   useIsMobile
 } from '../hooks';
 import '../styles/layouts/content-renderer.css';
@@ -14,7 +15,7 @@ import '../styles/layouts/layout-three-equal.css';
 import '../styles/layouts/grid-auto-fit.css';
 import { FillerContent } from './';
 
-const ContentRenderer = ({ contentFile, content }) => {
+const ContentRenderer = ({ contentFile, content, initialExpandedSlug = null, onPersonExpand = null }) => {
   const { layout, firstHeader, remainingContent, loading, error, fillerContent, people } = useMarkdownContent(contentFile);
   const contentBodyRef = useRef(null);
   const isPeopleGrid = layout.includes('people-grid');
@@ -22,8 +23,16 @@ const ContentRenderer = ({ contentFile, content }) => {
     fillerContent: Array.isArray(fillerContent) ? fillerContent : [],
   });
   const { isMobile, isSmallMobile } = useIsMobile(768);
-  const { toggleExpanded, isExpanded, orderedItems } = useExpandableGrid(people, gridRef);
+  const { toggleExpanded, isExpanded, orderedItems, expandedItem } = useExpandableGrid(
+    people, 
+    gridRef, 
+    initialExpandedSlug, 
+    onPersonExpand
+  );
   const contentBodyClass = useContentBodyClass(layout, isMobile, isSmallMobile);
+  
+  // Use dynamic title - show person name when expanded, otherwise show default header
+  const displayTitle = useDynamicTitle(firstHeader, expandedItem);
 
   // If content is provided directly, use it instead of loading from file
   if (content) {
@@ -52,9 +61,9 @@ const ContentRenderer = ({ contentFile, content }) => {
 
   return (
     <div className={`container ${layout}`}>
-      {firstHeader && (
+      {displayTitle && (
         <div className={`content-header ${isPeopleGrid ? 'people-header' : ''}`}>
-          <ReactMarkdown>{firstHeader}</ReactMarkdown>
+          <ReactMarkdown>{displayTitle}</ReactMarkdown>
         </div>
       )}
       <div
@@ -98,4 +107,6 @@ export default ContentRenderer;
  * @param {object} props
  * @param {string} [props.contentFile] - Path to markdown file
  * @param {string} [props.content] - Direct markdown content
+ * @param {string} [props.initialExpandedSlug] - Slug of person to expand initially (for URL routing)
+ * @param {function} [props.onPersonExpand] - Callback when person expansion changes (receives slug or null)
  */

@@ -6,15 +6,19 @@
  * bio text (can be multiline)
  *
  * @param {string} markdown
- * @returns {Array<{name: string, image: string, bio: string}>}
+ * @returns {Array<{name: string, slug: string, image: string, bio: string}>}
  */
+import { generateSlug } from './generateSlug';
+
 function parseMarkdownPeople(markdown) {
   const personRegex = /!\[([^\]]*)\]\(([^)]+)\)\s*##\s*([^\n]+)\n+([\s\S]*?)(?=!?\[|$)/g;
   const people = [];
   let match;
   while ((match = personRegex.exec(markdown)) !== null) {
+    const name = match[3].trim();
     people.push({
-      name: match[3].trim(),
+      name,
+      slug: generateSlug(name),
       image: match[2].trim(),
       bio: match[4].trim()
     });

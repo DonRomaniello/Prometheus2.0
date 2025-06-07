@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 
 /**
  * Custom hook for managing visibility based on scroll behavior
@@ -19,43 +19,53 @@ export const useScrollVisibility = (options = {}) => {
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
 
+  const handleScroll = useCallback(() => {
+    // Skip nav bar changes if scrolling is programmatic
+    if (window.__programmaticScroll) return;
+    
+    const currentScrollY = window.scrollY;
+    const scrollDifference = currentScrollY - lastScrollY;
+    const scrollSpeed = Math.abs(scrollDifference);
+    
+    // Hide when scrolling down past threshold
+    if (currentScrollY > hideThreshold && scrollDifference > 0 && !isHovered) {
+      setIsVisible(false);
+    }
+    // Show when scrolling up quickly or near top
+    else if (scrollDifference < 0 && (scrollSpeed > showSpeedThreshold || currentScrollY < hideThreshold)) {
+      setIsVisible(true);
+    } else if (currentScrollY <= hideThreshold) {
+      // Always show when at the top of the page
+      setIsVisible(true);
+    }
+    
+    setLastScrollY(currentScrollY);
+  }, [lastScrollY, isHovered, hideThreshold, showSpeedThreshold]);
+
   useEffect(() => {
     let scrollTimeout;
     
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-      const scrollDifference = currentScrollY - lastScrollY;
-      const scrollSpeed = Math.abs(scrollDifference);
-      
-      // Hide when scrolling down past threshold
-      if (currentScrollY > hideThreshold && scrollDifference > 0 && !isHovered) {
-        setIsVisible(false);
-      }
-      // Show when scrolling up quickly or near top
-      else if (scrollDifference < 0 && (scrollSpeed > showSpeedThreshold || currentScrollY < hideThreshold)) {
-        setIsVisible(true);
-      }
-      
-      setLastScrollY(currentScrollY);
+    const handleScrollWithTimeout = () => {
+      handleScroll();
       
       // Clear any existing timeout
       clearTimeout(scrollTimeout);
       
       // Set a timeout to show after scrolling stops
       scrollTimeout = setTimeout(() => {
-        if (currentScrollY < hideThreshold) {
+        if (window.scrollY < hideThreshold) {
           setIsVisible(true);
         }
       }, scrollStopDelay);
     };
 
-    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('scroll', handleScrollWithTimeout, { passive: true });
     
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('scroll', handleScrollWithTimeout);
       clearTimeout(scrollTimeout);
     };
-  }, [lastScrollY, isHovered, hideThreshold, showSpeedThreshold, scrollStopDelay]);
+  }, [handleScroll, hideThreshold, scrollStopDelay]);
 
   const handleMouseEnter = () => {
     setIsHovered(true);

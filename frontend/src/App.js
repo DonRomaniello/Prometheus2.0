@@ -26,6 +26,7 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/courses" element={<Courses />} />
             <Route path="/the_studio" element={<TheStudio />} />
+            <Route path="/the_studio/:personSlug" element={<TheStudio />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/privacy" element={<Privacy />} />
             <Route path="/terms" element={<Terms />} />
