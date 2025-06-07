@@ -11,7 +11,7 @@ import '../styles/layouts/grid-auto-fit.css';
 import FillerContent from './FillerContent';
 
 const ContentRenderer = ({ contentFile, content }) => {
-  const { layout, firstHeader, remainingContent, loading, error, fillerContent } = useMarkdownContent(contentFile);
+  const { layout, firstHeader, remainingContent, loading, error, fillerContent, people } = useMarkdownContent(contentFile);
   const contentBodyRef = useRef(null);
   const isPeopleGrid = layout.includes('people-grid');
   const { gridRef, fillerNeeded } = useFillPeopleGrid({
@@ -65,12 +65,28 @@ const ContentRenderer = ({ contentFile, content }) => {
         className={contentBodyClass}
         ref={isPeopleGrid ? gridRef : contentBodyRef}
       >
-        <ReactMarkdown>{remainingContent}</ReactMarkdown>
-        {isPeopleGrid && Array.isArray(fillerContent) && fillerContent.length > 0 && fillerNeeded > 0 && 
-          fillerContent.slice(0, fillerNeeded).map((filler, idx) => (
-            <FillerContent key={`filler-${idx}`} filler={filler} idx={idx} />
-          ))
-        }
+        {isPeopleGrid ? (
+          <>
+            {Array.isArray(people) && people.map((person, idx) => (
+              <div className="person-card" key={person.name + idx}>
+                <img src={person.image} alt={person.name} className="person-image" />
+                {/* <div className="person-info">
+                  <div className="person-name">{person.name}</div>
+                  <div className="person-bio">
+                    <ReactMarkdown>{person.bio}</ReactMarkdown>
+                  </div>
+                </div> */}
+              </div>
+            ))}
+            {Array.isArray(fillerContent) && fillerContent.length > 0 && fillerNeeded > 0 &&
+              fillerContent.slice(0, fillerNeeded).map((filler, idx) => (
+                <FillerContent key={`filler-${idx}`} filler={filler} idx={idx} />
+              ))
+            }
+          </>
+        ) : (
+          <ReactMarkdown>{remainingContent}</ReactMarkdown>
+        )}
       </div>
     </div>
   );
