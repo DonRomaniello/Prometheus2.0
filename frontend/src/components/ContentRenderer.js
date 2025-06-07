@@ -1,16 +1,18 @@
-import React, { useRef } from 'react';
+import { useRef } from 'react';
 import ReactMarkdown from 'react-markdown';
-import { useMarkdownContent } from '../hooks/useMarkdownContent';
-import { useFillPeopleGrid } from '../hooks/useFillPeopleGrid';
-import { useExpandableGrid } from '../hooks/useExpandableGrid';
-import { useContentBodyClass } from '../hooks/useContentBodyClass';
-import useIsMobile from '../hooks/useIsMobile';
+import {
+  useMarkdownContent,
+  useFillPeopleGrid,
+  useExpandableGrid,
+  useContentBodyClass,
+  useIsMobile
+} from '../hooks';
 import '../styles/layouts/content-renderer.css';
 import '../styles/layouts/people.css';
 import '../styles/layouts/layout-two-column.css';
 import '../styles/layouts/layout-three-equal.css';
 import '../styles/layouts/grid-auto-fit.css';
-import FillerContent from './FillerContent';
+import { FillerContent } from './';
 
 const ContentRenderer = ({ contentFile, content }) => {
   const { layout, firstHeader, remainingContent, loading, error, fillerContent, people } = useMarkdownContent(contentFile);

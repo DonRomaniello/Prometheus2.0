@@ -2,17 +2,18 @@ import './styles/user_agent_zero.css';
 import './styles/variables.css';
 import './styles/global.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import About from './pages/About';
-import Courses from './pages/Courses';
-import Contact from './pages/Contact';
-import Home from './pages/Home';
-import TheStudio from './pages/TheStudio';
-import Privacy from './pages/Privacy';
-import Terms from './pages/Terms';
-import FAQ from './pages/FAQ';
-import Testimonials from './pages/Testimonials';
-import Navigation from './components/Navigation';
-import Footer from './components/Footer';
+import {
+  About,
+  Courses,
+  Contact,
+  Home,
+  TheStudio,
+  Privacy,
+  Terms,
+  FAQ,
+  Testimonials
+} from './pages';
+import { Navigation, Footer } from './components';
 
 function App() {
   return (

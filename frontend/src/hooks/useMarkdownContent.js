@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import parseMarkdownPeople from '../utils/parseMarkdownPeople';
+import { parseMarkdownPeople } from '../utils';
 
 /**
  * Custom hook to fetch and parse markdown content with optional JSON layout block and header extraction.

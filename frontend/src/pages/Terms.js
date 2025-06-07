@@ -1,5 +1,5 @@
 import React from 'react';
-import ContentRenderer from '../components/ContentRenderer';
+import { ContentRenderer } from '../components';
 
 const Terms = () => {
   return <ContentRenderer contentFile="terms" />;
