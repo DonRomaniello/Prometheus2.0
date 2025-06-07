@@ -8,6 +8,7 @@ import '../styles/layouts/people.css';
 import '../styles/layouts/layout-two-column.css';
 import '../styles/layouts/layout-three-equal.css';
 import '../styles/layouts/grid-auto-fit.css';
+import FillerContent from './FillerContent';
 
 const ContentRenderer = ({ contentFile, content }) => {
   const { layout, firstHeader, remainingContent, loading, error, fillerContent } = useMarkdownContent(contentFile);
@@ -67,22 +68,7 @@ const ContentRenderer = ({ contentFile, content }) => {
         <ReactMarkdown>{remainingContent}</ReactMarkdown>
         {isPeopleGrid && Array.isArray(fillerContent) && fillerContent.length > 0 && fillerNeeded > 0 && 
           fillerContent.slice(0, fillerNeeded).map((filler, idx) => (
-            <div 
-              key={`filler-${idx}`} 
-              className="person-square filler-content"
-              style={{ animationDelay: `${idx * 0.1}s` }}
-            >
-              {filler.quote && filler.attribution ? (
-                <div className="filler-quote">
-                  <blockquote>"{filler.quote}"</blockquote>
-                  <cite>&mdash; {filler.attribution}</cite>
-                </div>
-              ) : filler.text ? (
-                <div className="filler-text">{filler.text}</div>
-              ) : (
-                <div className="filler-empty"></div>
-              )}
-            </div>
+            <FillerContent key={`filler-${idx}`} filler={filler} idx={idx} />
           ))
         }
       </div>
@@ -91,3 +77,10 @@ const ContentRenderer = ({ contentFile, content }) => {
 };
 
 export default ContentRenderer;
+
+/**
+ * ContentRenderer renders markdown content with optional people grid and filler logic.
+ * @param {object} props
+ * @param {string} [props.contentFile] - Path to markdown file
+ * @param {string} [props.content] - Direct markdown content
+ */

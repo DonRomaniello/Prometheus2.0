@@ -1,11 +1,12 @@
 /* CSS Variables - Edit these to change the entire app's appearance */
 :root {
-  /* Divisors */
-  --magic-number: 11;
-  --magic-62: calc(13/21);
+  /* --- DIVISORS & DESIGN RATIOS --- */
+  --magic-number: 11; /* Used for nav and grid calculations */
+  --magic-62: calc(13/21); /* Used for nav width scaling */
   --golden-ratio: 1.618; /* Golden ratio for design consistency */
 
-  /* Colors */
+  /* --- COLOR PALETTE --- */
+  /* Brand & UI Colors */
   --color-primary: #0A0A0A;
   --color-primary-rgb: 10, 10, 10;
   --color-secondary: #4F5165;   
@@ -25,14 +26,22 @@
   --color-white-rgb: 255, 255, 255;
   --color-black: #000000;
   --color-black-rgb: 0, 0, 0;
+  /* Extended Grays */
+  --color-gray-100: #f8f9fa;
+  --color-gray-200: #e9ecef;
+  --color-gray-300: #dee2e6;
+  --color-gray-400: #ced4da;
+  --color-gray-500: #adb5bd;
+  --color-gray-600: #6c757d;
+  --color-gray-700: #495057;
+  --color-gray-800: #343a40;
+  --color-gray-900: #212529;
 
-  /* Text Colors */
+  /* --- TEXT & BACKGROUND COLORS --- */
   --text-primary: var(--color-dark);
   --text-secondary: var(--color-secondary);
-  --text-muted: #6c757d;
+  --text-muted: var(--color-medium);
   --text-light: var(--color-light);
-
-  /* Background Colors */
   --bg-primary: var(--color-white);
   --bg-primary-rgb: var(--color-white-rgb);
   --bg-secondary: var(--color-light);
@@ -40,7 +49,7 @@
   --bg-dark: var(--color-dark);
   --bg-dark-rgb: var(--color-dark-rgb);
 
-  /* Pythagorean Scale */
+  /* --- TYPOGRAPHY SCALE (Pythagorean) --- */
   --unison: calc(1 / 1);
   --second: calc(9 / 8);
   --minor-third: calc(6 / 5);
@@ -52,16 +61,7 @@
   --minor-seventh: calc(7 / 4);
   --major-seventh: calc(15 / 8);
   --octave: calc(2 / 1);
-
-  /* Spacing */
-  --spacing-xs: 0.25rem;
-  --spacing-sm: 0.5rem;
-  --spacing-md: 1rem;
-  --spacing-lg: 1.5rem;
-  --spacing-xl: 2rem;
-  --spacing-xxl: 3rem;
-
-  /* Font Sizes */
+  /* Font Sizes (responsive, based on scale) */
   --font-size-xs: calc(1rem / var(--major-fifth));
   --font-size-sm: calc(1rem / var(--major-third));
   --font-size-base: calc(1rem * var(--unison));
@@ -69,46 +69,104 @@
   --font-size-xl: calc(1rem * var(--major-fifth));
   --font-size-xxl: calc(1rem * var(--minor-seventh));
   --font-size-xxxl: calc(1rem * var(--octave));
-
-  /* Font Weights - Proxima Nova supports 300-800 in 100 unit increments */
+  /* Font Weights */
   --font-weight-light: 300;
   --font-weight-normal: 400;
   --font-weight-medium: 500;
   --font-weight-semibold: 600;
   --font-weight-bold: 700;
   --font-weight-extrabold: 800;
-
   /* Line Heights */
   --line-height-tight: 1.2;
   --line-height-normal: 1.5;
   --line-height-relaxed: 1.75;
 
-  /* Borders */
+  /* --- SPACING SYSTEM --- */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-xxl: 3rem;
+
+  /* --- BORDERS & RADIUS --- */
   --border-width: 1px;
-  --border-color: #e5e7eb;
+  --border-color: var(--color-gray-300);
+  --border-radius: calc(var(--spacing-xs) / 2);
 
-  /* Shadows */
-  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  /* --- SHADOWS (based on border width) --- */
+  --shadow-sm: 0 var(--border-width) calc(var(--border-width) * 2) 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 calc(var(--border-width) * 4) calc(var(--border-width) * 6) calc(var(--border-width) * -1) rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 calc(var(--border-width) * 10) calc(var(--border-width) * 15) calc(var(--border-width) * -3) rgba(0, 0, 0, 0.1);
 
-  /* Grid System */
+  /* --- GRID SYSTEM --- */
   --grid-columns: 12;
   --grid-gap: var(--spacing-md);
   --container-max-width: 100vh;
 
-  /* People grid layout variables */
+  /* --- PEOPLE GRID --- */
   --people-image-size: 28vh;
+  --people-grid-gap: var(--spacing-xl);
+  --people-image-hover-transform: translateY(calc(var(--border-width) * -2));
+  --people-image-hover-shadow: 0 calc(var(--border-width) * 4) calc(var(--border-width) * 12) rgba(0, 0, 0, 0.1);
 
-  /* Mobile Navigation Variables */
-  --mobile-breakpoint: 768px;
+  /* --- CONTENT BODY --- */
+  --content-body-min-height: calc(61.8vh); /* Golden ratio based */
+  --content-body-border-width: var(--border-width);
+
+  /* --- HOVER EFFECTS --- */
+  --hover-transform-up: translateY(calc(var(--border-width) * -2.5));
+  --hover-transform-small: translateY(calc(var(--border-width) * -2));
+  --hover-height-compensation: calc(100% + calc(var(--border-width) * 2.5));
+  --hover-shadow: 0 calc(var(--border-width) * 4) calc(var(--border-width) * 8) rgba(var(--color-secondary-rgb), 0.3);
+
+  /* --- BACKDROP EFFECTS --- */
+  --backdrop-opacity: 0.45;
+  --main-content-padding-top: calc(var(--mobile-nav-height) * var(--golden-ratio));
+
+  /* --- MOBILE SIZING --- */
+  --mobile-breakpoint: calc(var(--spacing-xxl) * 25.6); /* 768px equivalent */
+  --mobile-breakpoint-large: calc(var(--mobile-breakpoint) + var(--border-width)); /* 769px */
   --mobile-nav-height: calc(100vh / var(--magic-number));
   --mobile-nav-z-index: 1001;
   --mobile-nav-backdrop-z-index: 1000;
   --mobile-nav-width: calc(100vw * var(--magic-62));
-  --mobile-nav-animation-duration: 0.3s;
+  --mobile-nav-max-width: calc(var(--spacing-xxl) * 13.33); /* 400px equivalent */
+  --mobile-nav-animation-duration: var(--transition-normal);
   --hamburger-container-width: var(--mobile-nav-height);
   --hamburger-size: calc(var(--hamburger-container-width) * var(--magic-62));
   --hamburger-line-height: calc(var(--hamburger-size) / var(--magic-number));
-  --brand-font-size: 2rem;
+  --brand-font-size: calc(1rem * var(--octave));
+
+  /* --- ANIMATION & TRANSITION --- */
+  --transition-fast: calc(var(--major-third) / 10 * 1s); /* ~0.15s */
+  --transition-normal: calc(var(--major-fifth) / 5 * 1s); /* ~0.3s */
+  --transition-slow: calc(var(--major-fifth) / 3 * 1s); /* ~0.5s */
+  --animation-easing: ease;
+  --animation-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+  /* --- Z-INDEX SCALE --- */
+  --z-index-base: 1;
+  --z-index-dropdown: 100;
+  --z-index-sticky: 500;
+  --z-index-fixed: 600;
+  --z-index-modal-backdrop: var(--mobile-nav-backdrop-z-index);
+  --z-index-modal: var(--mobile-nav-z-index);
+  --z-index-popover: 1100;
+  --z-index-tooltip: 1200;
+
+  /* --- LAYOUT RATIOS --- */
+  --ratio-2-1: 2fr 1fr;
+  --ratio-3-1: 3fr 1fr;
+  --ratio-1-1-1: 1fr 1fr 1fr;
+  --ratio-golden: var(--golden-ratio)fr 1fr;
+  --dashboard-columns: calc(var(--spacing-xxl) * 6.67) 2fr 1fr calc(var(--spacing-xxl) * 6.67); /* 200px 2fr 1fr 200px equivalent */
+
+  /* --- MOBILE TEXT SIZES --- */
+  --font-size-mobile-sm: calc(var(--font-size-xs) * 1.1);
+  --font-size-mobile-xs: calc(var(--font-size-xs) * 0.9);
+
+  /* --- GRID BREAKPOINTS --- */
+  --grid-mobile-min-size: calc(var(--spacing-xxl) * 5); /* 150px equivalent */
+  --grid-mobile-large-min-size: calc(var(--spacing-xxl) * 6.67); /* 200px equivalent */
 }

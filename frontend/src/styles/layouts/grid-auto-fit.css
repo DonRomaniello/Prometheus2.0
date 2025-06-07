@@ -7,5 +7,5 @@
 }
 
 .grid-auto-fit.mobile {
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(calc(var(--spacing-xxl) * 6.67), 1fr)); /* 200px equivalent */
 }
