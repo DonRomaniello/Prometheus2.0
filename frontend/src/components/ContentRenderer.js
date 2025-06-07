@@ -2,6 +2,8 @@ import React, { useRef } from 'react';
 import ReactMarkdown from 'react-markdown';
 import { useMarkdownContent } from '../hooks/useMarkdownContent';
 import { useFillPeopleGrid } from '../hooks/useFillPeopleGrid';
+import { useExpandableGrid } from '../hooks/useExpandableGrid';
+import { useContentBodyClass } from '../hooks/useContentBodyClass';
 import useIsMobile from '../hooks/useIsMobile';
 import '../styles/layouts/content-renderer.css';
 import '../styles/layouts/people.css';
@@ -18,6 +20,8 @@ const ContentRenderer = ({ contentFile, content }) => {
     fillerContent: Array.isArray(fillerContent) ? fillerContent : [],
   });
   const { isMobile, isSmallMobile } = useIsMobile(768);
+  const { expandedIdx, toggleExpanded, isExpanded } = useExpandableGrid(people?.length);
+  const contentBodyClass = useContentBodyClass(layout, isMobile, isSmallMobile);
 
   // If content is provided directly, use it instead of loading from file
   if (content) {
@@ -44,16 +48,6 @@ const ContentRenderer = ({ contentFile, content }) => {
     );
   }
 
-  // Compose className for content-body
-  let contentBodyClass = 'content-body';
-  if (isPeopleGrid) {
-    if (isSmallMobile) {
-      contentBodyClass += ' small-mobile';
-    } else if (isMobile) {
-      contentBodyClass += ' mobile';
-    }
-  }
-
   return (
     <div className={`container ${layout}`}>
       {firstHeader && (
@@ -68,14 +62,17 @@ const ContentRenderer = ({ contentFile, content }) => {
         {isPeopleGrid ? (
           <>
             {Array.isArray(people) && people.map((person, idx) => (
-              <div className="person-card" key={person.name + idx}>
-                <img src={person.image} alt={person.name} className="person-image" />
-                {/* <div className="person-info">
-                  <div className="person-name">{person.name}</div>
-                  <div className="person-bio">
-                    <ReactMarkdown>{person.bio}</ReactMarkdown>
-                  </div>
-                </div> */}
+              <div
+                className={`person-card${isExpanded(idx) ? ' expanded' : ''}`}
+                key={person.name + idx}
+                onClick={() => toggleExpanded(idx)}
+                style={{ cursor: 'pointer' }}
+              >
+                <img
+                  src={person.image}
+                  alt={person.name}
+                  className={`person-image${isExpanded(idx) ? ' expanded' : ''}`}
+                />
               </div>
             ))}
             {Array.isArray(fillerContent) && fillerContent.length > 0 && fillerNeeded > 0 &&
