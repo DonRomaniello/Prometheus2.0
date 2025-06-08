@@ -81,6 +81,9 @@ export const useExpandableGrid = (items = [], gridRef = null, initialExpandedSlu
         // Scroll after a delay to ensure DOM is ready
         setTimeout(() => scrollToExpandedItem(), 100);
       }
+    } else if (!initialExpandedSlug) {
+      // If no slug is provided, ensure we collapse any expanded person
+      setExpandedIdx(null);
     }
   }, [initialExpandedSlug, items, moveToFirst, scrollToExpandedItem]);
 
