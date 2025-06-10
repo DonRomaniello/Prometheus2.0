@@ -105,10 +105,27 @@
   --container-max-width: 100vh;
 
   /* --- PEOPLE GRID --- */
-  --people-image-size: 28vh;
-  --people-grid-gap: var(--spacing-xl);
   --people-image-hover-transform: translateY(calc(var(--border-width) * -2));
   --people-image-hover-shadow: 0 calc(var(--border-width) * 4) calc(var(--border-width) * 12) rgba(0, 0, 0, 0.1);
+  
+  /* Grid fundamentals */
+  --people-grid-container-width: 100vh;  /* Container width = viewport height */
+  --people-grid-columns: 3;              /* Always exactly 3 columns */
+  
+  /* Calculate cell size: container ÷ columns = 1/3 each */
+  --people-cell-size: calc(var(--people-grid-container-width) / var(--people-grid-columns));
+  /* Result: 100vh ÷ 3 = 33.33vh per cell */
+  
+  /* Image takes 90% of cell, leaving 5% white space on each side */
+  --people-image-size: calc(var(--people-cell-size) * 0.9);
+  /* Result: 33.33vh × 0.9 = 30vh image with 1.67vh (5%) padding on each side */
+  
+  /* Gap between cells (can be 0 since padding provides spacing) */
+  --people-grid-gap: 0;
+  
+  /* Expansion calculations */
+  --people-expanded-size: calc(var(--people-cell-size) * 3);
+
 
   /* --- CONTENT BODY --- */
   --content-body-min-height: calc(61.8vh); /* Golden ratio based */

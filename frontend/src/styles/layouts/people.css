@@ -6,11 +6,14 @@
 
 .people-grid .content-body {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(var(--people-image-size), 1fr));
+  /* Force exactly 3 columns, each 1/3 of container */
+  grid-template-columns: repeat(3, var(--people-cell-size));
+  grid-template-rows: auto;
   gap: var(--people-grid-gap);
+  width: var(--people-grid-container-width);
+  margin: 0 auto;
   justify-items: center;
   align-items: start;
-  margin: var(--spacing-lg) 0;
   border-left: none;
   position: relative;
 }
@@ -20,23 +23,47 @@
   display: contents;
 }
 
-.person-square {
+.person-card {
+  width: var(--people-cell-size);
+  height: var(--people-cell-size);
+  position: relative;
+  z-index: 1;
+  cursor: pointer;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
-  min-width: var(--people-image-size);
-  max-width: 100vw;
-  width: 100%;
-  box-sizing: border-box;
+  justify-content: center;
 }
 
-.person-square img {
+.person-image {
   width: var(--people-image-size);
   height: var(--people-image-size);
   object-fit: cover;
   background: var(--color-gray-300);
   display: block;
+}
+
+/* Expansion */
+.person-card.expanded {
+  grid-column: span 3;
+  grid-row: span 3;
+  width: var(--people-expanded-size);
+  height: var(--people-expanded-size);
+  z-index: 10;
+  background: var(--color-light);
+  box-shadow: var(--shadow-lg);
+  padding: calc(var(--people-cell-size) * 0.05); /* 5% padding */
+  border-radius: var(--border-radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.person-image.expanded {
+  width: calc(var(--people-expanded-size) * 0.8);
+  height: calc(var(--people-expanded-size) * 0.8);
+  max-width: calc(var(--people-expanded-size) * 0.8);
+  max-height: calc(var(--people-expanded-size) * 0.8);
+  object-fit: cover;
 }
 
 /* Filler content styling */
@@ -168,49 +195,6 @@
   margin-top: var(--spacing-md);
   font-size: var(--font-size-sm);
   color: var(--color-gray-700);
-}
-
-/* Person card styling */
-.person-card {
-  width: var(--people-image-size);
-  height: var(--people-image-size);
-  position: relative;
-  z-index: 1;
-  cursor: pointer;
-}
-
-.person-card.expanded {
-  /* Take up 3x3 grid cells with smooth scaling */
-  grid-column: span 3;
-  grid-row: span 3;
-  width: calc(var(--people-image-size) * 3 + var(--people-grid-gap) * 2);
-  height: calc(var(--people-image-size) * 3 + var(--people-grid-gap) * 2);
-  z-index: 10;
-  background: var(--color-light);
-  box-shadow: var(--shadow-lg);
-  padding: var(--spacing-md);
-  border-radius: var(--border-radius);
-  /* Add flexbox to center the image */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.person-image {
-  width: var(--people-image-size);
-  height: var(--people-image-size);
-  object-fit: cover;
-  background: var(--color-gray-300);
-  display: block;
-}
-
-.person-image.expanded {
-  /* Make image fill most of the expanded card, centered */
-  width: calc(100% - var(--spacing-md) * 2);
-  height: calc(100% - var(--spacing-md) * 2);
-  max-width: calc(var(--people-image-size) * 2.5);
-  max-height: calc(var(--people-image-size) * 2.5);
-  object-fit: cover;
 }
 
 /* Remove fade effect for other cards */
