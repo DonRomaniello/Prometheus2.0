@@ -18,11 +18,6 @@
   position: relative;
 }
 
-.people-grid .content-body p {
-  margin: 0;
-  display: contents;
-}
-
 .person-card {
   width: var(--people-cell-size);
   height: var(--people-cell-size);
@@ -40,6 +35,7 @@
   object-fit: cover;
   background: var(--color-gray-300);
   display: block;
+  flex-shrink: 0; /* Prevent flex shrinking */
 }
 
 /* Expansion */
