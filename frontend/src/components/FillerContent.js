@@ -1,7 +1,7 @@
 import React from 'react';
 
 /**
- * FillerContent renders a person-square filler for the people grid.
+ * FillerContent renders a filler card for the people grid.
  * @param {object} props
  * @param {object} props.filler - The filler object (quote/attribution or text)
  * @param {number} props.idx - The index for animation delay

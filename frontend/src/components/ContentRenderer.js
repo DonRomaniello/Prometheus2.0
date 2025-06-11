@@ -10,9 +10,6 @@ import {
 } from '../hooks';
 import '../styles/layouts/content-renderer.css';
 import '../styles/layouts/people.css';
-import '../styles/layouts/layout-two-column.css';
-import '../styles/layouts/layout-three-equal.css';
-import '../styles/layouts/grid-auto-fit.css';
 import { FillerContent } from './';
 
 const ContentRenderer = ({ contentFile, content, initialExpandedSlug = null, onPersonExpand = null }) => {

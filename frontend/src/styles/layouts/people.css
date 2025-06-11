@@ -1,19 +1,13 @@
-/* People grid layout: responsive, max 3 columns, always square */.filler-quote blockquote {
-  margin: 0 0 var(--spacing-xs) 0;
-  font-size: var(--font-size-sm);
-  line-height: var(--line-height-tight);
-}
-
 .people-grid .content-body {
   display: grid;
   /* Force exactly 3 columns, each 1/3 of container */
   grid-template-columns: repeat(3, var(--people-cell-size));
   grid-template-rows: auto;
   gap: var(--people-grid-gap);
-  width: var(--people-grid-container-width);
+  width: var(--people-grid-container-max-width);
   margin: 0 auto;
   justify-items: center;
-  align-items: start;
+  align-items: center;
   border-left: none;
   position: relative;
 }
@@ -122,9 +116,7 @@
 
 /* Mobile optimizations for people grid */
 .people-grid .content-body.mobile img,
-.people-grid .content-body.mobile .person-square,
-.people-grid .content-body.small-mobile img,
-.people-grid .content-body.small-mobile .person-square {
+.people-grid .content-body.small-mobile img {
   width: var(--people-image-size);
   height: var(--people-image-size);
   max-width: 100vw;
@@ -154,46 +146,12 @@
 .filler-content[data-idx="9"] { animation-delay: 0.9s; }
 /* Add more if needed for larger grids */
 
-.person-expanded .person-square {
-  z-index: 1;
-  filter: blur(2px) grayscale(0.5) brightness(0.8);
-  opacity: 0.5;
-  pointer-events: none;
-}
-.person-square.expanded {
-  z-index: 10;
-  filter: none;
-  opacity: 1;
-  pointer-events: auto;
-  width: 100% !important;
-  max-width: 100vw;
-  height: auto;
-  min-height: calc(var(--people-image-size) * 1.5);
-  box-shadow: var(--shadow-lg);
-  background: var(--color-light);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-}
-.person-expanded .person-square.expanded {
-  filter: none;
-  opacity: 1;
-  pointer-events: auto;
-}
-.person-square .person-bio {
-  display: none;
-}
-
-.person-square.expanded .person-bio {
-  display: block;
-  margin-top: var(--spacing-md);
-  font-size: var(--font-size-sm);
-  color: var(--color-gray-700);
-}
-
 /* Remove fade effect for other cards */
 .people-grid .content-body:has(.person-card.expanded) .person-card:not(.expanded) {
   opacity: 0.3;
+}
+
+
+.container.content-renderer.people-grid .content-body {
+    padding: 0 !important;
 }
