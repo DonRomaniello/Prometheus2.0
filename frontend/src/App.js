@@ -1,6 +1,3 @@
-import './styles/user_agent_zero.css';
-import './styles/variables.css';
-import './styles/global.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import {
   About,

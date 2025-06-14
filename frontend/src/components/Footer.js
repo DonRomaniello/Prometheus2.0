@@ -2,7 +2,6 @@ import { Link } from 'react-router-dom';
 import { useScrollFooter } from '../hooks/useViewportHover';
 import { useState, useEffect } from 'react';
 import useIsMobile from '../hooks/useIsMobile';
-import '../styles/components/footer.css';
 
 /**
  * Footer component with responsive and scroll-aware behavior.
