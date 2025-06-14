@@ -110,7 +110,7 @@ const Footer = () => {
         style={{ height: `${spacerHeight}px` }}
       />
       
-      <footer>
+      <footer className={`${isVisible ? 'footer-visible' : 'footer-hidden'}`}>
         <div>
           {/* Top row with navigation links */}
           <div>

@@ -1,0 +1,6 @@
+/* CSS Barrel File - Import all styles */
+@import './variables.css';
+@import './global.css';
+@import './components/navigation.css';
+@import './components/footer.css';
+@import './layouts/grid.css';

@@ -1,0 +1,35 @@
+/* Footer - minimal bar with hide/show */
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: var(--footer-height);
+  background: white;
+  border-top: 1px solid #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+  z-index: 1000;
+}
+
+/* Hook-controlled visibility */
+footer.footer-hidden {
+  transform: translateY(100%);
+}
+
+footer.footer-visible {
+  transform: translateY(0);
+}
+
+/* Basic footer layout */
+footer ul {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+footer a {
+  text-decoration: none;
+}

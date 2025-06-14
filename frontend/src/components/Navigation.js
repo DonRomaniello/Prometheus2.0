@@ -43,18 +43,20 @@ const Navigation = () => {
 
   return (
     <nav
+      className={`navigation ${isVisible ? 'nav-visible' : 'nav-hidden'}`}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
       <div>
         {isMobile ? (
           <>
-            <div>
+            <div className="nav-mobile-header">
               <Link to="/" onClick={handleLinkClick}>
                 Prometheus Studios
               </Link>
               <div>
               <button
+                className="nav-hamburger"
                 onClick={toggleNav}
                 aria-label="Toggle navigation menu"
               >
@@ -64,8 +66,8 @@ const Navigation = () => {
               </button>
               </div>
             </div>
-            {isOpen && <div onClick={closeNav}></div>}
-            <div>
+            {isOpen && <div className="nav-overlay" onClick={closeNav}></div>}
+            <div className="nav-mobile-menu">
               <ul>
                 <li><Link to="/" onClick={handleLinkClick}>Home</Link></li>
                 <li><Link to="/about" onClick={handleLinkClick}>About</Link></li>

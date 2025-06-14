@@ -1,0 +1,73 @@
+/* Main layout */
+main {
+  margin-top: 50px; /* Account for fixed nav */
+  margin-bottom: 50px; /* Account for fixed footer */
+  min-height: calc(100vh - 100px);
+}
+
+/* People grid */
+.people-grid .content-body {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  place-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.person-card {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.person-image {
+  width: 90%;
+  height: 90%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Person expansion */
+.person-card.expanded {
+  grid-column: span 3;
+  grid-row: span 3;
+  z-index: 10;
+  background: white;
+}
+
+.person-image.expanded {
+  width: 80%;
+  height: 80%;
+}
+
+/* Filler content */
+.filler-content {
+  width: 90%;
+  height: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Content centering */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.content-header {
+  text-align: center;
+}
+
+.content-body {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

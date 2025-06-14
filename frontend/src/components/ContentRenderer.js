@@ -30,8 +30,8 @@ const ContentRenderer = ({ contentFile, content, initialExpandedSlug = null, onP
   // If content is provided directly, use it instead of loading from file
   if (content) {
     return (
-      <div>
-        <div>
+      <div className="container">
+        <div className="content-body">
           <ReactMarkdown>{content}</ReactMarkdown>
         </div>
       </div>
@@ -53,19 +53,21 @@ const ContentRenderer = ({ contentFile, content, initialExpandedSlug = null, onP
   }
 
   return (
-    <div>
+    <div className={`container ${isPeopleGrid ? 'people-grid' : ''}`}>
       {displayTitle && (
         <div>
           <ReactMarkdown>{displayTitle}</ReactMarkdown>
         </div>
       )}
       <div
+        className="content-body"
         ref={isPeopleGrid ? gridRef : contentBodyRef}
       >
         {isPeopleGrid ? (
           <>
             {Array.isArray(orderedItems) && orderedItems.map((person, idx) => (
               <div
+                className={`person-card${isExpanded(idx) ? ' expanded' : ''}`}
                 key={person.name + idx}
                 onClick={() => toggleExpanded(idx)}
                 style={{ cursor: 'pointer' }}
@@ -73,6 +75,7 @@ const ContentRenderer = ({ contentFile, content, initialExpandedSlug = null, onP
                 <img
                   src={person.image}
                   alt={person.name}
+                  className={`person-image${isExpanded(idx) ? ' expanded' : ''}`}
                 />
               </div>
             ))}

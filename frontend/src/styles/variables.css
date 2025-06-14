@@ -1,0 +1,6 @@
+/* Minimal CSS variables */
+:root {
+  /* Only layout-related variables */
+  --nav-height: 60px;
+  --footer-height: 60px;
+}
