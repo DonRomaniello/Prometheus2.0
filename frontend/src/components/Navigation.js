@@ -43,32 +43,30 @@ const Navigation = () => {
 
   return (
     <nav
-      className={`navigation floating-nav ${isVisible ? 'nav-visible' : 'nav-hidden'}`}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
       <div>
         {isMobile ? (
           <>
-            <div className="mobile-nav-header">
-              <Link to="/" className="brand-logo" onClick={handleLinkClick}>
+            <div>
+              <Link to="/" onClick={handleLinkClick}>
                 Prometheus Studios
               </Link>
-              <div className="hamburger-container">
+              <div>
               <button
-                className={`hamburger-button${isOpen ? ' open' : ''}`}
                 onClick={toggleNav}
                 aria-label="Toggle navigation menu"
               >
-                <span className="hamburger-line"></span>
-                <span className="hamburger-line"></span>
-                <span className="hamburger-line"></span>
+                <span></span>
+                <span></span>
+                <span></span>
               </button>
               </div>
             </div>
-            {isOpen && <div className="mobile-nav-backdrop" onClick={closeNav}></div>}
-            <div className={`mobile-nav${isOpen ? ' open' : ''}`}>
-              <ul className="mobile-nav-links">
+            {isOpen && <div onClick={closeNav}></div>}
+            <div>
+              <ul>
                 <li><Link to="/" onClick={handleLinkClick}>Home</Link></li>
                 <li><Link to="/about" onClick={handleLinkClick}>About</Link></li>
                 <li><Link to="/courses" onClick={handleLinkClick}>Courses</Link></li>

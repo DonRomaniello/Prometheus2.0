@@ -70,32 +70,32 @@ const Footer = () => {
   // Only animate on desktop, inline on mobile
   if (isMobile) {
     return (
-      <footer className={`footer mobile${isSmallMobile ? ' small-mobile' : ''}`}>
-        <div className="footer-content">
-          <div className="footer-top-row">
-            <nav className="footer-nav">
-              <ul className={`footer-links mobile${isSmallMobile ? ' small-mobile' : ''}`}>
+      <footer>
+        <div>
+          <div>
+            <nav>
+              <ul>
                 <li>
-                  <Link to="/contact" className={`footer-link mobile${isSmallMobile ? ' small-mobile' : ''}`}>Contact</Link>
+                  <Link to="/contact">Contact</Link>
                 </li>
                 <li>
-                  <Link to="/privacy" className={`footer-link mobile${isSmallMobile ? ' small-mobile' : ''}`}>Privacy</Link>
+                  <Link to="/privacy">Privacy</Link>
                 </li>
                 <li>
-                  <Link to="/terms" className={`footer-link mobile${isSmallMobile ? ' small-mobile' : ''}`}>Terms of Service</Link>
+                  <Link to="/terms">Terms of Service</Link>
                 </li>
                 <li>
-                  <Link to="/faq" className={`footer-link mobile${isSmallMobile ? ' small-mobile' : ''}`}>FAQ</Link>
+                  <Link to="/faq">FAQ</Link>
                 </li>
                 <li>
-                  <Link to="/testimonials" className={`footer-link mobile${isSmallMobile ? ' small-mobile' : ''}`}>Testimonials</Link>
+                  <Link to="/testimonials">Testimonials</Link>
                 </li>
               </ul>
             </nav>
           </div>
           
           {/* Bottom row - can be used for additional content */}
-          <div className="footer-bottom-row">
+          <div>
             {/* This row is available for future content */}
           </div>
         </div>
@@ -107,38 +107,37 @@ const Footer = () => {
     <>
       {/* Dynamic spacer to ensure there's always enough content to scroll */}
       <div 
-        className="footer-scroll-spacer" 
         style={{ height: `${spacerHeight}px` }}
       />
       
-      <footer className={`footer ${isVisible ? 'footer-visible' : 'footer-hidden'}`}>
-        <div className="footer-content">
+      <footer>
+        <div>
           {/* Top row with navigation links */}
-          <div className="footer-top-row">
-            <nav className="footer-nav">
-              <ul className="footer-links">
+          <div>
+            <nav>
+              <ul>
                 <li>
-                  <Link to="/contact" className="footer-link">
+                  <Link to="/contact">
                     Contact
                   </Link>
                 </li>
                 <li>
-                  <Link to="/privacy" className="footer-link">
+                  <Link to="/privacy">
                     Privacy
                   </Link>
                 </li>
                 <li>
-                  <Link to="/terms" className="footer-link">
+                  <Link to="/terms">
                     Terms of Service
                   </Link>
                 </li>
                 <li>
-                  <Link to="/faq" className="footer-link">
+                  <Link to="/faq">
                     FAQ
                   </Link>
                 </li>
                 <li>
-                  <Link to="/testimonials" className="footer-link">
+                  <Link to="/testimonials">
                     Testimonials
                   </Link>
                 </li>
@@ -147,7 +146,7 @@ const Footer = () => {
           </div>
           
           {/* Bottom row - can be used for additional content */}
-          <div className="footer-bottom-row">
+          <div>
             {/* This row is available for future content */}
           </div>
         </div>

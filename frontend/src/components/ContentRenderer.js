@@ -4,7 +4,6 @@ import {
   useMarkdownContent,
   useFillPeopleGrid,
   useExpandableGrid,
-  useContentBodyClass,
   useDynamicTitle,
   useIsMobile
 } from '../hooks';
@@ -24,7 +23,6 @@ const ContentRenderer = ({ contentFile, content, initialExpandedSlug = null, onP
     initialExpandedSlug, 
     onPersonExpand
   );
-  const contentBodyClass = useContentBodyClass(layout, isMobile, isSmallMobile);
   
   // Use dynamic title - show person name when expanded, otherwise show default header
   const displayTitle = useDynamicTitle(firstHeader, expandedItem);
@@ -32,8 +30,8 @@ const ContentRenderer = ({ contentFile, content, initialExpandedSlug = null, onP
   // If content is provided directly, use it instead of loading from file
   if (content) {
     return (
-      <div className="container content-renderer">
-        <div className="content-body">
+      <div>
+        <div>
           <ReactMarkdown>{content}</ReactMarkdown>
         </div>
       </div>
@@ -41,12 +39,12 @@ const ContentRenderer = ({ contentFile, content, initialExpandedSlug = null, onP
   }
 
   if (loading) {
-    return <div className="content-loading">Loading content...</div>;
+    return <div>Loading content...</div>;
   }
 
   if (error) {
     return (
-      <div className="content-error">
+      <div>
         <h2>Content Not Found</h2>
         <p>{error}</p>
         <p>Please check that the markdown file exists in the content directory.</p>
@@ -55,21 +53,19 @@ const ContentRenderer = ({ contentFile, content, initialExpandedSlug = null, onP
   }
 
   return (
-    <div className={`container ${layout}`}>
+    <div>
       {displayTitle && (
-        <div className={`content-header ${isPeopleGrid ? 'people-header' : ''}`}>
+        <div>
           <ReactMarkdown>{displayTitle}</ReactMarkdown>
         </div>
       )}
       <div
-        className={contentBodyClass}
         ref={isPeopleGrid ? gridRef : contentBodyRef}
       >
         {isPeopleGrid ? (
           <>
             {Array.isArray(orderedItems) && orderedItems.map((person, idx) => (
               <div
-                className={`person-card${isExpanded(idx) ? ' expanded' : ''}`}
                 key={person.name + idx}
                 onClick={() => toggleExpanded(idx)}
                 style={{ cursor: 'pointer' }}
@@ -77,7 +73,6 @@ const ContentRenderer = ({ contentFile, content, initialExpandedSlug = null, onP
                 <img
                   src={person.image}
                   alt={person.name}
-                  className={`person-image${isExpanded(idx) ? ' expanded' : ''}`}
                 />
               </div>
             ))}

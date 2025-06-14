@@ -15,7 +15,7 @@ import { Navigation, Footer } from './components';
 function App() {
   return (
     <Router>
-      <div className="min-h-screen bg-primary">
+      <div>
         <Navigation />
         <main>
           <Routes>

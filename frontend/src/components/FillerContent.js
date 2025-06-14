@@ -7,20 +7,19 @@ import React from 'react';
  * @param {number} props.idx - The index for animation delay
  */
 const FillerContent = ({ filler, idx }) => (
-  <div className="person-card">
+  <div>
     <div 
-      className="filler-content"
       data-idx={idx}
     >
       {filler.quote && filler.attribution ? (
-        <div className="filler-quote">
+        <div>
           <blockquote>"{filler.quote}"</blockquote>
           <cite>&mdash; {filler.attribution}</cite>
         </div>
       ) : filler.text ? (
-        <div className="filler-text">{filler.text}</div>
+        <div>{filler.text}</div>
       ) : (
-        <div className="filler-empty"></div>
+        <div></div>
       )}
     </div>
   </div>
