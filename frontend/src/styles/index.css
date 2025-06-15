@@ -1,0 +1,22 @@
+/*
+ * index.css
+ * Barrel file for all CSS imports.
+ * This file imports all global, variable, reset, layout, and component styles.
+ * Adjust the import paths below to match your current directory structure.
+ */
+
+@import './user_agent_zero.css';
+@import './variables.css';
+@import './global.css';
+
+/* --- Layout Styles --- */
+@import './layouts/people.css';
+@import './layouts/grid-auto-fit.css';
+@import './layouts/layout-two-column.css';
+@import './layouts/layout-three-equal.css';
+@import './layouts/layout.css';
+
+/* --- Component Styles --- */
+@import './components/content-renderer.css';
+@import './components/footer.css';
+@import './components/navigation.css';

@@ -2,7 +2,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { useScrollVisibility } from '../hooks/useScrollVisibility';
 import useIsMobile from '../hooks/useIsMobile';
 import { useState, useEffect } from 'react';
-import '../styles/components/navigation.css';
+import '../styles/index.css';
 
 /**
  * Navigation component with responsive and scroll-aware behavior.

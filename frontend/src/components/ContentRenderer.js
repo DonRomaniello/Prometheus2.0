@@ -8,8 +8,7 @@ import {
   useDynamicTitle,
   useIsMobile
 } from '../hooks';
-import '../styles/layouts/content-renderer.css';
-import '../styles/layouts/people.css';
+import '../styles/index.css';
 import { FillerContent } from './';
 
 const ContentRenderer = ({ contentFile, content, initialExpandedSlug = null, onPersonExpand = null }) => {
