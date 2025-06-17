@@ -10,6 +10,13 @@ import '../styles/components/navigation.css';
  */
 const Navigation = () => {
   const location = useLocation();
+
+  const navLinks = [
+    { path: '/about', label: 'About' },
+    { path: '/courses', label: 'Courses' },
+    { path: '/', label: 'Home' },
+    { path: '/the_studio', label: 'The Studio' }
+  ];
   
   // Check if we're on a person's expanded page (e.g., /the_studio/person-1)
   const isPersonExpanded = location.pathname.startsWith('/the_studio/') && 
@@ -70,19 +77,24 @@ const Navigation = () => {
             {isOpen && <div className="mobile-nav-backdrop" onClick={closeNav}></div>}
             <div className={`mobile-nav${isOpen ? ' open' : ''}`}>
               <ul className="mobile-nav-links">
-                <li><Link to="/" onClick={handleLinkClick}>Home</Link></li>
-                <li><Link to="/about" onClick={handleLinkClick}>About</Link></li>
-                <li><Link to="/courses" onClick={handleLinkClick}>Courses</Link></li>
-                <li><Link to="/the_studio" onClick={handleLinkClick}>The Studio</Link></li>
+                {navLinks.map(({ path, label }) => (
+                  <li key={path}>
+                    <Link to={path} onClick={handleLinkClick}>{label}</Link>
+                  </li>
+                ))}
               </ul>
             </div>
           </>
         ) : (
           <ul>
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="/about">About</Link></li>
-            <li><Link to="/courses">Courses</Link></li>
-            <li><Link to="/the_studio">The Studio</Link></li>
+            {navLinks.map(({ path, label }) => (
+              <li key={path}>
+                <Link 
+                  to={path}>
+                  {label}
+                  </Link>
+              </li>
+            ))}
           </ul>
         )}
       </div>

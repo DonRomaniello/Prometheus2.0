@@ -31,6 +31,7 @@
   list-style: none;
   margin: 0;
   padding: 0;
+  width: 100%;
   display: flex;
   justify-content: center;
 }
@@ -47,6 +48,7 @@
   height: 100%;
   transition: all var(--transition-normal) var(--animation-easing);
   display: block;
+  text-align: center;
 }
 
 .navigation a:hover {
