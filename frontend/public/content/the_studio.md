@@ -16,7 +16,7 @@
 # The Studio
 
 ![Person 1](/img/headshot.png)
-## Person 1
+## David Schwartz
 
 Person 1 is a visual artist specializing in collages
 
