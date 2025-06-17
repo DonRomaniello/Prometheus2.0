@@ -109,7 +109,7 @@
   --people-image-hover-shadow: 0 calc(var(--border-width) * 4) calc(var(--border-width) * 12) rgba(0, 0, 0, 0.1);
   
   /* Grid fundamentals */
-  --people-grid-container-width: 100vh;  /* Container width = smaller of viewport height or width */
+  --people-grid-container-width: var(--container-max-width);  /* Container width = smaller of viewport height or width */
   --people-grid-columns: 3;              /* Always exactly 3 columns */
   
   /* Calculate cell size: container ÷ columns = 1/3 each */
@@ -117,7 +117,7 @@
   /* Result: 100vh ÷ 3 = 33.33vh per cell */
   
   /* Image takes 90% of cell, leaving 5% white space on each side */
-  --people-image-size: calc(var(--people-cell-size) - (3 * var(--grid-gap)));
+  --people-image-size: 90%;
   /* Result: 33.33vh × 0.9 = 30vh image with 1.67vh (5%) padding on each side */
   
   /* Gap between cells (can be 0 since padding provides spacing) */
@@ -139,7 +139,7 @@
 
   /* --- BACKDROP EFFECTS --- */
   --backdrop-opacity: 0.45;
-  --main-content-padding-top: calc(var(--mobile-nav-height) * var(--golden-ratio));
+  --main-content-padding-top: calc(1rem * var(--octave) * var(--major-fifth)); /* 1.618rem for main content padding */
 
   /* --- MOBILE SIZING --- */
   --mobile-breakpoint: calc(var(--spacing-xxl) * 25.6); /* 768px equivalent */
