@@ -12,6 +12,13 @@
   position: relative;
 }
 
+.people-grid .content-header {
+  text-align: center;
+  justify-content: center;
+  margin-bottom: var(--spacing-lg);
+  font-size: 60pt;
+}
+
 .person-card {
   width: var(--people-cell-size);
   height: var(--people-cell-size);

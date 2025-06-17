@@ -65,11 +65,11 @@ export function useMarkdownContent(contentFile) {
         const headerMatch = contentWithoutJsonBlock.match(/^(#{1,3})\s+(.+)$/m);
         if (headerMatch) {
           const [fullMatch, hashes, headerText] = headerMatch;
-          setFirstHeader(`${hashes} ${headerText}`);
-          setRemainingContent(contentWithoutJsonBlock.replace(fullMatch, '').trim());
+          setFirstHeader(`${hashes} ${headerText.trim()}`); // Add .trim() here
+          setRemainingContent(contentWithoutJsonBlock.replace(fullMatch, '').trim()); // Add .trim() here
         } else {
           setFirstHeader('');
-          setRemainingContent(contentWithoutJsonBlock);
+          setRemainingContent(contentWithoutJsonBlock.trim()); // Add .trim() here
         }
         
         if (isPeopleGrid) {
