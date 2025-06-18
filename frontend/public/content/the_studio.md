@@ -15,33 +15,32 @@
 ```
 # The Studio
 
-![Person 1](/img/headshot.png)
+![David Schwartz](/img/DavidSchwartz.webp)
 ## David Schwartz
 
-Person 1 is a visual artist specializing in collages
+David Schwartz lost his virginity during Jimmy Carter’s presidency and never found it again. A Baltimore native, he now calls Newburgh his home. By day, he is an instructional designer, developing online education in healthcare. He’s been doing improv for about 15 years, and lives with his wife, 3 cats and a dog, almost all of whom shed copiously. If you must know, he prefers driving stick.
 
-They routinely perform, etc.
-![Person 2](/img/headshot_hue_30.png)
-## Person 2
+![Lily Labe](/img/LilyLabe.webp)
+## Lily Labe
 
-Person 2 lorem ipsum.
-![Person 3](/img/headshot_hue_60.png)
-## Person 3
+Lily Labe is a performing artist based in the Hudson Valley.  She is passionate about snacks.
 
-Person 3 lorem ipsum.
-![Person 4](/img/headshot_hue_90.png)
-## Person 4
+![Alec Vanacore](/img/AlecVanacore.webp)
+## Alec Vanacore
 
-Person 4 lorem ipsum.
-![Person 5](/img/headshot_hue_120.png)
-## Person 5
+When Alec Vanacore isn’t doing improv, he’s there to listen. He once won a car and lives in Middletown NY.
 
-Person 5 lorem ipsum.
-![Person 6](/img/headshot_hue_150.png)
-## Person 6
+![Amalia Truglio](/img/AmaliaTruglio.webp)
+## Amalia Truglio
 
-Person 6 lorem ipsum.
-![Person 7](/img/headshot_hue_180.png)
-## Person 7
+Amalia Truglio is an improviser from Middletown NY. They are also a semi-professional pinball player in their spare time.
 
-Person 7 lorem ipsum.
+![Jonathan Connolly](/img/JonathanConnolly.webp)
+## Jonathan Connolly
+
+Jonathan Connolly is a Hudson Valley based improviser and actor.
+
+![Maya Gottfried](/img/MayaGottfried.webp)
+## Maya Gottfried
+
+Maya Gottfried has done it all.
