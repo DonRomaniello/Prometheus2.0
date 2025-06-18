@@ -42,6 +42,7 @@ const useIsMobile = (breakpoint = 960) => {
         screenHeight
       };
       
+      
       setIsMobile(mobile);
       setDeviceInfo(newDeviceInfo);
     };

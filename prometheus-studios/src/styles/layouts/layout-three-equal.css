@@ -1,0 +1,12 @@
+/* Three Equal Columns Layout */
+.layout-three-equal {
+  display: grid;
+  grid-template-areas: "left center right";
+  grid-template-columns: var(--ratio-1-1-1);
+  gap: var(--grid-gap);
+}
+
+.layout-three-equal.mobile {
+  grid-template-areas: "left" "center" "right";
+  grid-template-columns: 1fr;
+}

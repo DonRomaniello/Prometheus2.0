@@ -1,0 +1,266 @@
+/* Navigation Component Styles */
+
+/* Navigation */
+.navigation {
+  background: var(--bg-primary);
+  border-bottom: var(--border-width) solid rgba(var(--bg-dark-rgb), 0.1);
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.floating-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0; 
+  z-index: var(--z-index-fixed);
+  padding: 0;
+  transition: transform var(--transition-normal) var(--animation-easing), opacity var(--transition-normal) var(--animation-easing);
+}
+
+.nav-visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.nav-hidden {
+  transform: translateY(calc(-1 * (100% - (.618 * var(--spacing-md)))));
+}
+
+.navigation ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.navigation li {
+  margin: 0;
+}
+
+.navigation a {
+  text-decoration: none;
+  color: var(--text-primary);
+  font-weight: var(--font-weight-medium);
+  padding: var(--spacing-sm) var(--spacing-md);
+  height: 100%;
+  transition: all var(--transition-normal) var(--animation-easing);
+  display: block;
+  text-align: center;
+}
+
+.navigation a:hover {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  transform: var(--hover-transform-up);
+  height: var(--hover-height-compensation); /* Make the element 2.5px taller */
+  box-shadow: var(--hover-shadow);
+}
+
+/* Mobile Navigation Styles */
+.mobile-nav-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: var(--mobile-nav-height);
+  padding: 0;
+  margin: 0;
+}
+
+.brand-logo {
+  font-size: var(--brand-font-size);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: color var(--transition-normal) var(--animation-easing);
+}
+
+.brand-logo:hover {
+  color: var(--color-primary);
+}
+
+.hamburger-container {
+  width: var(--hamburger-container-width);
+  height: var(--hamburger-container-width);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.hamburger-button {
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  display: grid;
+  grid-template-rows: repeat(7, 1fr);
+  width: calc(var(--hamburger-size) * (4301558 / 6180000));
+  height: var(--hamburger-size);
+  aspect-ratio: 1 / 1;
+  padding: 0;
+  position: relative;
+  z-index: calc(var(--mobile-nav-z-index) + 1); /* Ensure it's above the mobile nav */
+  transition: transform var(--mobile-nav-animation-duration) var(--animation-easing);
+}
+
+/* Remove the individual line animations and replace with overall rotation */
+.hamburger-button.open {
+  transform: rotate(-90deg);
+}
+
+/* Reset the individual line transforms */
+.hamburger-button.open .hamburger-line:nth-child(1) {
+  transform: none;
+}
+.hamburger-button.open .hamburger-line:nth-child(2) {
+  opacity: 1; /* Keep all lines visible */
+}
+.hamburger-button.open .hamburger-line:nth-child(3) {
+  transform: none;
+}
+
+.hamburger-line {
+  width: 100%;
+  height: var(--hamburger-line-height);
+  background-color: var(--text-primary);
+  transition: all var(--mobile-nav-animation-duration) var(--animation-easing);
+  display: block;
+  margin: 0;
+}
+
+.hamburger-line:nth-child(1) {
+  grid-row: 2;
+}
+
+.hamburger-line:nth-child(2) {
+  grid-row: 4;
+}
+
+.hamburger-line:nth-child(3) {
+  grid-row: 6;
+}
+
+.mobile-nav {
+  position: fixed;
+  top: 0;
+  right: -100vw;
+  width: var(--mobile-nav-width);
+  max-width: var(--mobile-nav-max-width);
+  height: 100vh;
+  background: var(--bg-primary);
+  z-index: var(--mobile-nav-z-index);
+  transition: right var(--mobile-nav-animation-duration) var(--animation-easing);
+  box-shadow: 0 0 var(--spacing-lg) rgba(0,0,0,0.18);
+  display: flex;
+  flex-direction: column;
+  padding-top: 0;
+}
+.mobile-nav.open {
+  right: 0;
+}
+
+.mobile-nav-header-menu {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 var(--spacing-lg) 0 var(--spacing-lg);
+  border-bottom: var(--border-width) solid var(--border-color);
+  box-sizing: border-box; /* Include border in height calculation */ 
+}
+
+.brand-logo-menu {
+  font-size: var(--brand-font-size);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-primary);
+}
+
+.close-button {
+  background: none;
+  border: none;
+  font-size: var(--font-size-base);
+  cursor: pointer;
+  color: var(--text-secondary);
+  line-height: 1;
+  transition: color var(--transition-normal);
+  height: var(--hamburger-size);
+}
+
+.close-button:hover {
+  color: var(--color-primary);
+}
+
+.mobile-nav-links {
+  list-style: none;
+  margin: 0 !important;
+  padding: 0 !important;
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-nav-links li {
+  margin: 0 !important;
+  padding: 0;
+  height: var(--mobile-nav-height);
+  box-sizing: border-box;
+}
+
+.mobile-nav-links * {
+  margin: 0;
+  padding: 0;
+}
+
+.mobile-nav-links a {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 0 var(--spacing-xl);
+  color: var(--text-primary);
+  text-decoration: none;
+  font-weight: var(--font-weight-medium);
+  border-bottom: var(--border-width) solid rgba(var(--color-primary-rgb), 0.04);
+  box-sizing: border-box;
+  transition: all var(--transition-normal) var(--animation-easing); /* Add transition for smooth animation */
+}
+
+.mobile-nav-links a:hover {
+  background-color: var(--color-primary); /* Change to primary color like desktop */
+  color: var(--color-white); /* Change text to white like desktop */
+  padding-left: calc(var(--spacing-xl) + var(--spacing-sm));
+}
+
+.mobile-nav-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,var(--backdrop-opacity));
+  z-index: var(--mobile-nav-backdrop-z-index);
+  opacity: 0;
+  animation: fadeIn var(--mobile-nav-animation-duration) var(--animation-easing) forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Ensure main content starts below the fixed nav */
+main {
+  padding-top: var(--main-content-padding-top);
+}
+
+/* Responsive Navigation */
+@media (min-width: var(--mobile-breakpoint-large)) {
+  /* Hide mobile navigation elements on desktop */
+  .mobile-nav-header,
+  .mobile-nav,
+  .mobile-nav-backdrop {
+    display: none;
+  }
+}
