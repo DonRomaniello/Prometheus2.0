@@ -1,0 +1,15 @@
+# SPA Redirect Rules for React Router
+# All routes should serve index.html for client-side routing
+
+# Static assets - serve as-is
+/favicon/* /favicon/:splat 200
+/content/* /content/:splat 200
+/img/* /img/:splat 200
+/manifest.json /manifest.json 200
+/robots.txt /robots.txt 200
+
+# API routes (if you have any) - add them here
+# /api/* /api/:splat 200
+
+# All other routes should serve index.html for React Router
+/* /index.html 200

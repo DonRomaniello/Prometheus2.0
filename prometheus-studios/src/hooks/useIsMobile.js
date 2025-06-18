@@ -42,10 +42,6 @@ const useIsMobile = (breakpoint = 960) => {
         screenHeight
       };
       
-      console.log('Mobile Detection:', {
-        isMobile: mobile,
-        ...newDeviceInfo
-      });
       
       setIsMobile(mobile);
       setDeviceInfo(newDeviceInfo);
