@@ -18,7 +18,11 @@
 ![David Schwartz](/img/DavidSchwartz.webp)
 ## David Schwartz
 
-David Schwartz lost his virginity during Jimmy Carter’s presidency and never found it again. A Baltimore native, he now calls Newburgh his home. By day, he is an instructional designer, developing online education in healthcare. He’s been doing improv for about 15 years, and lives with his wife, 3 cats and a dog, almost all of whom shed copiously. If you must know, he prefers driving stick.
+David Schwartz lost his virginity during Jimmy Carter’s presidency and never found it again. A Baltimore native, he now calls Newburgh his home. 
+
+By day, he is an instructional designer, developing online education in healthcare. 
+
+He’s been doing improv for about 15 years, and lives with his wife, 3 cats and a dog, almost all of whom shed copiously. If you must know, he prefers driving stick.
 
 ![Lily Labe](/img/LilyLabe.webp)
 ## Lily Labe
@@ -43,4 +47,6 @@ Jonathan Connolly is a Hudson Valley based improviser and actor.
 ![Maya Gottfried](/img/MayaGottfried.webp)
 ## Maya Gottfried
 
-Maya Gottfried has done it all.
+Maya has written three picture books for children, one lifestyle book for grown-ups, and essays published by Oprah Daily, The Washington Post, STAT, and Oldster. 
+
+Her day job is working in nonprofit communications, but keeping up with her dogs at nosework class is the real challenge.
