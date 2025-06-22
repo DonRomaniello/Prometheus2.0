@@ -10,7 +10,7 @@ import {
 } from '../hooks';
 import '../styles/layouts/content-renderer.css';
 import '../styles/layouts/people.css';
-import { FillerContent } from './';
+import { FillerContent, PersonCard } from './';
 
 const ContentRenderer = ({ contentFile, content, initialExpandedSlug = null, onPersonExpand = null }) => {
   const { layout, firstHeader, remainingContent, loading, error, fillerContent, people } = useMarkdownContent(contentFile);
@@ -70,18 +70,13 @@ const ContentRenderer = ({ contentFile, content, initialExpandedSlug = null, onP
         {isPeopleGrid ? (
           <>
             {Array.isArray(orderedItems) && orderedItems.map((person, idx) => (
-              <div
-                className={`person-card${isExpanded(idx) ? ' expanded' : ''}`}
+              <PersonCard
                 key={person.name + idx}
-                onClick={() => toggleExpanded(idx)}
-                style={{ cursor: 'pointer' }}
-              >
-                <img
-                  src={person.image}
-                  alt={person.name}
-                  className={`person-image${isExpanded(idx) ? ' expanded' : ''}`}
-                />
-              </div>
+                person={person}
+                index={idx}
+                isExpanded={isExpanded(idx)}
+                onToggleExpanded={toggleExpanded}
+              />
             ))}
             {Array.isArray(fillerContent) && fillerContent.length > 0 && fillerNeeded > 0 &&
               fillerContent.slice(0, fillerNeeded).map((filler, idx) => (
