@@ -7,11 +7,18 @@
 ```
 # Courses
 
-## Our Services
+## The Reset
 
-- **Web Development**: Modern React applications
-- **Content Management**: Markdown-powered content systems
-- **Automation**: Scripts that make development easier
+Many approaches to improv are indexed on a different performance medium. Improvised plays, improvised musical theatre, improvised debates, improvised sketch comedy, improvised movies...
+
+Performers trained in these styles often have very specific crystalized skills, which are treated like the gems they are: precious, hard, and important to display.
+
+To help performers from other improvised media prepare for the holistic approach at Prometheus Studios, there is The Reset.
+
+## Solid Foundations
+
+For new students, or for former students of iO or The Magnet that want to begin improvising again.
+
 
 ## How It Works
 
