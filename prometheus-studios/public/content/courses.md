@@ -9,34 +9,33 @@
 
 ## The Reset
 
-Many approaches to improv are indexed on a different performance medium. Improvised plays, improvised musical theatre, improvised debates, improvised sketch comedy, improvised movies...
+To prepare performers with different educational backgrounds for the holistic approach at Prometheus Studios, there is The Reset.
 
-Performers trained in these styles often have very specific crystalized skills, which are treated like the gems they are: precious, hard, and important to display.
+The Reset is for people that have trained elsewhere, and gives experienced players a chance to connect with a grounded style of play.
 
-To help performers from other improvised media prepare for the holistic approach at Prometheus Studios, there is The Reset.
+Prerequisite: Study at another instition or body.*
+
+*Excepting The Magnet or iO training programs. Instruction at these institutions is compatible.
 
 ## Solid Foundations
 
-For new students, or for former students of iO or The Magnet that want to begin improvising again.
+Solid Foundations is a smooth introduction to the fundamental units of improvisation.
 
+The exercises, forms, and instructor gently place each student into an effortless state of play.
 
-## How It Works
+Solid Foundations culminates in a class show.
 
-When you create a new `.md` file in the content directory, our script automatically:
+## Branches and Roots
 
-1. Creates a new page component
-2. Adds a route to the router
-3. Updates the navigation menu
-4. Makes everything work seamlessly!
+Explore the relationship between time,space, characters, and they relationships they maintain.
 
-## Get Started
+Add depth to your play with lived-in characters. 
 
-Simply create a new markdown file and run:
-```bash
-npm run generate-pages
-```
+Extend your canvas in all directions.
 
-Or use the watch mode to automatically detect changes:
-```bash
-npm run watch-content
-```
+Utilize graceful hops through four dimensions to build wonderful long form sets.
+
+Play in the collaboratively built space of the stage, while learning how to be a grounded and confident improviser.
+
+Branches and Roots culminates in a class show.
+

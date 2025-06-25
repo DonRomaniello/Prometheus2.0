@@ -39,6 +39,6 @@ If you still feel like a four week course would be a waste of your time, then yo
 
 The Studio is a select group of players who are expected to innovate and expand the art of long form improvisation.
 
-Membership is extended via instructor invitation. 
+Membership is extended soley through instructor invitation. 
 
-In addition to on stage ability, members of The Studio are expected to be models of ethical and professional beliefs and behavior.
+In addition to ability on stage, members of The Studio are expected to model ethical and professional beliefs and behavior.
