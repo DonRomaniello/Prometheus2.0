@@ -78,16 +78,66 @@
   transition: color var(--transition-normal) var(--animation-easing);
 }
 
-.mobile-brand-logo {
-  font-size: calc(var(--mobile-nav-height) * 0.5);
-  font-weight: var(--font-weight-bold);
-  color: var(--text-primary);
-  text-decoration: none;
-  transition: color var(--transition-normal) var(--animation-easing);
+.mobile-brand-container {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  flex: 1; /* Takes available space but doesn't interfere with hamburger */
+  justify-content: flex-start; /* Align logo to the left */
+  padding-left: var(--spacing-lg); /* Add some left padding to match hamburger spacing */
 }
 
-.brand-logo:hover {
-  color: var(--color-primary);
+.mobile-brand-logo {
+  /* Add image-based styling */
+  max-height: calc(var(--mobile-nav-height) * 0.8); /* 80% of container height */
+  max-width: 80%; /* 80% of container width */
+  height: auto;
+  width: auto;
+  transition: opacity var(--transition-normal) var(--animation-easing);
+  display: block !important; /* Force display to stay as block */
+}
+
+/* Completely disable ALL effects for mobile brand logo */
+.mobile-brand-logo,
+.mobile-brand-logo:hover,
+.mobile-brand-logo:focus,
+.mobile-brand-logo:active,
+.mobile-brand-logo:visited {
+  background: none !important;
+  background-color: transparent !important;
+  color: inherit !important;
+  transform: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  opacity: 1 !important;
+  transition: none !important;
+  border: none !important;
+  outline: none !important;
+  display: block !important;
+  margin: 0 !important; /* Remove auto margin since we're aligning left */
+}
+
+/* Also disable effects on any child elements */
+.mobile-brand-logo *,
+.mobile-brand-logo:hover *,
+.mobile-brand-logo:focus *,
+.mobile-brand-logo:active * {
+  background: none !important;
+  background-color: transparent !important;
+  transform: none !important;
+  box-shadow: none !important;
+  opacity: 1 !important;
+  transition: none !important;
+}
+
+.mobile-brand-logo img {
+  height: 100%;
+  width: 100%;
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+  display: block;
+  pointer-events: none; /* This prevents any mouse interactions with the image itself */
 }
 
 .hamburger-container {
@@ -96,8 +146,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0;
-  padding: 0;
+  flex-shrink: 0; /* Prevents the hamburger from shrinking */
 }
 
 .hamburger-button {

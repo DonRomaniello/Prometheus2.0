@@ -182,7 +182,7 @@
   /* --- MOBILE TEXT SIZES --- */
   --font-size-mobile-sm: calc(var(--font-size-xs) * 1.1);
   --font-size-mobile-xs: calc(var(--font-size-xs) * 0.9);
-  --font-size-mobile-nav: calc(var(--font-size-base) * 0.9); /* Add this line */
+  --font-size-mobile-nav: calc(var(--font-size-base) * 0.5); /* Add this line */
 
   /* --- GRID BREAKPOINTS --- */
   --grid-mobile-min-size: calc(var(--spacing-xxl) * 5); /* 150px equivalent */
