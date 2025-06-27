@@ -59,7 +59,7 @@ const Navigation = () => {
         {isMobile ? (
           <>
             <div className="mobile-nav-header">
-              <Link to="/" className="brand-logo" onClick={handleLinkClick}>
+              <Link to="/" className="mobile-brand-logo" onClick={handleLinkClick}>
                 Prometheus Studios
               </Link>
               <div className="hamburger-container">

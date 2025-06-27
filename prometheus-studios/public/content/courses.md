@@ -25,7 +25,7 @@ The exercises, forms, and instructor gently place each student into an effortles
 
 Solid Foundations culminates in a class show.
 
-## Branches and Roots
+## Roots and Branches
 
 Explore the relationship between time,space, characters, and they relationships they maintain.
 
@@ -37,5 +37,5 @@ Utilize graceful hops through four dimensions to build wonderful long form sets.
 
 Play in the collaboratively built space of the stage, while learning how to be a grounded and confident improviser.
 
-Branches and Roots culminates in a class show.
+Roots and Branches culminates in a class show.
 

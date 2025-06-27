@@ -50,3 +50,10 @@ Jonathan Connolly is a Hudson Valley based improviser and actor.
 Maya has written three picture books for children, one lifestyle book for grown-ups, and essays published by Oprah Daily, The Washington Post, STAT, and Oldster. 
 
 Her day job is working in nonprofit communications, but keeping up with her dogs at nosework class is the real challenge.
+
+![Ania Kowalczuk](/img/AniaKowalczuk.webp)
+## Ania Kowalczuk
+
+When Ania’s not on stage, she’s securing your data, locking down physical perimeters, or quietly tailing someone through a Whole Foods parking lot. By day, she’s a cybersecurity strategist. By night, she’s an amateur private detective (available for hire, obviously). 
+
+Please don’t ask what her notebook contains. You’re not cleared for that.
