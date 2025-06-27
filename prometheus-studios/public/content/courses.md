@@ -7,29 +7,35 @@
 ```
 # Courses
 
-## Our Services
+## The Reset
 
-- **Web Development**: Modern React applications
-- **Content Management**: Markdown-powered content systems
-- **Automation**: Scripts that make development easier
+To prepare performers with different educational backgrounds for the holistic approach at Prometheus Studios, there is The Reset.
 
-## How It Works
+The Reset is for people that have trained elsewhere, and gives experienced players a chance to connect with a grounded style of play.
 
-When you create a new `.md` file in the content directory, our script automatically:
+Prerequisite: Study at another instition or body.*
 
-1. Creates a new page component
-2. Adds a route to the router
-3. Updates the navigation menu
-4. Makes everything work seamlessly!
+*Excepting The Magnet or iO training programs. Instruction at these institutions is compatible.
 
-## Get Started
+## Solid Foundations
 
-Simply create a new markdown file and run:
-```bash
-npm run generate-pages
-```
+Solid Foundations is a smooth introduction to the fundamental units of improvisation.
 
-Or use the watch mode to automatically detect changes:
-```bash
-npm run watch-content
-```
+The exercises, forms, and instructor gently place each student into an effortless state of play.
+
+Solid Foundations culminates in a class show.
+
+## Roots and Branches
+
+Explore the relationship between time,space, characters, and they relationships they maintain.
+
+Add depth to your play with lived-in characters. 
+
+Extend your canvas in all directions.
+
+Utilize graceful hops through four dimensions to build wonderful long form sets.
+
+Play in the collaboratively built space of the stage, while learning how to be a grounded and confident improviser.
+
+Roots and Branches culminates in a class show.
+

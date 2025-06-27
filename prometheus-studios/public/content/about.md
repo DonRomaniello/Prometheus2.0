@@ -9,7 +9,7 @@
 
 ## The Impetus
 
-Prometheus Studios was founded to provide opportunities for the study and practice of long form improvisation in the city of Beacon.
+Prometheus Studios provides opportunities for the study and practice of long form improvisation in the city of Beacon.
 
 As the performing arts flourish in the Hudson Valley, we aim to contribute world-class improv instruction to underpin this growth.
 
@@ -34,3 +34,9 @@ Our classes are accessible to as many people as possible. Tuition is offered on 
 We welcome all students, regardless of experience or background. We offer introductory courses as well as bleeding-edge classes where students have participated in the world premiere of new forms.
 
 Students explore not just the art of improvisation, but the practical side of the craft as well. Students are involved in the production of their class shows and share in the proceeds from ticket sales.
+
+
+## Lineage
+
+The grounded, humanist approach to improvisation practiced at Prometheus Studios is a living art.
+The current that ran through Viola Spolin, Paul Sills, Del Close, and Armando Diaz ...

@@ -78,6 +78,14 @@
   transition: color var(--transition-normal) var(--animation-easing);
 }
 
+.mobile-brand-logo {
+  font-size: calc(var(--mobile-nav-height) * 0.5);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: color var(--transition-normal) var(--animation-easing);
+}
+
 .brand-logo:hover {
   color: var(--color-primary);
 }
