@@ -59,9 +59,11 @@ const Navigation = () => {
         {isMobile ? (
           <>
             <div className="mobile-nav-header">
-              <Link to="/" className="mobile-brand-logo" onClick={handleLinkClick}>
-                Prometheus Studios
-              </Link>
+              <div className="mobile-brand-container">
+                <Link to="/" className="mobile-brand-logo" onClick={handleLinkClick}>
+                    <img src="/img/branding.svg" alt="Prometheus Studios" />
+                </Link>
+              </div>
               <div className="hamburger-container">
               <button
                 className={`hamburger-button${isOpen ? ' open' : ''}`}
