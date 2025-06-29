@@ -1,0 +1,1 @@
+- [ ] After hamburger menu is used mobile, hide on scroll stops working

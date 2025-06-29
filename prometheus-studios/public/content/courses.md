@@ -15,7 +15,7 @@ The Reset is for people that have trained elsewhere, and gives experienced playe
 
 Prerequisite: Study at another instition or body.*
 
-*Excepting The Magnet or iO training programs. Instruction at these institutions is compatible.
+*Excepting The Magnet or iO training programs. Instruction at these institutions is compatible with our curriculum.
 
 ## Solid Foundations
 

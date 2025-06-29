@@ -29,15 +29,16 @@
   position: relative;
   z-index: 1;
   cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: grid;                /* changed from flex to grid */
+  grid-template-columns: 1fr;   /* single column */
+  align-items: center;          /* vertical alignment */
+  justify-items: center;        /* horizontal alignment */
 }
 
 .person-image {
   width: var(--people-image-size);
   height: var(--people-image-size);
-  object-fit: cover;
+  object-fit: contain;
   background: var(--color-gray-300);
   display: block;
   flex-shrink: 0; /* Prevent flex shrinking */
@@ -58,14 +59,14 @@
   overflow-y: auto; /* Allow scrolling if bio is long */
 }
 
-.person-conent.expanded {
-  width: calc(var(--people-expanded-size) * 0.6); /* Reduced from 0.8 to make room for text */
-  height: calc(var(--people-expanded-size) * 0.6);
-  max-width: calc(var(--people-expanded-size) * 0.6);
-  max-height: calc(var(--people-expanded-size) * 0.6);
+.person-content.expanded {
+  /* width: calc(100% / var(--golden-ratio));  */
+  width: calc(var(--people-cell-size) * 2);
 }
 
 .person-image.expanded {
+  width: 100%;
+  height: auto; /* Maintain aspect ratio */
   margin-bottom: var(--spacing-md); /* Add space between image and bio */
 }
 
@@ -74,7 +75,7 @@
   width: 100%;
   max-width: calc(var(--people-expanded-size) * 0.9);
   padding: 0 var(--spacing-md);
-  text-align: center;
+  text-align: left;
   overflow-y: auto;
   flex: 1; /* Take remaining space */
 }
