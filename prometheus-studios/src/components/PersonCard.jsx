@@ -16,7 +16,7 @@ const PersonCard = ({ person, index, isExpanded, onToggleExpanded }) => {
       onClick={() => onToggleExpanded(index)}
       style={{ cursor: 'pointer' }}
     >
-      <div className="person-content">
+      <div className={`person-content${isExpanded ? ' expanded' : ''}`}>
         <img
           src={person.image}
           alt={person.name}

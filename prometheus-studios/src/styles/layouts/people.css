@@ -1,3 +1,7 @@
+.people-grid {
+  padding: 0;
+}
+
 .people-grid .content-body {
   display: grid;
   grid-template-columns: repeat(auto-fill, var(--people-cell-size));
@@ -46,8 +50,6 @@
   width: var(--people-expanded-size);
   height: var(--people-expanded-size);
   z-index: 10;
-  background: var(--color-light);
-  box-shadow: var(--shadow-lg);
   padding: calc(var(--people-cell-size) * 0.05); /* 5% padding */
   border-radius: var(--border-radius);
   display: flex;
@@ -56,12 +58,14 @@
   overflow-y: auto; /* Allow scrolling if bio is long */
 }
 
-.person-image.expanded {
+.person-conent.expanded {
   width: calc(var(--people-expanded-size) * 0.6); /* Reduced from 0.8 to make room for text */
   height: calc(var(--people-expanded-size) * 0.6);
   max-width: calc(var(--people-expanded-size) * 0.6);
   max-height: calc(var(--people-expanded-size) * 0.6);
-  object-fit: cover;
+}
+
+.person-image.expanded {
   margin-bottom: var(--spacing-md); /* Add space between image and bio */
 }
 

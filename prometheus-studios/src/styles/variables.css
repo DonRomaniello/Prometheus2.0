@@ -124,7 +124,8 @@
   --people-grid-gap: 0;
   
   /* Expansion calculations */
-  --people-expanded-size: calc(var(--people-cell-size) * 3);
+  /* --people-expanded-size: calc(var(--people-cell-size) * 2); */
+  --people-expanded-size: var(--people-grid-container-width);
 
 
   /* --- CONTENT BODY --- */
