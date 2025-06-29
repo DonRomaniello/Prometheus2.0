@@ -44,7 +44,7 @@
 
 /* Expansion */
 .person-card.expanded {
-  grid-column: span 2;
+  grid-column: 1 / -1;
   grid-row: span 3;
   width: var(--people-expanded-size);
   height: var(--people-expanded-size);
