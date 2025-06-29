@@ -26,6 +26,10 @@ body {
   background-color: var(--bg-primary);
 }
 
+main {
+  padding-top: var(--main-content-padding-top);
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

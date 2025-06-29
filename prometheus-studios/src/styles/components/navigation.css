@@ -115,9 +115,7 @@
   border: none !important;
   outline: none !important;
   display: block !important;
-  margin: 0 !important;
-  height: auto !important;      /* Add this line */
-  max-height: calc(var(--mobile-nav-height) * 0.8) !important; /* Add this line */
+  margin: 0 !important; /* Remove auto margin since we're aligning left */
 }
 
 /* Also disable effects on any child elements */
@@ -299,19 +297,4 @@
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
-}
-
-/* Ensure main content starts below the fixed nav */
-main {
-  padding-top: var(--main-content-padding-top);
-}
-
-/* Responsive Navigation */
-@media (min-width: var(--mobile-breakpoint-large)) {
-  /* Hide mobile navigation elements on desktop */
-  .nav-header.mobile,
-  .mobile-nav,
-  .mobile-nav.backdrop {
-    display: none;
-  }
 }
