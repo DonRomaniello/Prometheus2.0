@@ -5,12 +5,10 @@
 .people-grid .content-body {
   display: grid;
   grid-template-columns: repeat(auto-fill, var(--people-cell-size));
-  /* grid-template-rows: auto; */
   gap: var(--people-grid-gap);
   width: var(--people-grid-container-max-width);
   margin: 0 auto;
   justify-items: center;
-  /* align-items: center; */
   justify-content: center;
   border-left: none;
   position: relative;
@@ -46,21 +44,21 @@
 
 /* Expansion */
 .person-card.expanded {
-  grid-column: span 3;
+  grid-column: span 2;
   grid-row: span 3;
   width: var(--people-expanded-size);
   height: var(--people-expanded-size);
-  z-index: 10;
+  /* z-index: 10; */
   padding: calc(var(--people-cell-size) * 0.05); /* 5% padding */
   border-radius: var(--border-radius);
   display: flex;
   align-items: flex-start; /* Changed from center to flex-start */
+  justify-self: center;
   justify-content: center;
   overflow-y: auto; /* Allow scrolling if bio is long */
 }
 
 .person-content.expanded {
-  /* width: calc(100% / var(--golden-ratio));  */
   width: calc(var(--people-cell-size) * 2);
 }
 

@@ -1,1 +1,2 @@
 - [ ] After hamburger menu is used mobile, hide on scroll stops working
+- [ ] Mixed use of media queries and javascript, prefer javascript
