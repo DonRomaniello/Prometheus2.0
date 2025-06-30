@@ -12,7 +12,9 @@
   justify-content: center;
   border-left: none;
   position: relative;
+  /* grid-auto-rows: auto; */
 }
+
 
 .people-grid .content-header {
   text-align: center;
@@ -23,7 +25,8 @@
 
 .person-card {
   width: var(--people-cell-size);
-  height: var(--people-cell-size);
+  min-height: fit-content; /* Adjust height based on content */
+  height: auto;
   position: relative;
   z-index: 1;
   cursor: pointer;
@@ -37,7 +40,6 @@
   width: var(--people-image-size);
   height: var(--people-image-size);
   object-fit: contain;
-  background: var(--color-gray-300);
   display: block;
   flex-shrink: 0; /* Prevent flex shrinking */
 }
@@ -45,21 +47,21 @@
 /* Expansion */
 .person-card.expanded {
   grid-column: 1 / -1;
-  grid-row: span 3;
   width: var(--people-expanded-size);
-  height: var(--people-expanded-size);
-  /* z-index: 10; */
+  min-height: fit-content; /* Adjust height based on content */
+  height: auto;
   padding: calc(var(--people-cell-size) * 0.05); /* 5% padding */
   border-radius: var(--border-radius);
   display: flex;
   align-items: flex-start; /* Changed from center to flex-start */
   justify-self: center;
   justify-content: center;
-  overflow-y: auto; /* Allow scrolling if bio is long */
 }
 
 .person-content.expanded {
   width: calc(var(--people-cell-size) * 2);
+  min-height: fit-content; /* Adjust height based on content */
+  height: auto;
 }
 
 .person-image.expanded {
@@ -68,15 +70,25 @@
   margin-bottom: var(--spacing-md); /* Add space between image and bio */
 }
 
+.person-card.expanded.mobile {
+  width: 100vw; /* Full width on mobile */
+  max-width: none; /* Remove max-width constraint */
+  min-height: fit-content; /* Adjust height based on content */
+  height: auto;
+  padding: var(--spacing-md); /* Add padding */
+  border-radius: 0; /* Remove border radius on mobile */
+  margin-bottom: var(--spacing-sm);
+}
+
 /* Bio text styling */
 .person-bio {
   width: 100%;
+  min-height: fit-content; /* Adjust height based on content */
   max-width: calc(var(--people-expanded-size) * 0.9);
   padding: 0 var(--spacing-md);
   text-align: left;
-  overflow-y: auto;
-  flex: 1; /* Take remaining space */
 }
+
 
 .person-bio p {
   font-size: var(--font-size-sm);
@@ -150,10 +162,11 @@
 /* Mobile optimizations for people grid */
 .people-grid .content-body.mobile img,
 .people-grid .content-body.small-mobile img {
-  width: var(--people-image-size);
-  height: var(--people-image-size);
-  max-width: 100vw;
-  max-height: 100vw;
+  width: 100%;
+  height: auto; /* Maintain aspect ratio */
+  /* height: var(--people-image-size); */
+  /* max-width: 90vw;
+  max-height: 100vw; */
 }
 
 .people-grid .content-header h1,
@@ -198,4 +211,9 @@
   justify-content: center;
   width: 100%;
   height: 100%;
+}
+
+.person-card.mobile {
+  /* width: calc(100vw - (200vw / var(--magic-number))); */
+  width: 81.81vw;
 }
