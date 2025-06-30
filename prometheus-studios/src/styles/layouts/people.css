@@ -2,9 +2,6 @@
   padding: 0;
 }
 
-.people-grid .content-body.mobile {
-  background-color: #ff0000;
-}
 
 .people-grid .content-body {
   display: grid;
@@ -40,7 +37,9 @@
 }
 
 .person-card.mobile {
-  width: 100%;
+  width: var(--people-card-mobile); /* Full width on mobile */
+  height: auto; /* Maintain aspect ratio */
+  margin-bottom: calc((100vw - var(--people-card-mobile)) * .5);
 }
 
 .person-image {
@@ -49,6 +48,11 @@
   object-fit: contain;
   display: block;
   flex-shrink: 0; /* Prevent flex shrinking */
+}
+
+.person-image.mobile {
+  width: 100%;
+  height: auto; /* Maintain aspect ratio */
 }
 
 /* Expansion */
@@ -167,7 +171,7 @@
 }
 
 /* Mobile optimizations for people grid */
-.people-grid .content-body.mobile img {
+.person-image.mobile {
   width: 100%;
   height: auto; /* Maintain aspect ratio */
   /* height: var(--people-image-size); */
