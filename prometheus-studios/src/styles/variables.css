@@ -120,11 +120,14 @@
   --people-image-size: 90%;
   /* Result: 33.33vh × 0.9 = 30vh image with 1.67vh (5%) padding on each side */
   
+  --people-card-mobile: 74vw;
+
   /* Gap between cells (can be 0 since padding provides spacing) */
   --people-grid-gap: 0;
   
   /* Expansion calculations */
-  --people-expanded-size: calc(var(--people-cell-size) * 3);
+  /* --people-expanded-size: calc(var(--people-cell-size) * 2); */
+  --people-expanded-size: var(--people-grid-container-width);
 
 
   /* --- CONTENT BODY --- */

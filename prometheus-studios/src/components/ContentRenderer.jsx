@@ -19,7 +19,7 @@ const ContentRenderer = ({ contentFile, content, initialExpandedSlug = null, onP
   const { gridRef, fillerNeeded } = useFillPeopleGrid({
     fillerContent: Array.isArray(fillerContent) ? fillerContent : [],
   });
-  const { isMobile, isSmallMobile } = useIsMobile(768);
+  const { isMobile, isSmallMobile } = useIsMobile();
   const { toggleExpanded, isExpanded, orderedItems, expandedItem } = useExpandableGrid(
     people, 
     gridRef, 

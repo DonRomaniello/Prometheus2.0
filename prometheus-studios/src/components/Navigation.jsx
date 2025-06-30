@@ -28,7 +28,7 @@ const Navigation = () => {
     scrollStopDelay: 150,
     forceHide: isPersonExpanded
   });
-  const { isMobile } = useIsMobile(768);
+  const { isMobile } = useIsMobile();
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
@@ -51,20 +51,20 @@ const Navigation = () => {
 
   return (
     <nav
-      className={`navigation floating-nav ${isVisible ? 'nav-visible' : 'nav-hidden'}`}
+      className={`navigation floating-nav nav ${isVisible ? 'visible' : 'hidden'}`}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
       <div>
         {isMobile ? (
           <>
-            <div className="mobile-nav-header">
-              <div className="mobile-brand-container">
-                <Link to="/" className="mobile-brand-logo" onClick={handleLinkClick}>
+            <div className="nav-header mobile">
+              <div className="brand-container mobile">
+                <Link to="/" className="brand-logo mobile" onClick={handleLinkClick}>
                     <img src="/img/branding.svg" alt="Prometheus Studios" />
                 </Link>
               </div>
-              <div className="hamburger-container">
+              <div className="hamburger-container mobile">
               <button
                 className={`hamburger-button${isOpen ? ' open' : ''}`}
                 onClick={toggleNav}
@@ -76,9 +76,9 @@ const Navigation = () => {
               </button>
               </div>
             </div>
-            {isOpen && <div className="mobile-nav-backdrop" onClick={closeNav}></div>}
-            <div className={`mobile-nav${isOpen ? ' open' : ''}`}>
-              <ul className="mobile-nav-links">
+            {isOpen && <div className="nav-backdrop mobile" onClick={closeNav}></div>}
+            <div className={`nav mobile${isOpen ? ' open' : ''}`}> 
+              <ul className="nav-links mobile">
                 {navLinks.map(({ path, label }) => (
                   <li key={path}>
                     <Link to={path} onClick={handleLinkClick}>{label}</Link>

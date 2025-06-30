@@ -18,12 +18,12 @@
   transition: transform var(--transition-normal) var(--animation-easing), opacity var(--transition-normal) var(--animation-easing);
 }
 
-.nav-visible {
+.nav.visible {
   transform: translateY(0);
   opacity: 1;
 }
 
-.nav-hidden {
+.nav.hidden {
   transform: translateY(calc(-1 * (100% - (.618 * var(--spacing-md)))));
 }
 
@@ -60,7 +60,7 @@
 }
 
 /* Mobile Navigation Styles */
-.mobile-nav-header {
+.nav-header.mobile {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -70,15 +70,7 @@
   margin: 0;
 }
 
-.brand-logo {
-  font-size: var(--brand-font-size);
-  font-weight: var(--font-weight-bold);
-  color: var(--text-primary);
-  text-decoration: none;
-  transition: color var(--transition-normal) var(--animation-easing);
-}
-
-.mobile-brand-container {
+.brand-container.mobile {
   display: flex;
   align-items: center;
   height: 100%;
@@ -87,8 +79,8 @@
   padding-left: var(--spacing-lg); /* Add some left padding to match hamburger spacing */
 }
 
-.mobile-brand-logo {
-  /* Add image-based styling */
+.brand-logo.mobile {
+  transition: color var(--transition-normal) var(--animation-easing);
   max-height: calc(var(--mobile-nav-height) * 0.8); /* 80% of container height */
   max-width: 80%; /* 80% of container width */
   height: auto;
@@ -97,12 +89,21 @@
   display: block !important; /* Force display to stay as block */
 }
 
+.brand-logo.mobile img {
+  height: 100%;
+  width: 100%;
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+  display: block;
+  pointer-events: none; /* This prevents any mouse interactions with the image itself */
+}
 /* Completely disable ALL effects for mobile brand logo */
-.mobile-brand-logo,
-.mobile-brand-logo:hover,
-.mobile-brand-logo:focus,
-.mobile-brand-logo:active,
-.mobile-brand-logo:visited {
+.brand-logo.mobile,
+.brand-logo.mobile:hover,
+.brand-logo.mobile:focus,
+.brand-logo.mobile:active,
+.brand-logo.mobile:visited {
   background: none !important;
   background-color: transparent !important;
   color: inherit !important;
@@ -118,10 +119,10 @@
 }
 
 /* Also disable effects on any child elements */
-.mobile-brand-logo *,
-.mobile-brand-logo:hover *,
-.mobile-brand-logo:focus *,
-.mobile-brand-logo:active * {
+.brand-logo.mobile *,
+.brand-logo.mobile:hover *,
+.brand-logo.mobile:focus *,
+.brand-logo.mobile:active * {
   background: none !important;
   background-color: transparent !important;
   transform: none !important;
@@ -130,17 +131,8 @@
   transition: none !important;
 }
 
-.mobile-brand-logo img {
-  height: 100%;
-  width: 100%;
-  max-height: 100%;
-  max-width: 100%;
-  object-fit: contain;
-  display: block;
-  pointer-events: none; /* This prevents any mouse interactions with the image itself */
-}
 
-.hamburger-container {
+.hamburger-container.mobile {
   width: var(--hamburger-container-width);
   height: var(--hamburger-container-width);
   display: flex;
@@ -202,7 +194,7 @@
   grid-row: 6;
 }
 
-.mobile-nav {
+.nav.mobile {
   position: fixed;
   top: 0;
   right: -100vw;
@@ -217,11 +209,11 @@
   flex-direction: column;
   padding-top: 0;
 }
-.mobile-nav.open {
+.nav.mobile.open {
   right: 0;
 }
 
-.mobile-nav-header-menu {
+.nav-header-menu.mobile {
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -251,7 +243,7 @@
   color: var(--color-primary);
 }
 
-.mobile-nav-links {
+.nav-links.mobile {
   list-style: none;
   margin: 0 !important;
   padding: 0 !important;
@@ -259,19 +251,19 @@
   flex-direction: column;
 }
 
-.mobile-nav-links li {
+.nav-links.mobile li {
   margin: 0 !important;
   padding: 0;
   height: var(--mobile-nav-height);
   box-sizing: border-box;
 }
 
-.mobile-nav-links * {
+.nav-links.mobile * {
   margin: 0;
   padding: 0;
 }
 
-.mobile-nav-links a {
+.nav-links.mobile a {
   display: flex;
   align-items: center;
   height: 100%;
@@ -284,13 +276,13 @@
   transition: all var(--transition-normal) var(--animation-easing); /* Add transition for smooth animation */
 }
 
-.mobile-nav-links a:hover {
+.nav-links.mobile a:hover {
   background-color: var(--color-primary); /* Change to primary color like desktop */
   color: var(--color-white); /* Change text to white like desktop */
   padding-left: calc(var(--spacing-xl) + var(--spacing-sm));
 }
 
-.mobile-nav-backdrop {
+.nav-backdrop.mobile {
   position: fixed;
   top: 0;
   left: 0;
@@ -305,19 +297,4 @@
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
-}
-
-/* Ensure main content starts below the fixed nav */
-main {
-  padding-top: var(--main-content-padding-top);
-}
-
-/* Responsive Navigation */
-@media (min-width: var(--mobile-breakpoint-large)) {
-  /* Hide mobile navigation elements on desktop */
-  .mobile-nav-header,
-  .mobile-nav,
-  .mobile-nav-backdrop {
-    display: none;
-  }
 }

@@ -1,91 +1,52 @@
 import { useState, useEffect } from 'react';
 
 /**
- * Custom hook for detecting mobile devices and screen properties
+ * Centralized device detection hook
  * @param {number} breakpoint - Screen width breakpoint for mobile detection (default: 960)
- * @returns {Object} Mobile detection state and device information
+ * @returns {Object} Device information and breakpoint status
  */
-const useIsMobile = (breakpoint = 960) => {
-  const [isMobile, setIsMobile] = useState(false);
-  const [deviceInfo, setDeviceInfo] = useState({
-    isMobileDevice: false,
+const useDevice = (breakpoint = 960) => {
+  const [device, setDevice] = useState({
+    width: typeof window !== 'undefined' ? window.innerWidth : 0,
+    height: typeof window !== 'undefined' ? window.innerHeight : 0,
+    isMobile: false,
+    isSmallMobile: false,
+    isTablet: false,
+    isDesktop: false,
     isPortrait: false,
-    isMobileScreen: false,
-    screenWidth: 0,
-    screenHeight: 0
+    isLandscape: false,
   });
 
   useEffect(() => {
-    const checkIsMobile = () => {
-      // Check if it's a mobile device by user agent
-      const isMobileDevice = /Mobi|Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-        window.navigator.userAgent
-      );
-      
-      // Check orientation
-      const isPortrait = window.matchMedia("(orientation: portrait)").matches;
-      
-      // Check screen size
-      const screenWidth = window.innerWidth;
-      const screenHeight = window.innerHeight;
-      const isMobileScreen = screenWidth <= breakpoint;
-      
-      // Determine if mobile using your original logic
-      const mobile = (isMobileDevice && isPortrait) || isMobileScreen;
-      
-      // Update device info
-      const newDeviceInfo = {
-        isMobileDevice,
+    const update = () => {
+      const width = window.innerWidth;
+      const height = window.innerHeight;
+      const isMobile = width <= breakpoint;
+      const isSmallMobile = width <= 480;
+      const isTablet = width > 480 && width <= breakpoint;
+      const isDesktop = width > breakpoint;
+      const isPortrait = height >= width;
+      const isLandscape = width > height;
+      setDevice({
+        width,
+        height,
+        isMobile,
+        isSmallMobile,
+        isTablet,
+        isDesktop,
         isPortrait,
-        isMobileScreen,
-        screenWidth,
-        screenHeight
-      };
-      
-      
-      setIsMobile(mobile);
-      setDeviceInfo(newDeviceInfo);
+        isLandscape,
+      });
     };
-
-    // Initial check
-    checkIsMobile();
-
-    // Create media query listeners
-    const orientationQuery = window.matchMedia("(orientation: portrait)");
-    const screenQuery = window.matchMedia(`(max-width: ${breakpoint}px)`);
-    
-    // Event listeners
-    const handleResize = () => checkIsMobile();
-    const handleOrientationChange = () => {
-      // Small delay to ensure orientation change is complete
-      setTimeout(checkIsMobile, 100);
-    };
-
-    // Add listeners
-    window.addEventListener('resize', handleResize);
-    orientationQuery.addEventListener('change', handleOrientationChange);
-    screenQuery.addEventListener('change', handleResize);
-
-    // Cleanup
+    update();
+    window.addEventListener('resize', update);
+    window.addEventListener('orientationchange', update);
     return () => {
-      window.removeEventListener('resize', handleResize);
-      orientationQuery.removeEventListener('change', handleOrientationChange);
-      screenQuery.removeEventListener('change', handleResize);
+      window.removeEventListener('resize', update);
+      window.removeEventListener('orientationchange', update);
     };
   }, [breakpoint]);
-
-  return {
-    isMobile,
-    ...deviceInfo,
-    // Utility functions for common breakpoints
-    isTablet: deviceInfo.screenWidth > 768 && deviceInfo.screenWidth <= breakpoint,
-    isDesktop: deviceInfo.screenWidth > breakpoint,
-    isLandscape: !deviceInfo.isPortrait,
-    // Responsive breakpoint helpers
-    isSmallMobile: deviceInfo.screenWidth <= 480,
-    isMediumMobile: deviceInfo.screenWidth > 480 && deviceInfo.screenWidth <= 768,
-    isLargeMobile: deviceInfo.screenWidth > 768 && deviceInfo.screenWidth <= breakpoint
-  };
+  return device;
 };
 
-export default useIsMobile;
+export default useDevice;

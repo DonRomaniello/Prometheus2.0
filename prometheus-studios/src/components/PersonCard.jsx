@@ -1,4 +1,4 @@
-import React from 'react';
+import useIsMobile from '../hooks/useIsMobile';
 import ReactMarkdown from 'react-markdown';
 
 /**
@@ -10,20 +10,21 @@ import ReactMarkdown from 'react-markdown';
  * @param {function} props.onToggleExpanded - Callback to toggle expansion state
  */
 const PersonCard = ({ person, index, isExpanded, onToggleExpanded }) => {
+  const { isMobile } = useIsMobile();
   return (
     <div
-      className={`person-card${isExpanded ? ' expanded' : ''}`}
+      className={`person-card${isExpanded ? ' expanded' : ''}${isMobile ? ' mobile' : ''}`}
       onClick={() => onToggleExpanded(index)}
       style={{ cursor: 'pointer' }}
     >
-      <div className="person-content">
+      <div className={`person-content${isExpanded ? ' expanded' : ''}${isMobile ? ' mobile' : ''}`}>
         <img
           src={person.image}
           alt={person.name}
-          className={`person-image${isExpanded ? ' expanded' : ''}`}
+          className={`person-image${isExpanded ? ' expanded' : ''}${isMobile ? ' mobile' : ''}`}
         />
         {isExpanded && person.bio && (
-          <div className="person-bio">
+          <div className={`person-bio${isMobile ? ' mobile' : ''}`}>
             <ReactMarkdown>{person.bio}</ReactMarkdown>
           </div>
         )}

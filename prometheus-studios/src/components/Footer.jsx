@@ -9,7 +9,7 @@ import '../styles/components/footer.css';
  * Navigation links are variable-driven and mobile/desktop layouts are handled via CSS classes.
  */
 const Footer = () => {
-  const { isMobile, isSmallMobile } = useIsMobile(768);
+  const { isMobile, isSmallMobile } = useIsMobile();
   const { isVisible } = useScrollFooter({
     showDelay: 100,
     hideDelay: 200,
