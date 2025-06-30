@@ -7,7 +7,7 @@
   grid-template-columns: repeat(auto-fill, var(--people-cell-size));
   gap: var(--people-grid-gap);
   width: var(--people-grid-container-max-width);
-  margin: 0 auto;
+  margin: 0;
   justify-items: center;
   justify-content: center;
   border-left: none;
@@ -25,8 +25,7 @@
 
 .person-card {
   width: var(--people-cell-size);
-  min-height: fit-content; /* Adjust height based on content */
-  height: auto;
+  height: var(--people-cell-size);
   position: relative;
   z-index: 1;
   cursor: pointer;
