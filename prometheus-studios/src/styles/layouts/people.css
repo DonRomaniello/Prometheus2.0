@@ -2,6 +2,10 @@
   padding: 0;
 }
 
+.people-grid .content-body.mobile {
+  background-color: #ff0000;
+}
+
 .people-grid .content-body {
   display: grid;
   grid-template-columns: repeat(auto-fill, var(--people-cell-size));
