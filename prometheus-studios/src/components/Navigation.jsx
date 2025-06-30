@@ -28,7 +28,7 @@ const Navigation = () => {
     scrollStopDelay: 150,
     forceHide: isPersonExpanded
   });
-  const { isMobile } = useIsMobile(768);
+  const { isMobile } = useIsMobile();
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {

@@ -36,6 +36,10 @@
   justify-items: center;        /* horizontal alignment */
 }
 
+.person-card.mobile {
+  width: 100%;
+}
+
 .person-image {
   width: var(--people-image-size);
   height: var(--people-image-size);
@@ -160,8 +164,7 @@
 }
 
 /* Mobile optimizations for people grid */
-.people-grid .content-body.mobile img,
-.people-grid .content-body.small-mobile img {
+.people-grid .content-body.mobile img {
   width: 100%;
   height: auto; /* Maintain aspect ratio */
   /* height: var(--people-image-size); */
@@ -211,9 +214,4 @@
   justify-content: center;
   width: 100%;
   height: 100%;
-}
-
-.person-card.mobile {
-  /* width: calc(100vw - (200vw / var(--magic-number))); */
-  width: 81.81vw;
 }

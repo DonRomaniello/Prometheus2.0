@@ -10,9 +10,6 @@ export const useContentBodyClass = (layout, isMobile, isSmallMobile) => {
   
   let contentBodyClass = 'content-body';
   if (isPeopleGrid) {
-    // if (isSmallMobile) {
-    //   contentBodyClass += ' small-mobile';
-    // }
     if (isMobile) {
       contentBodyClass += ' mobile';
     }
