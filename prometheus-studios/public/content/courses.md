@@ -21,7 +21,7 @@ Prerequisite: Study at another instition or body.*
 
 Solid Foundations is a smooth introduction to the fundamental units of improvisation.
 
-The exercises, forms, and instructor gently place each student into an effortless state of play.
+The exercises, forms, and instructor gently place each student in an effortless state of play.
 
 Solid Foundations culminates in a class show.
 
@@ -29,7 +29,7 @@ Solid Foundations culminates in a class show.
 
 ## Roots and Branches
 
-Explore the relationship between time,space, characters, and they relationships they maintain.
+Explore the relationship between time, space, characters, and the relationships they maintain.
 
 Add depth to your play with lived-in characters. 
 
