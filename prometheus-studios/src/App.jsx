@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import {
   About,
   Courses,
+  SolidFoundations,
   Contact,
   Home,
   TheStudio,
@@ -25,6 +26,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/courses" element={<Courses />} />
+            <Route path="/solid_foundations" element={<SolidFoundations />} />
             <Route path="/the_studio" element={<TheStudio />} />
             <Route path="/the_studio/:personSlug" element={<TheStudio />} />
             <Route path="/contact" element={<Contact />} />

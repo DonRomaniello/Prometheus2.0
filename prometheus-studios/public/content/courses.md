@@ -25,6 +25,8 @@ The exercises, forms, and instructor gently place each student into an effortles
 
 Solid Foundations culminates in a class show.
 
+[Read more and sign up for the next session of Solid Foundations.](/solid_foundations)
+
 ## Roots and Branches
 
 Explore the relationship between time,space, characters, and they relationships they maintain.
