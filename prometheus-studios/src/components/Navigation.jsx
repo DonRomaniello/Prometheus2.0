@@ -12,9 +12,9 @@ const Navigation = () => {
   const location = useLocation();
 
   const navLinks = [
-    { path: '/about', label: 'About' },
-    { path: '/courses', label: 'Courses' },
     { path: '/', label: 'Home' },
+    { path: '/courses', label: 'Courses' },
+    { path: '/about', label: 'About' },
     { path: '/the_studio', label: 'The Studio' }
   ];
   
