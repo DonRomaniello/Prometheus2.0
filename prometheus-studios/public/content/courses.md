@@ -41,3 +41,5 @@ Play in the collaboratively built space of the stage, while learning how to be a
 
 Roots and Branches culminates in a class show.
 
+Prerequisite: Completion of Solid Foundations.
+
