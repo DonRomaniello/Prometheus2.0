@@ -20,10 +20,10 @@ Solid Foundations culminates in a class show.
 The next meeting of Solid Foundations begins Monday, July 7th, runs for four weeks, and culminates in a class show.
 
 ## Classes
-July 7th
-July 14th
-July 21st
-July 28th
+- July 7th 
+- July 14th
+- July 21st
+- July 28th
 
 Classes meet from 7-9 pm at [329 Main Street, Beacon, NY](https://maps.app.goo.gl/TXm12e6cz6TFTrCz9).
 
