@@ -23,7 +23,7 @@ const Navigation = () => {
                           location.pathname !== '/the_studio';
   
   const { isVisible, handleMouseEnter, handleMouseLeave } = useScrollVisibility({
-    hideThreshold: 100,
+    hideThreshold: 10,
     showSpeedThreshold: 10,
     scrollStopDelay: 150,
     forceHide: isPersonExpanded
