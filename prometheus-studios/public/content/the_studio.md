@@ -57,3 +57,11 @@ Her day job is working in nonprofit communications, but keeping up with her dogs
 When Ania’s not on stage, she’s securing your data, locking down physical perimeters, or quietly tailing someone through a Whole Foods parking lot. By day, she’s a cybersecurity strategist. By night, she’s an amateur private detective (available for hire, obviously). 
 
 Please don’t ask what her notebook contains. You’re not cleared for that.
+
+
+![Halle Sarner](/img/HalleSarner.webp)
+## Halle Sarner
+
+In lieu of a bio, Halle Sarner provided chilly silence, which was taken as carte blanche.
+
+Halle's exploits include five cold cases and three broken promises to provide a short blurb.
