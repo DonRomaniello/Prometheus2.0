@@ -102,7 +102,6 @@
 
 
 .person-bio p {
-  font-size: var(--font-size-sm);
   line-height: var(--line-height-normal);
   color: var(--text-primary);
   margin: 0 0 var(--spacing-sm) 0;

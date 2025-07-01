@@ -1,4 +1,3 @@
-import React from 'react';
 import ContentRenderer from '../components/ContentRenderer';
 
 const Services = () => {

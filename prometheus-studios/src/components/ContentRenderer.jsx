@@ -12,6 +12,12 @@ import '../styles/layouts/content-renderer.css';
 import '../styles/layouts/people.css';
 import { FillerContent, PersonCard } from './';
 
+
+// Helper to detect external links
+function isExternalLink(href) {
+  return /^https?:\/\//.test(href);
+}
+
 const ContentRenderer = ({ contentFile, content, initialExpandedSlug = null, onPersonExpand = null }) => {
   const { layout, firstHeader, remainingContent, loading, error, fillerContent, people } = useMarkdownContent(contentFile);
   const contentBodyRef = useRef(null);
@@ -31,12 +37,25 @@ const ContentRenderer = ({ contentFile, content, initialExpandedSlug = null, onP
   // Use dynamic title - show person name when expanded, otherwise show default header
   const displayTitle = useDynamicTitle(firstHeader, expandedItem);
 
+  // Custom link renderer for ReactMarkdown
+  const markdownComponents = {
+    a: ({ node, ...props }) => (
+      <a
+        {...props}
+        target={isExternalLink(props.href) ? '_blank' : undefined}
+        rel={isExternalLink(props.href) ? 'noopener noreferrer' : undefined}
+      >
+        {props.children}
+      </a>
+    )
+  };
+
   // If content is provided directly, use it instead of loading from file
   if (content) {
     return (
       <div className="container content-renderer">
         <div className="content-body">
-          <ReactMarkdown>{content}</ReactMarkdown>
+          <ReactMarkdown components={markdownComponents}>{content}</ReactMarkdown>
         </div>
       </div>
     );
@@ -60,7 +79,7 @@ const ContentRenderer = ({ contentFile, content, initialExpandedSlug = null, onP
     <div className={`container ${layout}`}>
       {displayTitle && (
         <div className={`content-header ${isPeopleGrid ? 'people-header' : ''}`}>
-          <ReactMarkdown>{displayTitle}</ReactMarkdown>
+          <ReactMarkdown components={markdownComponents}>{displayTitle}</ReactMarkdown>
         </div>
       )}
       <div
@@ -85,7 +104,7 @@ const ContentRenderer = ({ contentFile, content, initialExpandedSlug = null, onP
             }
           </>
         ) : (
-          <ReactMarkdown>{remainingContent}</ReactMarkdown>
+          <ReactMarkdown components={markdownComponents}>{remainingContent}</ReactMarkdown>
         )}
       </div>
     </div>

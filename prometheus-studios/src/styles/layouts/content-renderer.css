@@ -77,9 +77,10 @@
 
 .content-renderer a {
   color: var(--color-primary);
-  text-decoration: none;
+  font-weight: var(--font-weight-medium);
+  border-bottom: 1px solid;
 }
 
 .content-renderer a:hover {
-  text-decoration: underline;
+  border-bottom: 1.5px solid;
 }
