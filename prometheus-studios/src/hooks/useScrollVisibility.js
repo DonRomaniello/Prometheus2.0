@@ -11,7 +11,7 @@ import { useState, useEffect, useCallback } from 'react';
  */
 export const useScrollVisibility = (options = {}) => {
   const {
-    hideThreshold = 100,
+    hideThreshold = 63,
     showSpeedThreshold = 10,
     scrollStopDelay = 150,
     forceHide = false
@@ -52,14 +52,10 @@ export const useScrollVisibility = (options = {}) => {
 
   useEffect(() => {
     let scrollTimeout;
-    
+
     const handleScrollWithTimeout = () => {
       handleScroll();
-      
-      // Clear any existing timeout
       clearTimeout(scrollTimeout);
-      
-      // Set a timeout to show after scrolling stops
       scrollTimeout = setTimeout(() => {
         if (window.scrollY < hideThreshold) {
           setIsVisible(true);
@@ -68,9 +64,11 @@ export const useScrollVisibility = (options = {}) => {
     };
 
     window.addEventListener('scroll', handleScrollWithTimeout, { passive: true });
-    
+    window.addEventListener('touchmove', handleScrollWithTimeout, { passive: true });
+
     return () => {
       window.removeEventListener('scroll', handleScrollWithTimeout);
+      window.removeEventListener('touchmove', handleScrollWithTimeout);
       clearTimeout(scrollTimeout);
     };
   }, [handleScroll, hideThreshold, scrollStopDelay]);
