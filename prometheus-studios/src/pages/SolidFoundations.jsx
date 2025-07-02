@@ -11,8 +11,8 @@ const SolidFoundations = () => {
         <meta property="og:title" content="Prometheus Studios: Solid Foundations" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://prometheusstudios.org/solid_foundations" />
-        <link rel="apple-touch-icon" href="http://prometheusstudios.org/img/classes/solid_foundations.png" />
-        <meta property="og:image" content="http://prometheusstudios.org/img/classes/solid_foundations.png" />
+        <link rel="apple-touch-icon" href="https://prometheusstudios.org/img/classes/solid_foundations.png" />
+        <meta property="og:image" content="https://prometheusstudios.org/img/classes/solid_foundations.png" />
         <meta property="og:description" content="World class improv in the Hudson Valley." />
       </Helmet>
       <ContentRenderer contentFile="solid_foundations" />

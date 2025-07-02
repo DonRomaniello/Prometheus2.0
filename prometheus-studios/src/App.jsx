@@ -27,7 +27,7 @@ function App() {
         <meta property="og:title" content="Prometheus Studios" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://prometheusstudios.org/" />
-        <meta property="og:image" content="http://prometheusstudios.org/logo512.png" />
+        <meta property="og:image" content="https://prometheusstudios.org/logo512.png" />
         <meta property="og:description" content="World class improv in the Hudson Valley." />
         <link rel="apple-touch-icon" href="https://prometheusstudios.org/logo192.png" />
         <link rel="manifest" href="https://prometheusstudios.org/manifest.json" />
