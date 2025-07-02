@@ -7,16 +7,6 @@
 ```
 # Courses
 
-## The Reset
-
-To prepare performers with different educational backgrounds for the holistic approach at Prometheus Studios, there is The Reset.
-
-The Reset is for people that have trained elsewhere, and gives experienced players a chance to connect with a grounded style of play.
-
-Prerequisite: Study at another instition or body.*
-
-*Excepting The Magnet or iO training programs. Instruction at these institutions is compatible with our curriculum.
-
 ## Solid Foundations
 
 Solid Foundations is a smooth introduction to the fundamental units of improvisation.
@@ -43,3 +33,14 @@ Roots and Branches culminates in a class show.
 
 Prerequisite: Completion of Solid Foundations.
 
+## The Reset
+
+To prepare performers with different educational backgrounds for the holistic approach at Prometheus Studios, there is The Reset.
+
+The Reset is for people that have trained elsewhere, and gives experienced players a chance to connect with a grounded style of play.
+
+Prerequisite: Study at another instition or body.*
+
+*Excepting The Magnet or iO training programs. Instruction at these institutions is compatible with our curriculum.
+
+[Reserve a spot in the next session of The Reset](https://buy.stripe.com/3cIeVc67UdAM1Uy8uXaR20j)
