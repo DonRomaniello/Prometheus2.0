@@ -26,11 +26,11 @@ function App() {
         <meta name="keywords" content="improv, hudson valley, comedy, theater, acting, classes, workshops, instruction, fun, laughter, learning, community, performance, stage, theater, theatre, acting" />
         <meta property="og:title" content="Prometheus Studios" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.prometheusstudios.org/" />
-        <meta property="og:image" content="http://www.prometheusstudios.org/logo512.png" />
+        <meta property="og:url" content="https://prometheusstudios.org/" />
+        <meta property="og:image" content="http://prometheusstudios.org/logo512.png" />
         <meta property="og:description" content="World class improv in the Hudson Valley." />
-        <link rel="apple-touch-icon" href="https://www.prometheusstudios.org/logo192.png" />
-        <link rel="manifest" href="https://www.prometheusstudios.org/manifest.json" />
+        <link rel="apple-touch-icon" href="https://prometheusstudios.org/logo192.png" />
+        <link rel="manifest" href="https://prometheusstudios.org/manifest.json" />
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-404TGSM614"></script>
         <script>
           {`
