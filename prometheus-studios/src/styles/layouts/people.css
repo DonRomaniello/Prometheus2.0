@@ -111,6 +111,14 @@
   margin-bottom: 0;
 }
 
+.person-bio a {
+  color: var(--color-primary);
+  cursor: pointer;
+}
+.person-bio a:hover {
+  color: var(--color-secondary);
+}
+
 /* Filler content styling */
 .filler-content {
   width: var(--people-image-size);

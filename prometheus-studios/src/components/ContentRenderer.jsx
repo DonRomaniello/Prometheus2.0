@@ -44,6 +44,14 @@ const ContentRenderer = ({ contentFile, content, initialExpandedSlug = null, onP
         {...props}
         target={isExternalLink(props.href) ? '_blank' : undefined}
         rel={isExternalLink(props.href) ? 'noopener noreferrer' : undefined}
+        onClick={e => {
+          e.stopPropagation();
+          if (isExternalLink(props.href)) {
+            // Let browser handle opening in new tab
+          } else {
+            // For internal links, allow default behavior
+          }
+        }}
       >
         {props.children}
       </a>

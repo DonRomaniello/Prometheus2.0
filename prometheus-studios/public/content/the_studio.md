@@ -54,7 +54,11 @@ Her day job is working in nonprofit communications, but keeping up with her dogs
 ![Ania Kowalczuk](/img/AniaKowalczuk.webp)
 ## Ania Kowalczuk
 
-When Ania’s not on stage, she’s securing your data, locking down physical perimeters, or quietly tailing someone through a Whole Foods parking lot. By day, she’s a cybersecurity strategist. By night, she’s an amateur private detective (available for hire, obviously). 
+When Ania’s not on stage, she’s securing your data, locking down physical perimeters, or quietly tailing someone through a Whole Foods parking lot. 
+
+By day, she’s a cybersecurity strategist. 
+
+By night, she’s an amateur private detective (available for hire, obviously). 
 
 Please don’t ask what her notebook contains. You’re not cleared for that.
 
@@ -65,3 +69,12 @@ Please don’t ask what her notebook contains. You’re not cleared for that.
 In lieu of a bio, Halle Sarner provided chilly silence, which was taken as carte blanche.
 
 Halle's exploits include five cold cases and three broken promises to provide a short blurb.
+
+![Carli Rhoades](/img/CarliRhoades.webp)
+## Carli Rhoades
+
+Carli Rhoades is an actor and puppeteer from Newburgh, NY.  
+
+She also rescues cats and plans elaborate interior designs that may never come true. 
+
+Find out more here: [carlirhoades.com](https://carlirhoades.com).
