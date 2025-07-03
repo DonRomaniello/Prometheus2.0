@@ -11,7 +11,8 @@
 import { generateSlug } from './generateSlug';
 
 function parseMarkdownPeople(markdown) {
-  const personRegex = /!\[([^\]]*)\]\(([^)]+)\)\s*##\s*([^\n]+)\n+([\s\S]*?)(?=!?\[|$)/g;
+  // const personRegex = /!\[([^\]]*)\]\(([^)]+)\)\s*##\s*([^\n]+)\n+([\s\S]*?)(?=!?\[|$)/g;
+  const personRegex = /!\[([^\]]*)\]\(([^)]+)\)\s*##\s*([^\n]+)\n+([\s\S]*?)(?=!\[|$)/g;
   const people = [];
   let match;
   while ((match = personRegex.exec(markdown)) !== null) {
