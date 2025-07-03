@@ -1,8 +1,5 @@
-import React from 'react';
 import { ContentRenderer } from '../components';
 
-const Home = () => {
+export default function Home() {
   return <ContentRenderer contentFile="home" />;
-};
-
-export default Home;
+}

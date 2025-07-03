@@ -1,9 +1,9 @@
 'use client';
 
 import { useParams, useRouter } from 'next/navigation';
-import { ContentRenderer } from '../components';
+import { ContentRenderer } from '../../../components';
 
-const TheStudio = () => {
+export default function PersonPage() {
   const params = useParams();
   const router = useRouter();
   const personSlug = params?.personSlug;
@@ -24,6 +24,4 @@ const TheStudio = () => {
       onPersonExpand={handlePersonExpand}
     />
   );
-};
-
-export default TheStudio;
+}

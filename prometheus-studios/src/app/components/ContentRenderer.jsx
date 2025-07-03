@@ -9,10 +9,8 @@ import {
   useContentBodyClass,
   useDynamicTitle,
   useIsMobile
-} from '../hooks';
-import '../styles/layouts/content-renderer.css';
-import '../styles/layouts/people.css';
-import { FillerContent, PersonCard } from './';
+} from '../../hooks';
+import { FillerContent, PersonCard } from '../../components';
 
 
 // Helper to detect external links

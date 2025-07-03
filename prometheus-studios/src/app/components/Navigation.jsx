@@ -2,10 +2,9 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useScrollVisibility } from '../hooks/useScrollVisibility';
-import useIsMobile from '../hooks/useIsMobile';
+import { useScrollVisibility } from '../../hooks/useScrollVisibility';
+import useIsMobile from '../../hooks/useIsMobile';
 import { useState, useEffect } from 'react';
-import '../styles/components/navigation.css';
 
 /**
  * Navigation component with responsive and scroll-aware behavior.

@@ -1,12 +1,10 @@
 'use client';
 
-import { useParams, useRouter } from 'next/navigation';
-import { ContentRenderer } from '../components';
+import { useRouter } from 'next/navigation';
+import { ContentRenderer } from '../../components';
 
-const TheStudio = () => {
-  const params = useParams();
+export default function TheStudio() {
   const router = useRouter();
-  const personSlug = params?.personSlug;
 
   const handlePersonExpand = (slug) => {
     // Update URL when person is expanded/collapsed
@@ -20,10 +18,8 @@ const TheStudio = () => {
   return (
     <ContentRenderer 
       contentFile="the_studio" 
-      initialExpandedSlug={personSlug}
+      initialExpandedSlug={null}
       onPersonExpand={handlePersonExpand}
     />
   );
-};
-
-export default TheStudio;
+}
