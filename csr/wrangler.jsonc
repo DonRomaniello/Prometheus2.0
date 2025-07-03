@@ -5,16 +5,8 @@
 {
 	"$schema": "node_modules/wrangler/config-schema.json",
 	"name": "prometheus-studios",
-	"main": ".open-next/worker.js",
-	"compatibility_date": "2025-03-01",
-	"compatibility_flags": [
-		"nodejs_compat",
-		"global_fetch_strictly_public"
-	],
-	"assets": {
-		"binding": "ASSETS",
-		"directory": ".open-next/assets"
-	},
+	"compatibility_date": "2025-06-18",
+	"pages_build_output_dir": "./dist",
 	"observability": {
 		"enabled": true
 	}

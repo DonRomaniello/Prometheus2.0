@@ -1,7 +1,0 @@
-{
-  "devDependencies": {
-    "@craco/craco": "^7.1.0",
-    "gray-matter": "^4.0.3",
-    "gray-matter-loader": "^0.0.10"
-  }
-}
