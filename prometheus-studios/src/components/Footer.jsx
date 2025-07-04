@@ -1,4 +1,6 @@
-import { Link } from 'react-router-dom';
+'use client';
+
+import Link from 'next/link';
 import { useScrollFooter } from '../hooks/useViewportHover';
 import { useState, useEffect } from 'react';
 import useIsMobile from '../hooks/useIsMobile';
@@ -77,19 +79,19 @@ const Footer = () => {
             <nav className="footer-nav">
               <ul className={`footer-links mobile${isSmallMobile ? ' small-mobile' : ''}`}>
                 <li>
-                  <Link to="/contact" className={`footer-link mobile${isSmallMobile ? ' small-mobile' : ''}`}>Contact</Link>
+                  <Link href="/contact" className={`footer-link mobile${isSmallMobile ? ' small-mobile' : ''}`}>Contact</Link>
                 </li>
                 <li>
-                  <Link to="/privacy" className={`footer-link mobile${isSmallMobile ? ' small-mobile' : ''}`}>Privacy</Link>
+                  <Link href="/privacy" className={`footer-link mobile${isSmallMobile ? ' small-mobile' : ''}`}>Privacy</Link>
                 </li>
                 <li>
-                  <Link to="/terms" className={`footer-link mobile${isSmallMobile ? ' small-mobile' : ''}`}>Terms of Service</Link>
+                  <Link href="/terms" className={`footer-link mobile${isSmallMobile ? ' small-mobile' : ''}`}>Terms of Service</Link>
                 </li>
                 <li>
-                  <Link to="/faq" className={`footer-link mobile${isSmallMobile ? ' small-mobile' : ''}`}>FAQ</Link>
+                  <Link href="/faq" className={`footer-link mobile${isSmallMobile ? ' small-mobile' : ''}`}>FAQ</Link>
                 </li>
                 <li>
-                  <Link to="/testimonials" className={`footer-link mobile${isSmallMobile ? ' small-mobile' : ''}`}>Testimonials</Link>
+                  <Link href="/testimonials" className={`footer-link mobile${isSmallMobile ? ' small-mobile' : ''}`}>Testimonials</Link>
                 </li>
               </ul>
             </nav>
@@ -119,27 +121,27 @@ const Footer = () => {
             <nav className="footer-nav">
               <ul className="footer-links">
                 <li>
-                  <Link to="/contact" className="footer-link">
+                  <Link href="/contact" className="footer-link">
                     Contact
                   </Link>
                 </li>
                 <li>
-                  <Link to="/privacy" className="footer-link">
+                  <Link href="/privacy" className="footer-link">
                     Privacy
                   </Link>
                 </li>
                 <li>
-                  <Link to="/terms" className="footer-link">
+                  <Link href="/terms" className="footer-link">
                     Terms of Service
                   </Link>
                 </li>
                 <li>
-                  <Link to="/faq" className="footer-link">
+                  <Link href="/faq" className="footer-link">
                     FAQ
                   </Link>
                 </li>
                 <li>
-                  <Link to="/testimonials" className="footer-link">
+                  <Link href="/testimonials" className="footer-link">
                     Testimonials
                   </Link>
                 </li>

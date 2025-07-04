@@ -84,3 +84,7 @@
 .content-renderer a:hover {
   border-bottom: 1.5px solid;
 }
+
+.content-renderer h1 {
+  font-size: var(--font-size-xl);
+}

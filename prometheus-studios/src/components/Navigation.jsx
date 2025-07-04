@@ -1,4 +1,7 @@
-import { Link, useLocation } from 'react-router-dom';
+'use client';
+
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { useScrollVisibility } from '../hooks/useScrollVisibility';
 import useIsMobile from '../hooks/useIsMobile';
 import { useState, useEffect } from 'react';
@@ -9,7 +12,7 @@ import '../styles/components/navigation.css';
  * Handles mobile/desktop layouts and accessibility for navigation menu.
  */
 const Navigation = () => {
-  const location = useLocation();
+  const pathname = usePathname();
 
   const navLinks = [
     { path: '/', label: 'Home' },
@@ -19,8 +22,8 @@ const Navigation = () => {
   ];
   
   // Check if we're on a person's expanded page (e.g., /the_studio/person-1)
-  const isPersonExpanded = location.pathname.startsWith('/the_studio/') && 
-                          location.pathname !== '/the_studio';
+  const isPersonExpanded = pathname.startsWith('/the_studio/') && 
+                          pathname !== '/the_studio';
   
   const { isVisible, handleMouseEnter, handleMouseLeave } = useScrollVisibility({
     hideThreshold: 10,
@@ -60,7 +63,7 @@ const Navigation = () => {
           <>
             <div className="nav-header mobile">
               <div className="brand-container mobile">
-                <Link to="/" className="brand-logo mobile" onClick={handleLinkClick}>
+                <Link href="/" className="brand-logo mobile" onClick={handleLinkClick}>
                     <img src="/img/branding.svg" alt="Prometheus Studios" />
                 </Link>
               </div>
@@ -81,7 +84,7 @@ const Navigation = () => {
               <ul className="nav-links mobile">
                 {navLinks.map(({ path, label }) => (
                   <li key={path}>
-                    <Link to={path} onClick={handleLinkClick}>{label}</Link>
+                    <Link href={path} onClick={handleLinkClick}>{label}</Link>
                   </li>
                 ))}
               </ul>
@@ -92,7 +95,7 @@ const Navigation = () => {
             {navLinks.map(({ path, label }) => (
               <li key={path}>
                 <Link 
-                  to={path}>
+                  href={path}>
                   {label}
                   </Link>
               </li>

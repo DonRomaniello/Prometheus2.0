@@ -5,35 +5,17 @@
   ]
 }
 ```
-# Contact Us
+## Contact
 
-Get in touch with the Prometheus 2.0 team.
+### Questions about Courses
 
-## Contact Information
+Any questions about courses should be directed here:
 
-**Email**: contact@prometheus2.0.com  
-**Phone**: (555) 123-4567  
-**Address**: 123 Innovation Drive, Tech City, TC 12345
+[courses@prometheusstudios.org](mailto:courses@prometheusstudios.org)
 
-## Office Hours
+### General
 
-- **Monday - Friday**: 9:00 AM - 6:00 PM
-- **Saturday**: 10:00 AM - 4:00 PM
-- **Sunday**: Closed
+Feel free to email us here with any other questions:
 
-## Quick Contact Form
+[questions@prometheusstudios.org](mailto:questions@prometheusstudios.org)
 
-*Note: This is a placeholder for a contact form. You can integrate with your preferred form handling service.*
-
----
-
-## FAQ
-
-### How do I edit content?
-Simply edit the corresponding `.md` file in the `src/content/` directory.
-
-### Can I add new pages?
-Yes! Create a new `.md` file in `src/content/` and add a corresponding route and page component.
-
-### Is the content automatically saved?
-Content is saved when you save the markdown files. The app will automatically reflect changes during development.
