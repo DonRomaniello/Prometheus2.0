@@ -62,7 +62,7 @@ const Navigation = () => {
           <>
             <div className="nav-header mobile">
               <div className="brand-container mobile">
-                <Link to="/" className="brand-logo mobile" onClick={handleLinkClick}>
+                <Link href="/" className="brand-logo mobile" onClick={handleLinkClick}>
                     <img src="/img/branding.svg" alt="Prometheus Studios" />
                 </Link>
               </div>
