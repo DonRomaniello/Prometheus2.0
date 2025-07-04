@@ -12,4 +12,4 @@
 # /api/* /api/:splat 200
 
 # All other routes should serve index.html for React Router
-/* /index.html 200
+# /* /index.html 200
