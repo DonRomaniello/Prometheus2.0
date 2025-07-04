@@ -89,9 +89,6 @@ const Footer = () => {
                 <li>
                   <Link href="/faq" className={`footer-link mobile${isSmallMobile ? ' small-mobile' : ''}`}>FAQ</Link>
                 </li>
-                <li>
-                  <Link href="/testimonials" className={`footer-link mobile${isSmallMobile ? ' small-mobile' : ''}`}>Testimonials</Link>
-                </li>
               </ul>
             </nav>
           </div>
@@ -137,11 +134,6 @@ const Footer = () => {
                 <li>
                   <Link href="/faq" className="footer-link">
                     FAQ
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/testimonials" className="footer-link">
-                    Testimonials
                   </Link>
                 </li>
               </ul>
