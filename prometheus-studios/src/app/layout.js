@@ -1,4 +1,3 @@
-import "../styles/global.css";
 import "../styles/user_agent_zero.css";
 import "../styles/variables.css";
 import "../styles/global.css";
@@ -34,6 +33,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        <link rel="stylesheet" href="https://use.typekit.net/rtr3rae.css" />
+      </head>
       <body className="min-h-screen bg-primary">
         <GoogleAnalytics />
         <Navigation />
