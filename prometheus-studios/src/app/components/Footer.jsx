@@ -95,7 +95,7 @@ const Footer = () => {
           
           {/* Bottom row - can be used for additional content */}
           <div className="footer-bottom-row">
-            {/* This row is available for future content */}
+            Prometheus Studios: Play with fire.
           </div>
         </div>
       </footer>
@@ -142,7 +142,7 @@ const Footer = () => {
           
           {/* Bottom row - can be used for additional content */}
           <div className="footer-bottom-row">
-            {/* This row is available for future content */}
+            Prometheus Studios: Play with fire.
           </div>
         </div>
       </footer>
