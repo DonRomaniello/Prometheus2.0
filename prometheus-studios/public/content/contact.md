@@ -9,5 +9,5 @@
 
 Feel free to email any questions.
 
-Email: [prometheusstudioscourier@gmail.com](mailto:prometheusstudioscourier@gmail.com)
+Email: [questions@prometheusstudios.org](mailto:questions@prometheusstudios.org)
 
